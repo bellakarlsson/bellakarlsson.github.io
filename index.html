@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link href="style.css" rel="stylesheet" />
-</head>
-<body>
-ööööööö
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>
-  </script>
-</body>
-</html>
+:root {
+  --pink: #FF8FB8;
+  --light-pink: #FFE4EE;
+  --hot-pink: #FF5C9A;
+}
+
+/* Rosa delar av stora rubriker */
+.hero h1 span {
+  color: var(--pink);
+}
+
+/* Rosa knappar */
+.button {
+  background: var(--pink);
+  color: #111;
+}
+
+/* Hover */
+.button:hover {
+  background: var(--hot-pink);
+}
+
+/* Skills */
+.skill:hover {
+  background: var(--light-pink);
+  border-color: var(--pink);
+}
+
+/* Projektkort */
+.project:hover {
+  background: var(--light-pink);
+}
+
+/* Små sektionsnummer */
+.section-number {
+  color: var(--pink);
+}
+
+/* Kontaktsektionen */
+.contact h2 {
+  color: var(--pink);
+}
