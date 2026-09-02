@@ -1,114 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Isabella Karlsson | Portfolio</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+            margin: 0;
             background-color: #FFC0CB;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 50px;
-            padding-bottom: 0;
             color: #C62828;
         }
 
-        h1 {
-            text-align: left;
+        /* MENU */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+        }
+
+        .logo {
             font-family: Impact, sans-serif;
-            font-size: 85px;
-            letter-spacing: 2px;
-            margin: 20px 0 5px 0;
-            color: #C62828;
-            text-shadow: 4px 4px 0px white;
+            font-size: 24px;
+            letter-spacing: 1px;
         }
 
-        .subtitle {
-            text-align: left;
-            font-size: 22px;
+        .menu a {
+            color: #C62828;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 50px 80px;
+        }
+
+        .hero h1 {
+            font-family: Impact, sans-serif;
+            font-size: 95px;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 5px 5px 0px white;
+        }
+
+        .hero p {
+            font-size: 23px;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 80px;
-            color: #C62828;
+            margin-top: 10px;
             text-shadow: 2px 2px 0px white;
         }
 
-        .content {
-            text-align: center;
-            max-width: 750px;
+        /* SECTIONS */
+
+        section {
+            max-width: 900px;
             margin: auto;
-            padding-bottom: 70px;
+            padding: 90px 40px;
         }
 
-        h2 {
+        section h2 {
             font-family: Georgia, serif;
-            font-size: 28px;
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 50px;
+        }
+
+        /* EDUCATION */
+
+        .education-item {
+            margin-bottom: 35px;
+        }
+
+        .education-item h3 {
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            margin-top: 0;
+        }
+
+        /* CONTACT */
+
+        .contact a {
             color: #C62828;
+            font-weight: bold;
         }
 
-        p {
-            font-size: 17px;
-            line-height: 1.6;
-        }
+        /* ZEBRA */
 
-        a {
-            color: #C62828;
-        }
-
-        /* DISKRET ZEBRA LÄNGST NER */
         .zebra {
-            height: 100px;
-            margin-left: -50px;
-            margin-right: -50px;
+            height: 120px;
 
             background:
                 repeating-linear-gradient(
                     115deg,
                     transparent 0px,
-                    transparent 28px,
-                    rgba(255, 255, 255, 0.25) 28px,
-                    rgba(255, 255, 255, 0.25) 43px,
-                    transparent 43px,
-                    transparent 68px
+                    transparent 30px,
+                    rgba(255, 255, 255, 0.28) 30px,
+                    rgba(255, 255, 255, 0.28) 46px,
+                    transparent 46px,
+                    transparent 72px
                 );
 
-            opacity: 0.7;
+            opacity: 0.8;
         }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .menu a {
+                margin-left: 12px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .about {
+                padding: 30px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <h1>Isabella Karlsson</h1>
-    <p class="subtitle">Growth Marketing Student</p>
+    <!-- MENU -->
 
-    <div class="content">
+    <nav>
 
-        <h2>About Me</h2>
+        <div class="logo">
+            IK
+        </div>
 
-        <p>
-            I am currently studying Growth Marketing at Berghs School of Communication.
-            I am passionate about marketing, business and creativity.
-        </p>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-        <br>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <h1>Isabella Karlsson</h1>
+
+        <p>Growth Marketing Student</p>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am currently studying Growth Marketing at Berghs School of
+                Communication, where I am developing my skills within digital
+                marketing, communication, strategy and business growth.
+            </p>
+
+            <p>
+                I am especially interested in understanding how brands can
+                combine creativity with data to build stronger relationships
+                with their audiences and create long-term growth.
+            </p>
+
+            <p>
+                I enjoy working with creative ideas, brand development,
+                digital communication and marketing strategies. I am curious,
+                ambitious and always interested in learning new ways to
+                understand consumers and create meaningful communication.
+            </p>
+
+            <p>
+                My goal is to continue developing within marketing and work
+                with brands and companies where creativity, strategy and
+                business come together.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
 
         <h2>Education</h2>
 
-        <p>
-            <b>Berghs School of Communication</b><br>
-            Growth Marketing
-        </p>
+        <div class="education-item">
+
+            <h3>Berghs School of Communication</h3>
+
+            <p>
+                Growth Marketing
+            </p>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <h3>Florida International University</h3>
+
+            <p>
+                Business & Marketing Courses
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Let's Connect</h2>
 
         <p>
-            <b>Florida International University</b><br>
-            Business & Marketing
+            I am always interested in new opportunities, collaborations
+            and conversations within marketing and creative industries.
         </p>
-
-        <br>
-
-        <h2>Contact</h2>
 
         <p>
             Email:
@@ -124,9 +305,13 @@
             </a>
         </p>
 
-    </div>
+    </section>
+
+
+    <!-- ZEBRA -->
 
     <div class="zebra"></div>
+
 
 </body>
 </html>
