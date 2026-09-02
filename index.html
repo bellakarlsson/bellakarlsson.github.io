@@ -3,199 +3,47 @@
 
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-54WKDCLW');</script>
-<!-- End Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+            });
+
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer' ? '&l='+l : '';
+
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+            f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-54WKDCLW');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Isabella Karlsson | Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            background-color: #FFC0CB;
-            font-family: Arial, sans-serif;
-            color: #C62828;
-        }
-
-        /* MENU */
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 50px;
-        }
-
-        .logo {
-            font-family: Impact, sans-serif;
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
-
-        .menu a {
-            color: #C62828;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        .menu a:hover {
-            text-decoration: underline;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 50px 80px;
-        }
-
-        .hero h1 {
-            font-family: Impact, sans-serif;
-            font-size: 95px;
-            letter-spacing: 2px;
-            margin: 0;
-            text-shadow: 5px 5px 0px white;
-        }
-
-        .hero p {
-            font-size: 23px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            text-shadow: 2px 2px 0px white;
-        }
-
-        /* SECTIONS */
-
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 90px 40px;
-        }
-
-        section h2 {
-            font-family: Georgia, serif;
-            font-size: 38px;
-            margin-bottom: 30px;
-        }
-
-        section p {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background-color: rgba(255, 255, 255, 0.25);
-            border-radius: 25px;
-            padding: 50px;
-        }
-
-        /* EDUCATION */
-
-        .education-item {
-            margin-bottom: 35px;
-        }
-
-        .education-item h3 {
-            font-size: 21px;
-            margin-bottom: 5px;
-        }
-
-        .education-item p {
-            margin-top: 0;
-        }
-
-        /* CONTACT */
-
-        .contact a {
-            color: #C62828;
-            font-weight: bold;
-        }
-
-        /* ZEBRA */
-
-        .zebra {
-            height: 120px;
-
-            background:
-                repeating-linear-gradient(
-                    115deg,
-                    transparent 0px,
-                    transparent 30px,
-                    rgba(255, 255, 255, 0.28) 30px,
-                    rgba(255, 255, 255, 0.28) 46px,
-                    transparent 46px,
-                    transparent 72px
-                );
-
-            opacity: 0.8;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            nav {
-                padding: 20px;
-            }
-
-            .menu a {
-                margin-left: 12px;
-                font-size: 13px;
-            }
-
-            .hero {
-                padding: 40px 20px;
-            }
-
-            .hero h1 {
-                font-size: 55px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .about {
-                padding: 30px;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-    <!-- MENU -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav>
 
@@ -211,118 +59,141 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </nav>
 
+    <main>
 
-    <!-- HERO -->
+        <section class="hero">
 
-    <div class="hero">
+            <h1>
+                Isabella<br>
+                Karlsson
+            </h1>
 
-        <h1>Isabella Karlsson</h1>
+            <p class="hero-subtitle">
+                Growth Marketing Student
+            </p>
 
-        <p>Growth Marketing Student</p>
+            <p class="hero-note">
+                Exploring the space between creativity,
+                culture, strategy and growth.
+            </p>
 
-    </div>
+            <svg class="star" viewBox="0 0 200 200">
 
+                <path d="
+                    M100 15
+                    L122 72
+                    L185 75
+                    L136 115
+                    L150 177
+                    L100 142
+                    L50 177
+                    L64 115
+                    L15 75
+                    L78 72
+                    Z
+                "/>
 
-    <!-- ABOUT -->
+            </svg>
 
-    <section id="about">
+        </section>
 
-        <div class="about">
+        <section id="about">
 
-            <h2>About Me</h2>
+            <div class="about-wrapper">
+
+                <div class="section-label">
+                    01 / About
+                </div>
+
+                <div class="about-text">
+
+                    <h2>About Me</h2>
+
+                    <p>
+                        I'm Isabella, a Growth Marketing student at
+                        Berghs School of Communication with a strong
+                        interest in branding, creative strategy and
+                        digital growth.
+                    </p>
+
+                    <p>
+                        I am especially interested in understanding
+                        why people connect with certain brands and
+                        how creativity, culture, consumer insights
+                        and data can work together to create meaningful
+                        communication.
+                    </p>
+
+                    <p>
+                        I enjoy developing concepts, exploring consumer
+                        behaviour and turning insights into ideas that
+                        feel relevant, distinctive and commercially strong.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="education" class="peach-section">
+
+            <div class="section-label">
+                02 / Education
+            </div>
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+            <div class="education">
+
+                <div class="education-item">
+                    <strong>Berghs School of Communication</strong>
+                    <span>Growth Marketing</span>
+                </div>
+
+                <div class="education-item">
+                    <strong>Florida International University</strong>
+                    <span>Business & Marketing Courses</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="contact">
+
+            <div class="section-label">
+                03 / Contact
+            </div>
+
+            <h2>
+                Let's<br>
+                Connect.
+            </h2>
 
             <p>
-                I am currently studying Growth Marketing at Berghs School of
-                Communication, where I am developing my skills within digital
-                marketing, communication, strategy and business growth.
+                <a href="mailto:bellakarlsson02@gmail.com">
+                    bellakarlsson02@gmail.com
+                </a>
             </p>
 
             <p>
-                I am especially interested in understanding how brands can
-                combine creativity with data to build stronger relationships
-                with their audiences and create long-term growth.
+                <a href="tel:+46707495606">
+                    +46 70 749 56 06
+                </a>
             </p>
 
-            <p>
-                I enjoy working with creative ideas, brand development,
-                digital communication and marketing strategies. I am curious,
-                ambitious and always interested in learning new ways to
-                understand consumers and create meaningful communication.
-            </p>
+        </section>
 
-            <p>
-                My goal is to continue developing within marketing and work
-                with brands and companies where creativity, strategy and
-                business come together.
-            </p>
+    </main>
 
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-
-    <section id="education">
-
-        <h2>Education</h2>
-
-        <div class="education-item">
-
-            <h3>Berghs School of Communication</h3>
-
-            <p>
-                Growth Marketing
-            </p>
-
-        </div>
-
-
-        <div class="education-item">
-
-            <h3>Florida International University</h3>
-
-            <p>
-                Business & Marketing Courses
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="contact">
-
-        <h2>Let's Connect</h2>
-
-        <p>
-            I am always interested in new opportunities, collaborations
-            and conversations within marketing and creative industries.
-        </p>
-
-        <p>
-            Email:
-            <a href="mailto:bellakarlsson02@gmail.com">
-                bellakarlsson02@gmail.com
-            </a>
-        </p>
-
-        <p>
-            Phone:
-            <a href="tel:+46707495606">
-                +46 70 749 56 06
-            </a>
-        </p>
-
-    </section>
-
-
-    <!-- ZEBRA -->
-
-    <div class="zebra"></div>
-
+    <footer>
+        <span>Isabella Karlsson</span>
+        <span>Portfolio © 2026</span>
+    </footer>
 
 </body>
+
 </html>
