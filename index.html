@@ -5,30 +5,24 @@
 
     <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
-            });
-
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer' ? '&l='+l : '';
-
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
-            f.parentNode.insertBefore(j,f);
-
-        })(window,document,'script','dataLayer','GTM-54WKDCLW');
+    (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),
+        dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-54WKDCLW');
     </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Isabella Karlsson | Portfolio</title>
+    <title>Isabella Karlsson</title>
 
     <style>
 
@@ -42,62 +36,58 @@
 
         body {
             margin: 0;
-
-            background-color: #FFD6B8;
-
-            color: #D94F8A;
-
+            background: #F6B28D;
+            color: #B51F3D;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* MENU */
+
+        /* =========================
+           MENU
+        ========================= */
 
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-
             width: 100%;
-
             padding: 25px 40px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            background-color: #FFD6B8;
+            z-index: 100;
 
-            border-bottom: 2px solid #D94F8A;
+            border-bottom: 2px solid #B51F3D;
 
-            z-index: 1000;
+            background-color: #F6B28D;
         }
 
         .logo {
             font-family: Impact, sans-serif;
             font-size: 24px;
-            letter-spacing: 1px;
         }
 
         .menu a {
-            margin-left: 30px;
-
-            color: #D94F8A;
-
+            color: #B51F3D;
             text-decoration: none;
-
-            font-size: 14px;
             font-weight: bold;
 
-            text-transform: uppercase;
+            margin-left: 30px;
 
-            transition: opacity 0.3s ease;
+            font-size: 14px;
+
+            text-transform: uppercase;
         }
 
         .menu a:hover {
             opacity: 0.5;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -107,11 +97,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            overflow: hidden;
         }
 
-        .hero h1 {
-            margin: 0;
 
+        .hero h1 {
             font-family: Impact, sans-serif;
 
             font-size: clamp(75px, 13vw, 190px);
@@ -122,14 +113,80 @@
 
             letter-spacing: -2px;
 
-            text-shadow: 5px 5px 0px #FFF1E8;
+            margin: 0;
 
-            animation: appear 1.2s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .hero-subtitle {
-            margin-top: 25px;
 
+        /* ISABELLA */
+
+        .first-name {
+            display: block;
+
+            opacity: 0;
+
+            transform: translateY(50px);
+
+            animation: firstNameIn 0.9s ease forwards;
+
+            text-shadow:
+                6px 6px 0px #FAD4C1;
+        }
+
+
+        /* KARLSSON */
+
+        .last-name {
+            display: block;
+
+            margin-left: 10vw;
+
+            opacity: 0;
+
+            transform: translateX(-80px);
+
+            animation: lastNameIn 0.9s ease forwards;
+
+            animation-delay: 1s;
+
+            text-shadow:
+                6px 6px 0px #FAD4C1;
+        }
+
+
+        @keyframes firstNameIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes lastNameIn {
+
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+
+        .hero-subtitle {
             font-size: 20px;
 
             font-weight: bold;
@@ -138,23 +195,46 @@
 
             letter-spacing: 3px;
 
-            text-shadow: 2px 2px 0px #FFF1E8;
+            margin-top: 35px;
 
-            animation: appear 1.8s ease;
+            opacity: 0;
+
+            animation: subtitleIn 1s ease forwards;
+
+            animation-delay: 2s;
         }
 
-        /* STAR */
+
+        @keyframes subtitleIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           STAR
+        ========================= */
 
         .star {
-            width: 90px;
+            width: 100px;
 
-            margin-top: 45px;
+            margin-top: 50px;
         }
+
 
         .star path {
             fill: transparent;
 
-            stroke: #D94F8A;
+            stroke: #B51F3D;
 
             stroke-width: 5;
 
@@ -166,51 +246,46 @@
 
             stroke-dashoffset: 700;
 
-            animation: drawStar 2.5s ease forwards;
+            animation: drawStar 2s ease forwards;
 
-            animation-delay: 0.5s;
+            animation-delay: 2.3s;
         }
 
+
         @keyframes drawStar {
+
             to {
                 stroke-dashoffset: 0;
             }
+
         }
 
-        @keyframes appear {
 
-            from {
-                opacity: 0;
-
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-        }
-
-        /* SECTIONS */
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
             padding: 130px 40px;
         }
 
-        .section-title {
-            margin: 0 0 60px 0;
 
+        .section-title {
             font-family: Impact, sans-serif;
+
+            text-transform: uppercase;
 
             font-size: clamp(60px, 9vw, 130px);
 
-            text-transform: uppercase;
+            margin: 0 0 60px 0;
 
             line-height: 0.9;
         }
 
-        /* ABOUT */
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-text {
             max-width: 900px;
@@ -220,15 +295,15 @@
             line-height: 1.4;
         }
 
-        .about-text p {
-            margin-bottom: 30px;
-        }
 
-        /* EDUCATION */
+        /* =========================
+           EDUCATION
+        ========================= */
 
         .education {
-            border-top: 2px solid #D94F8A;
+            border-top: 2px solid #B51F3D;
         }
+
 
         .education-item {
             display: flex;
@@ -237,16 +312,20 @@
 
             padding: 35px 0;
 
-            border-bottom: 2px solid #D94F8A;
+            border-bottom: 2px solid #B51F3D;
 
             font-size: 22px;
         }
+
 
         .education-item strong {
             font-size: 25px;
         }
 
-        /* CONTACT */
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             min-height: 80vh;
@@ -258,20 +337,22 @@
             justify-content: center;
         }
 
-        .contact h2 {
-            margin: 0 0 50px 0;
 
+        .contact h2 {
             font-family: Impact, sans-serif;
 
             font-size: clamp(70px, 12vw, 170px);
 
             text-transform: uppercase;
 
+            margin: 0 0 50px 0;
+
             line-height: 0.9;
         }
 
+
         .contact a {
-            color: #D94F8A;
+            color: #B51F3D;
 
             font-size: 25px;
 
@@ -280,29 +361,35 @@
             text-decoration: none;
         }
 
+
         .contact a:hover {
             text-decoration: underline;
         }
 
-        /* FOOTER */
 
-        footer {
-            padding: 25px 40px;
+        /* =========================
+           BOTTOM DETAIL
+        ========================= */
 
-            border-top: 2px solid #D94F8A;
+        .zebra {
+            height: 100px;
 
-            display: flex;
-
-            justify-content: space-between;
-
-            font-size: 12px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
+            background:
+                repeating-linear-gradient(
+                    115deg,
+                    transparent 0px,
+                    transparent 30px,
+                    rgba(255,255,255,0.25) 30px,
+                    rgba(255,255,255,0.25) 45px,
+                    transparent 45px,
+                    transparent 70px
+                );
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 700px) {
 
@@ -320,6 +407,14 @@
                 padding: 100px 20px 40px;
             }
 
+            .hero h1 {
+                font-size: 20vw;
+            }
+
+            .last-name {
+                margin-left: 4vw;
+            }
+
             section {
                 padding: 90px 20px;
             }
@@ -334,36 +429,47 @@
                 gap: 10px;
             }
 
-            footer {
-                padding: 20px;
+            .contact a {
+                font-size: 18px;
             }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
+
     <!-- Google Tag Manager (noscript) -->
+
     <noscript>
 
         <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden">
+        src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden">
         </iframe>
 
     </noscript>
+
     <!-- End Google Tag Manager (noscript) -->
 
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
 
     <nav>
 
         <div class="logo">
             IK
         </div>
+
 
         <div class="menu">
 
@@ -384,145 +490,213 @@
     </nav>
 
 
-    <main>
 
-        <section class="hero">
+    <!-- =========================
+         HERO
+    ========================= -->
 
-            <h1>
-                Isabella<br>
+    <div class="hero">
+
+
+        <h1>
+
+            <span class="first-name">
+                Isabella
+            </span>
+
+            <span class="last-name">
                 Karlsson
-            </h1>
+            </span>
 
-            <div class="hero-subtitle">
-                Growth Marketing Student
-            </div>
-
-            <svg class="star" viewBox="0 0 200 200">
-
-                <path d="
-                    M100 15
-                    L122 72
-                    L185 75
-                    L136 115
-                    L150 177
-                    L100 142
-                    L50 177
-                    L64 115
-                    L15 75
-                    L78 72
-                    Z
-                "/>
-
-            </svg>
-
-        </section>
+        </h1>
 
 
-        <section id="about">
+        <div class="hero-subtitle">
 
-            <h2 class="section-title">
-                About Me
-            </h2>
+            Growth Marketing Student
 
-            <div class="about-text">
-
-                <p>
-                    I'm Isabella, a Growth Marketing student at
-                    Berghs School of Communication with a strong
-                    interest in the intersection between creativity,
-                    strategy and business.
-                </p>
-
-                <p>
-                    I'm particularly interested in understanding
-                    what makes people connect with brands and how
-                    creative ideas, culture and data can work
-                    together to create meaningful growth.
-                </p>
-
-                <p>
-                    I enjoy developing concepts, exploring consumer
-                    behaviour and turning insights into communication
-                    that feels relevant, memorable and effective.
-                </p>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        <section id="education">
+        <svg class="star" viewBox="0 0 200 200">
 
-            <h2 class="section-title">
-                Education
-            </h2>
+            <path d="
+            M100 15
+            L122 72
+            L185 75
+            L136 115
+            L150 177
+            L100 142
+            L50 177
+            L64 115
+            L15 75
+            L78 72
+            Z
+            "/>
 
-            <div class="education">
-
-                <div class="education-item">
-
-                    <strong>
-                        Berghs School of Communication
-                    </strong>
-
-                    <span>
-                        Growth Marketing
-                    </span>
-
-                </div>
-
-                <div class="education-item">
-
-                    <strong>
-                        Florida International University
-                    </strong>
-
-                    <span>
-                        Business & Marketing
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
+        </svg>
 
 
-        <section id="contact" class="contact">
+    </div>
 
-            <h2>
-                Let's<br>
-                Talk.
-            </h2>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+
+        <h2 class="section-title">
+
+            About Me
+
+        </h2>
+
+
+        <div class="about-text">
+
 
             <p>
-                <a href="mailto:bellakarlsson02@gmail.com">
-                    bellakarlsson02@gmail.com
-                </a>
+
+                I'm Isabella, a Growth Marketing student at
+                Berghs School of Communication with a strong
+                interest in the intersection between creativity,
+                strategy and business.
+
             </p>
+
 
             <p>
-                <a href="tel:+46707495606">
-                    +46 70 749 56 06
-                </a>
+
+                I'm particularly interested in understanding
+                what makes people connect with brands and how
+                creative ideas, culture and data can work
+                together to create meaningful growth.
+
             </p>
 
-        </section>
 
-    </main>
+            <p>
+
+                I enjoy developing concepts, exploring consumer
+                behaviour and turning insights into communication
+                that feels relevant, memorable and effective.
+
+            </p>
 
 
-    <footer>
+        </div>
 
-        <span>
-            Isabella Karlsson
-        </span>
 
-        <span>
-            Portfolio © 2026
-        </span>
+    </section>
 
-    </footer>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+
+        <h2 class="section-title">
+
+            Education
+
+        </h2>
+
+
+        <div class="education">
+
+
+            <div class="education-item">
+
+                <strong>
+
+                    Berghs School of Communication
+
+                </strong>
+
+                <span>
+
+                    Growth Marketing
+
+                </span>
+
+            </div>
+
+
+            <div class="education-item">
+
+                <strong>
+
+                    Florida International University
+
+                </strong>
+
+                <span>
+
+                    Business & Marketing
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+    id="contact"
+    class="contact">
+
+
+        <h2>
+
+            Let's<br>
+            Talk.
+
+        </h2>
+
+
+        <p>
+
+            <a href="mailto:bellakarlsson02@gmail.com">
+
+                bellakarlsson02@gmail.com
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <a href="tel:+46707495606">
+
+                +46 70 749 56 06
+
+            </a>
+
+        </p>
+
+
+    </section>
+
+
+
+    <div class="zebra"></div>
+
 
 </body>
 
