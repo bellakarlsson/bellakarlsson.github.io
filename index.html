@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){
@@ -29,21 +30,334 @@
 
     <title>Isabella Karlsson | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background-color: #FFD6B8;
+
+            color: #D94F8A;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* MENU */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 25px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: #FFD6B8;
+
+            border-bottom: 2px solid #D94F8A;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: Impact, sans-serif;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .menu a {
+            margin-left: 30px;
+
+            color: #D94F8A;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.5;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+
+            padding: 130px 40px 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-family: Impact, sans-serif;
+
+            font-size: clamp(75px, 13vw, 190px);
+
+            text-transform: uppercase;
+
+            line-height: 0.85;
+
+            letter-spacing: -2px;
+
+            text-shadow: 5px 5px 0px #FFF1E8;
+
+            animation: appear 1.2s ease;
+        }
+
+        .hero-subtitle {
+            margin-top: 25px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            text-shadow: 2px 2px 0px #FFF1E8;
+
+            animation: appear 1.8s ease;
+        }
+
+        /* STAR */
+
+        .star {
+            width: 90px;
+
+            margin-top: 45px;
+        }
+
+        .star path {
+            fill: transparent;
+
+            stroke: #D94F8A;
+
+            stroke-width: 5;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+
+            stroke-dasharray: 700;
+
+            stroke-dashoffset: 700;
+
+            animation: drawStar 2.5s ease forwards;
+
+            animation-delay: 0.5s;
+        }
+
+        @keyframes drawStar {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 130px 40px;
+        }
+
+        .section-title {
+            margin: 0 0 60px 0;
+
+            font-family: Impact, sans-serif;
+
+            font-size: clamp(60px, 9vw, 130px);
+
+            text-transform: uppercase;
+
+            line-height: 0.9;
+        }
+
+        /* ABOUT */
+
+        .about-text {
+            max-width: 900px;
+
+            font-size: 28px;
+
+            line-height: 1.4;
+        }
+
+        .about-text p {
+            margin-bottom: 30px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            border-top: 2px solid #D94F8A;
+        }
+
+        .education-item {
+            display: flex;
+
+            justify-content: space-between;
+
+            padding: 35px 0;
+
+            border-bottom: 2px solid #D94F8A;
+
+            font-size: 22px;
+        }
+
+        .education-item strong {
+            font-size: 25px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            min-height: 80vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .contact h2 {
+            margin: 0 0 50px 0;
+
+            font-family: Impact, sans-serif;
+
+            font-size: clamp(70px, 12vw, 170px);
+
+            text-transform: uppercase;
+
+            line-height: 0.9;
+        }
+
+        .contact a {
+            color: #D94F8A;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px 40px;
+
+            border-top: 2px solid #D94F8A;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .menu a {
+                margin-left: 10px;
+
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 100px 20px 40px;
+            }
+
+            section {
+                padding: 90px 20px;
+            }
+
+            .about-text {
+                font-size: 21px;
+            }
+
+            .education-item {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+        }
+
+    </style>
+
 </head>
 
 <body>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
+
         <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
             height="0"
             width="0"
             style="display:none;visibility:hidden">
         </iframe>
+
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+
 
     <nav>
 
@@ -52,12 +366,23 @@
         </div>
 
         <div class="menu">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#education">
+                Education
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </div>
 
     </nav>
+
 
     <main>
 
@@ -68,14 +393,9 @@
                 Karlsson
             </h1>
 
-            <p class="hero-subtitle">
+            <div class="hero-subtitle">
                 Growth Marketing Student
-            </p>
-
-            <p class="hero-note">
-                Exploring the space between creativity,
-                culture, strategy and growth.
-            </p>
+            </div>
 
             <svg class="star" viewBox="0 0 200 200">
 
@@ -97,50 +417,41 @@
 
         </section>
 
+
         <section id="about">
 
-            <div class="about-wrapper">
+            <h2 class="section-title">
+                About Me
+            </h2>
 
-                <div class="section-label">
-                    01 / About
-                </div>
+            <div class="about-text">
 
-                <div class="about-text">
+                <p>
+                    I'm Isabella, a Growth Marketing student at
+                    Berghs School of Communication with a strong
+                    interest in the intersection between creativity,
+                    strategy and business.
+                </p>
 
-                    <h2>About Me</h2>
+                <p>
+                    I'm particularly interested in understanding
+                    what makes people connect with brands and how
+                    creative ideas, culture and data can work
+                    together to create meaningful growth.
+                </p>
 
-                    <p>
-                        I'm Isabella, a Growth Marketing student at
-                        Berghs School of Communication with a strong
-                        interest in branding, creative strategy and
-                        digital growth.
-                    </p>
-
-                    <p>
-                        I am especially interested in understanding
-                        why people connect with certain brands and
-                        how creativity, culture, consumer insights
-                        and data can work together to create meaningful
-                        communication.
-                    </p>
-
-                    <p>
-                        I enjoy developing concepts, exploring consumer
-                        behaviour and turning insights into ideas that
-                        feel relevant, distinctive and commercially strong.
-                    </p>
-
-                </div>
+                <p>
+                    I enjoy developing concepts, exploring consumer
+                    behaviour and turning insights into communication
+                    that feels relevant, memorable and effective.
+                </p>
 
             </div>
 
         </section>
 
-        <section id="education" class="peach-section">
 
-            <div class="section-label">
-                02 / Education
-            </div>
+        <section id="education">
 
             <h2 class="section-title">
                 Education
@@ -149,28 +460,39 @@
             <div class="education">
 
                 <div class="education-item">
-                    <strong>Berghs School of Communication</strong>
-                    <span>Growth Marketing</span>
+
+                    <strong>
+                        Berghs School of Communication
+                    </strong>
+
+                    <span>
+                        Growth Marketing
+                    </span>
+
                 </div>
 
                 <div class="education-item">
-                    <strong>Florida International University</strong>
-                    <span>Business & Marketing Courses</span>
+
+                    <strong>
+                        Florida International University
+                    </strong>
+
+                    <span>
+                        Business & Marketing
+                    </span>
+
                 </div>
 
             </div>
 
         </section>
 
-        <section id="contact" class="contact">
 
-            <div class="section-label">
-                03 / Contact
-            </div>
+        <section id="contact" class="contact">
 
             <h2>
                 Let's<br>
-                Connect.
+                Talk.
             </h2>
 
             <p>
@@ -189,9 +511,17 @@
 
     </main>
 
+
     <footer>
-        <span>Isabella Karlsson</span>
-        <span>Portfolio © 2026</span>
+
+        <span>
+            Isabella Karlsson
+        </span>
+
+        <span>
+            Portfolio © 2026
+        </span>
+
     </footer>
 
 </body>
