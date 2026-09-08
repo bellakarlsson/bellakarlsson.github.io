@@ -1,41 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event:'gtm.js'
-      });
-
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-
-    })(window,document,'script','dataLayer','GTM-54WKDCLW');
-  </script>
-  <!-- End Google Tag Manager -->
-
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Isabella Karlsson — Portfolio</title>
+  <title>Portfolio</title>
 
   <meta
     name="description"
-    content="Portfolio of Isabella Karlsson — Growth Marketing student at Berghs School of Communication."
-  >
+    content="Creative portfolio website."
+  />
 
-
-  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -44,32 +20,15 @@
     rel="stylesheet"
   >
 
-
   <style>
-
-    /* =========================
-       VARIABLES
-    ========================== */
-
     :root {
-
       --beige: #e9dfd2;
-      --beige-light: #f2ebe3;
-
-      --red: #8f1d18;
-      --red-dark: #69120f;
-
+      --beige-light: #f5eee6;
+      --red: #8c1f1a;
+      --dark-red: #681512;
       --black: #11100f;
-      --white: #f7f3ed;
-
-      --border: rgba(17, 16, 15, 0.35);
-
+      --border: rgba(17, 16, 15, 0.28);
     }
-
-
-    /* =========================
-       RESET
-    ========================== */
 
     * {
       margin: 0;
@@ -95,16 +54,12 @@
 
     ::selection {
       background: var(--red);
-      color: var(--beige);
+      color: var(--beige-light);
     }
 
-
-    /* =========================
-       NAVIGATION
-    ========================== */
+    /* NAVIGATION */
 
     .navbar {
-
       position: fixed;
       top: 0;
       left: 0;
@@ -119,295 +74,193 @@
 
       padding: 22px 32px;
 
-      border-bottom: 1px solid var(--border);
-
-      background: rgba(233, 223, 210, 0.93);
+      background: rgba(233, 223, 210, 0.92);
 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
+      border-bottom: 1px solid var(--border);
     }
-
 
     .logo {
-
       font-family: "Instrument Serif", serif;
-
-      font-size: 25px;
-
-      letter-spacing: -0.02em;
-
+      font-size: 26px;
     }
 
-
     .nav-links {
-
       display: flex;
       gap: 32px;
 
       list-style: none;
 
-      font-size: 12px;
+      font-size: 11px;
 
       text-transform: uppercase;
-
-      letter-spacing: 0.12em;
-
+      letter-spacing: 0.14em;
     }
-
 
     .nav-links a {
-
       position: relative;
-
     }
 
-
     .nav-links a::after {
-
       content: "";
 
       position: absolute;
 
-      width: 0%;
+      left: 0;
+      bottom: -5px;
+
+      width: 0;
       height: 1px;
 
       background: var(--red);
 
-      bottom: -5px;
-      left: 0;
-
       transition: width 0.3s ease;
-
     }
-
 
     .nav-links a:hover::after {
       width: 100%;
     }
 
+    .menu-button {
+      display: none;
 
-    /* =========================
-       HERO
-    ========================== */
+      border: none;
+      background: none;
+
+      font-family: inherit;
+      font-size: 11px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      cursor: pointer;
+    }
+
+    /* HERO */
 
     .hero {
-
       min-height: 100vh;
 
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
 
-      padding:
-
-        150px
-        32px
-        35px
-        32px;
+      padding: 150px 32px 35px;
 
       border-bottom: 1px solid var(--border);
-
     }
 
-
     .hero-top {
-
       display: flex;
-
       justify-content: space-between;
-      align-items: flex-start;
 
       margin-bottom: 45px;
 
-      font-size: 12px;
+      font-size: 11px;
 
       text-transform: uppercase;
-
-      letter-spacing: 0.12em;
-
+      letter-spacing: 0.14em;
     }
 
-
-    .hero-location {
-      max-width: 220px;
-      line-height: 1.6;
-    }
-
-
-    .hero-number {
-
+    .hero-year {
       font-family: "Instrument Serif", serif;
 
       color: var(--red);
 
       font-size: 24px;
-
     }
 
-
-    .hero-name {
-
+    .hero-title {
       font-family: "Instrument Serif", serif;
 
-      font-size: clamp(80px, 14vw, 210px);
+      font-size: clamp(75px, 14vw, 210px);
 
       font-weight: 400;
 
-      letter-spacing: -0.07em;
+      line-height: 0.75;
 
-      line-height: 0.72;
+      letter-spacing: -0.06em;
 
       text-transform: uppercase;
-
     }
 
-
-    .hero-name .first {
-
+    .hero-title span {
       display: block;
-
-      animation: revealLeft 1.2s cubic-bezier(.77,0,.18,1);
-
     }
 
-
-    .hero-name .last {
-
-      display: block;
+    .hero-title .accent {
+      margin-left: 17%;
 
       color: var(--red);
 
-      margin-left: 18%;
-
       font-style: italic;
-
-      animation: revealRight 1.5s cubic-bezier(.77,0,.18,1);
-
     }
-
-
-    @keyframes revealLeft {
-
-      from {
-        opacity: 0;
-        transform: translateX(-80px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-    }
-
-
-    @keyframes revealRight {
-
-      from {
-        opacity: 0;
-        transform: translateX(80px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-    }
-
 
     .hero-bottom {
-
-      margin-top: 55px;
-
       display: flex;
-
       justify-content: space-between;
       align-items: flex-end;
 
+      margin-top: 55px;
     }
 
-
     .hero-description {
-
       max-width: 470px;
 
       font-size: 17px;
-
-      line-height: 1.5;
-
+      line-height: 1.55;
     }
 
-
     .scroll-label {
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.15em;
-
       display: flex;
       align-items: center;
       gap: 15px;
 
+      font-size: 10px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
-
     .scroll-line {
-
       width: 70px;
       height: 1px;
 
       background: var(--black);
-
     }
 
-
-    /* =========================
-       BIG STRIP
-    ========================== */
+    /* MARQUEE */
 
     .statement {
-
-      background: var(--red);
-
-      color: var(--beige-light);
-
-      padding: 30px 0;
-
       overflow: hidden;
 
-      border-bottom: 1px solid var(--black);
+      padding: 28px 0;
 
+      background: var(--red);
+      color: var(--beige-light);
+
+      border-bottom: 1px solid var(--black);
     }
 
-
     .statement-track {
+      display: inline-block;
 
       white-space: nowrap;
-
-      display: inline-block;
 
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(55px, 8vw, 120px);
 
       animation: marquee 24s linear infinite;
-
     }
-
 
     .statement-track span {
-
       margin-right: 50px;
-
     }
 
-
     @keyframes marquee {
-
       from {
         transform: translateX(0);
       }
@@ -415,60 +268,42 @@
       to {
         transform: translateX(-50%);
       }
-
     }
 
-
-    /* =========================
-       GENERAL SECTION
-    ========================== */
+    /* SECTIONS */
 
     section {
       padding: 90px 32px;
     }
 
-
     .section-header {
-
       display: grid;
 
-      grid-template-columns:
-        70px
-        1fr
-        2fr;
-
-      padding-bottom: 30px;
-
-      margin-bottom: 60px;
-
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: 70px 1fr 2fr;
 
       align-items: start;
 
-    }
+      padding-bottom: 30px;
+      margin-bottom: 60px;
 
+      border-bottom: 1px solid var(--border);
+    }
 
     .section-number {
-
       color: var(--red);
 
-      font-size: 12px;
-
+      font-size: 11px;
     }
-
 
     .section-label {
-
-      font-size: 12px;
+      font-size: 11px;
 
       text-transform: uppercase;
-
       letter-spacing: 0.15em;
-
     }
 
-
     .section-title {
+      max-width: 900px;
 
       font-family: "Instrument Serif", serif;
 
@@ -477,42 +312,28 @@
       line-height: 0.95;
 
       letter-spacing: -0.04em;
-
-      max-width: 900px;
-
     }
 
-
-    /* =========================
-       ABOUT
-    ========================== */
+    /* ABOUT */
 
     .about-grid {
-
       display: grid;
 
       grid-template-columns: 1fr 2fr;
 
       gap: 60px;
-
     }
-
 
     .about-small {
-
-      font-size: 12px;
+      font-size: 11px;
 
       text-transform: uppercase;
+      letter-spacing: 0.12em;
 
-      letter-spacing: 0.1em;
-
-      line-height: 1.6;
-
+      line-height: 1.7;
     }
 
-
     .about-text {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(32px, 4vw, 58px);
@@ -520,234 +341,155 @@
       line-height: 1.05;
 
       letter-spacing: -0.025em;
-
     }
-
 
     .about-text em {
-
       color: var(--red);
 
-      font-weight: normal;
-
+      font-weight: 400;
     }
 
-
-    /* =========================
-       WORK
-    ========================== */
+    /* WORK */
 
     .work-list {
-
       border-top: 1px solid var(--border);
-
     }
 
-
     .project {
-
       min-height: 180px;
 
       display: grid;
 
-      grid-template-columns:
-        60px
-        1.8fr
-        1fr
-        80px;
+      grid-template-columns: 60px 1.8fr 1fr 80px;
 
       align-items: center;
 
       border-bottom: 1px solid var(--border);
 
       transition:
-
         background 0.35s ease,
         color 0.35s ease,
         padding 0.35s ease;
-
     }
 
-
     .project:hover {
-
-      background: var(--red);
-
-      color: var(--beige-light);
-
       padding-left: 20px;
       padding-right: 20px;
 
+      background: var(--red);
+      color: var(--beige-light);
     }
-
 
     .project-number {
-
-      font-size: 11px;
-
+      font-size: 10px;
     }
 
-
     .project-title {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(40px, 5vw, 78px);
 
       line-height: 0.9;
-
     }
-
 
     .project-type {
-
-      font-size: 12px;
+      font-size: 11px;
 
       text-transform: uppercase;
-
       letter-spacing: 0.1em;
-
     }
 
-
     .project-arrow {
+      text-align: right;
 
       font-family: "Instrument Serif", serif;
 
-      font-size: 45px;
-
-      text-align: right;
-
+      font-size: 44px;
     }
 
+    /* INFO */
 
-    /* =========================
-       EDUCATION
-    ========================== */
-
-    .education {
-
+    .info-section {
       background: var(--black);
-
       color: var(--beige-light);
-
     }
 
-
-    .education .section-header {
-
-      border-color: rgba(255,255,255,0.3);
-
+    .info-section .section-header {
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
-
-    .education .section-number {
-
-      color: #cf4f45;
-
+    .info-section .section-number {
+      color: #ce5147;
     }
 
-
-    .education-item {
-
+    .info-row {
       display: grid;
 
-      grid-template-columns:
-        1.5fr
-        1fr
-        150px;
+      grid-template-columns: 1.4fr 1fr 150px;
 
       gap: 30px;
 
       padding: 35px 0;
 
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     }
 
-
-    .education-school {
-
+    .info-title {
       font-family: "Instrument Serif", serif;
 
-      font-size: clamp(35px, 4vw, 65px);
-
+      font-size: clamp(34px, 4vw, 62px);
     }
 
-
-    .education-course {
-
+    .info-description {
       font-size: 14px;
 
       line-height: 1.6;
 
-      color: rgba(255,255,255,0.75);
-
+      color: rgba(255, 255, 255, 0.72);
     }
 
-
-    .education-year {
-
+    .info-meta {
       text-align: right;
 
-      color: #cf4f45;
-
+      color: #ce5147;
     }
 
-
-    /* =========================
-       CONTACT
-    ========================== */
+    /* CONTACT */
 
     .contact {
-
       min-height: 90vh;
 
       display: flex;
       flex-direction: column;
-
       justify-content: space-between;
-
     }
-
 
     .contact-intro {
-
-      font-size: 12px;
-
-      letter-spacing: 0.15em;
-
-      text-transform: uppercase;
-
       margin-bottom: 30px;
 
+      font-size: 11px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
-
     .contact-title {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(65px, 11vw, 170px);
 
-      letter-spacing: -0.06em;
-
       line-height: 0.82;
 
+      letter-spacing: -0.06em;
     }
 
-
     .contact-title span {
-
       color: var(--red);
 
       font-style: italic;
-
     }
 
-
     .contact-details {
-
       display: grid;
 
       grid-template-columns: 1fr 1fr;
@@ -755,366 +497,192 @@
       gap: 50px;
 
       margin-top: 80px;
-
-      border-top: 1px solid var(--border);
-
       padding-top: 35px;
 
+      border-top: 1px solid var(--border);
     }
 
-
     .contact-box {
-
       display: flex;
-
       flex-direction: column;
 
       gap: 10px;
-
     }
-
 
     .contact-label {
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.12em;
-
       font-size: 10px;
 
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-
     .contact-link {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(24px, 3vw, 45px);
 
       transition: color 0.3s ease;
-
-      word-break: break-word;
-
     }
-
 
     .contact-link:hover {
-
       color: var(--red);
-
     }
 
-
-    /* =========================
-       FOOTER
-    ========================== */
+    /* FOOTER */
 
     footer {
-
-      background: var(--red);
-
-      color: var(--beige);
+      display: flex;
+      justify-content: space-between;
 
       padding: 24px 32px;
 
-      display: flex;
-
-      justify-content: space-between;
+      background: var(--red);
+      color: var(--beige);
 
       font-size: 10px;
 
       text-transform: uppercase;
-
       letter-spacing: 0.13em;
-
     }
 
-
-    /* =========================
-       SCROLL ANIMATION
-    ========================== */
+    /* SCROLL REVEAL */
 
     .reveal {
-
       opacity: 0;
 
       transform: translateY(50px);
 
       transition:
-
         opacity 0.8s ease,
         transform 0.8s ease;
-
     }
 
-
     .reveal.visible {
-
       opacity: 1;
 
       transform: translateY(0);
-
     }
 
-
-    /* =========================
-       MOBILE MENU BUTTON
-    ========================== */
-
-    .menu-button {
-
-      display: none;
-
-      border: 0;
-
-      background: transparent;
-
-      font-family: "DM Sans", sans-serif;
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.12em;
-
-      cursor: pointer;
-
-    }
-
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
+    /* MOBILE */
 
     @media (max-width: 800px) {
-
-
       .navbar {
-
         padding: 18px 20px;
-
       }
 
-
       .nav-links {
-
         position: absolute;
 
         top: 66px;
-
         left: 0;
 
         width: 100%;
 
-        background: var(--beige);
-
+        display: none;
         flex-direction: column;
 
         padding: 30px 20px;
 
+        background: var(--beige);
+
         border-bottom: 1px solid var(--border);
-
-        display: none;
-
       }
-
 
       .nav-links.active {
-
         display: flex;
-
       }
-
 
       .menu-button {
-
         display: block;
-
       }
-
 
       .hero {
-
         min-height: 95vh;
 
-        padding:
-
-          120px
-          20px
-          25px;
-
+        padding: 120px 20px 25px;
       }
 
-
-      .hero-name {
-
+      .hero-title {
         font-size: clamp(65px, 20vw, 120px);
 
         line-height: 0.8;
-
       }
 
-
-      .hero-name .last {
-
+      .hero-title .accent {
         margin-left: 5%;
-
       }
-
 
       .hero-bottom {
-
         flex-direction: column;
-
         align-items: flex-start;
 
         gap: 40px;
-
       }
-
 
       section {
-
         padding: 70px 20px;
-
       }
-
 
       .section-header {
-
-        grid-template-columns:
-          45px
-          1fr;
+        grid-template-columns: 45px 1fr;
 
         gap: 15px;
-
       }
 
-
       .section-title {
-
         grid-column: 1 / -1;
 
         margin-top: 25px;
-
       }
-
 
       .about-grid {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .project {
-
-        grid-template-columns:
-          40px
-          1fr
-          40px;
+        grid-template-columns: 40px 1fr 40px;
 
         min-height: 140px;
-
       }
-
 
       .project-type {
-
         display: none;
-
       }
 
-
-      .education-item {
-
+      .info-row {
         grid-template-columns: 1fr;
-
       }
 
-
-      .education-year {
-
+      .info-meta {
         text-align: left;
-
       }
-
 
       .contact-details {
-
         grid-template-columns: 1fr;
-
       }
 
-
       footer {
-
         flex-direction: column;
 
         gap: 12px;
 
         padding: 20px;
-
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- Google Tag Manager (noscript) -->
-
-  <noscript>
-
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
-      height="0"
-      width="0"
-      style="display:none;visibility:hidden"
-    >
-    </iframe>
-
-  </noscript>
-
-  <!-- End Google Tag Manager (noscript) -->
-
-
-  <!-- =========================
-       NAV
-  ========================== -->
-
   <nav class="navbar">
-
-    <a href="#home" class="logo">
-      IK
-    </a>
-
+    <a href="#home" class="logo">PORTFOLIO</a>
 
     <ul class="nav-links" id="navLinks">
-
-      <li>
-        <a href="#about">About</a>
-      </li>
-
-      <li>
-        <a href="#work">Work</a>
-      </li>
-
-      <li>
-        <a href="#education">Education</a>
-      </li>
-
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#info">Info</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
 
     <button
       class="menu-button"
@@ -1123,100 +691,59 @@
     >
       Menu
     </button>
-
   </nav>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
 
   <main id="home" class="hero">
 
-
     <div class="hero-top">
-
-      <div class="hero-location">
-
-        Growth Marketing<br>
-        Stockholm, Sweden
-
+      <div>
+        Creative Portfolio<br>
+        Selected Work
       </div>
 
-
-      <div class="hero-number">
+      <div class="hero-year">
         2026
       </div>
-
     </div>
 
-
-    <h1 class="hero-name">
-
-      <span class="first">
-        Isabella
-      </span>
-
-      <span class="last">
-        Karlsson
-      </span>
-
+    <h1 class="hero-title">
+      <span>Your</span>
+      <span class="accent">Name</span>
     </h1>
-
 
     <div class="hero-bottom">
 
-
       <p class="hero-description">
-
-        Growth marketer and creative thinker focused on
-        culture, communication, digital behaviour and ideas
-        that make brands impossible to ignore.
-
+        A portfolio focused on ideas, creativity, strategy
+        and work that deserves attention.
       </p>
 
-
       <div class="scroll-label">
-
         Scroll
-
         <span class="scroll-line"></span>
-
       </div>
-
 
     </div>
 
   </main>
-
-
-  <!-- =========================
-       MOVING TEXT
-  ========================== -->
 
   <div class="statement">
 
     <div class="statement-track">
 
       <span>
-        STRATEGY × CULTURE × CREATIVITY × GROWTH ×
+        CREATIVE × STRATEGY × CULTURE × IDEAS ×
       </span>
 
       <span>
-        STRATEGY × CULTURE × CREATIVITY × GROWTH ×
+        CREATIVE × STRATEGY × CULTURE × IDEAS ×
       </span>
 
     </div>
 
   </div>
 
-
-  <!-- =========================
-       ABOUT
-  ========================== -->
-
   <section id="about">
-
 
     <div class="section-header reveal">
 
@@ -1229,54 +756,36 @@
       </span>
 
       <h2 class="section-title">
-
-        Curiosity first.
-        Strategy second.
-        Never boring.
-
+        A short introduction
+        goes here.
       </h2>
 
     </div>
 
-
     <div class="about-grid reveal">
 
-
       <div class="about-small">
-
-        Based in Stockholm<br>
-        Studying at Berghs<br>
-        Growth Marketing
-
+        Your role<br>
+        Your city<br>
+        Your focus
       </div>
 
-
       <p class="about-text">
-
-        I'm Isabella, a Growth Marketing student at
-        <em>Berghs School of Communication</em> with an
-        interest in the intersection between brands,
-        people and culture.
+        Add your own introduction here.
+        Tell people who you are, what you do
+        and what interests you.
 
         <br><br>
 
-        I enjoy turning insights into ideas and ideas into
-        communication that people actually want to engage with.
-
+        You can highlight important words
+        using <em>this red accent style.</em>
       </p>
-
 
     </div>
 
   </section>
 
-
-  <!-- =========================
-       WORK
-  ========================== -->
-
   <section id="work">
-
 
     <div class="section-header reveal">
 
@@ -1289,17 +798,13 @@
       </span>
 
       <h2 class="section-title">
-
-        Projects, concepts
-        & things I've made.
-
+        Projects, ideas
+        & selected cases.
       </h2>
 
     </div>
 
-
     <div class="work-list reveal">
-
 
       <a href="#" class="project">
 
@@ -1308,11 +813,11 @@
         </span>
 
         <h3 class="project-title">
-          Opera × DIF
+          Project One
         </h3>
 
         <span class="project-type">
-          Brand concept / Campaign
+          Category / Type
         </span>
 
         <span class="project-arrow">
@@ -1320,7 +825,6 @@
         </span>
 
       </a>
-
 
       <a href="#" class="project">
 
@@ -1329,11 +833,11 @@
         </span>
 
         <h3 class="project-title">
-          Vehicle of Hope
+          Project Two
         </h3>
 
         <span class="project-type">
-          Strategy / Creative
+          Category / Type
         </span>
 
         <span class="project-arrow">
@@ -1341,7 +845,6 @@
         </span>
 
       </a>
-
 
       <a href="#" class="project">
 
@@ -1350,11 +853,11 @@
         </span>
 
         <h3 class="project-title">
-          Growth Case
+          Project Three
         </h3>
 
         <span class="project-type">
-          Growth Marketing
+          Category / Type
         </span>
 
         <span class="project-arrow">
@@ -1362,7 +865,6 @@
         </span>
 
       </a>
-
 
       <a href="#" class="project">
 
@@ -1371,11 +873,11 @@
         </span>
 
         <h3 class="project-title">
-          Next project
+          Project Four
         </h3>
 
         <span class="project-type">
-          Coming soon
+          Category / Type
         </span>
 
         <span class="project-arrow">
@@ -1384,21 +886,14 @@
 
       </a>
 
-
     </div>
 
   </section>
 
-
-  <!-- =========================
-       EDUCATION
-  ========================== -->
-
   <section
-    id="education"
-    class="education"
+    id="info"
+    class="info-section"
   >
-
 
     <div class="section-header reveal">
 
@@ -1407,118 +902,75 @@
       </span>
 
       <span class="section-label">
-        Education
+        Info
       </span>
 
       <h2 class="section-title">
-
-        Learning by doing.
-
+        Add anything
+        you want here.
       </h2>
 
     </div>
 
+    <div class="reveal">
 
-    <div class="education-list reveal">
+      <div class="info-row">
 
-
-      <div class="education-item">
-
-
-        <h3 class="education-school">
-
-          Berghs School of Communication
-
+        <h3 class="info-title">
+          Experience
         </h3>
 
-
-        <div class="education-course">
-
-          Growth Marketing<br><br>
-
-          Strategy, digital marketing, communication,
-          creativity, consumer behaviour and growth.
-
+        <div class="info-description">
+          Add experience, education,
+          skills or any other information here.
         </div>
 
-
-        <div class="education-year">
-
-          Stockholm<br>
-          2026
-
+        <div class="info-meta">
+          Details
         </div>
-
 
       </div>
 
+      <div class="info-row">
 
-      <div class="education-item">
-
-
-        <h3 class="education-school">
-
-          Florida International University
-
+        <h3 class="info-title">
+          Skills
         </h3>
 
-
-        <div class="education-course">
-
-          Business & Marketing Courses
-
+        <div class="info-description">
+          Strategy, marketing, design,
+          communication or whatever fits you.
         </div>
 
-
-        <div class="education-year">
-
-          Miami<br>
-          USA
-
+        <div class="info-meta">
+          Details
         </div>
-
 
       </div>
-
 
     </div>
 
   </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================== -->
 
   <section
     id="contact"
     class="contact"
   >
 
-
     <div>
 
-
       <p class="contact-intro reveal">
-
-        Have an idea, project or opportunity?
-
+        Want to get in touch?
       </p>
 
-
       <h2 class="contact-title reveal">
-
         Let's make<br>
         something <span>good.</span>
-
       </h2>
-
 
     </div>
 
-
     <div class="contact-details reveal">
-
 
       <div class="contact-box">
 
@@ -1527,49 +979,41 @@
         </span>
 
         <a
-          href="mailto:bellakarlsson02@gmail.com"
+          href="#"
           class="contact-link"
         >
-          bellakarlsson02@gmail.com
+          your@email.com
         </a>
 
       </div>
-
 
       <div class="contact-box">
 
         <span class="contact-label">
-          Phone
+          Social
         </span>
 
         <a
-          href="tel:+46707495606"
+          href="#"
           class="contact-link"
         >
-          +46 70 749 56 06
+          @yourprofile
         </a>
 
       </div>
 
-
     </div>
 
-
   </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
 
   <footer>
 
     <span>
-      © Isabella Karlsson 2026
+      © 2026
     </span>
 
     <span>
-      Stockholm, Sweden
+      Portfolio
     </span>
 
     <a href="#home">
@@ -1578,23 +1022,13 @@
 
   </footer>
 
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
-
-
-    /* MOBILE MENU */
 
     const menuButton =
       document.getElementById("menuButton");
 
     const navLinks =
       document.getElementById("navLinks");
-
 
     menuButton.addEventListener(
       "click",
@@ -1604,7 +1038,6 @@
 
       }
     );
-
 
     document
       .querySelectorAll(".nav-links a")
@@ -1621,13 +1054,8 @@
 
       });
 
-
-
-    /* SCROLL REVEAL */
-
     const revealElements =
       document.querySelectorAll(".reveal");
-
 
     const observer =
       new IntersectionObserver(
@@ -1654,84 +1082,14 @@
 
       );
 
-
     revealElements.forEach(element => {
 
       observer.observe(element);
 
     });
 
-
-
-    /* GOOGLE TAG MANAGER EVENTS */
-
-    document
-      .querySelectorAll(".project")
-      .forEach((project, index) => {
-
-        project.addEventListener(
-          "click",
-          function() {
-
-            window.dataLayer =
-              window.dataLayer || [];
-
-            window.dataLayer.push({
-
-              event: "portfolio_project_click",
-
-              project_number:
-                index + 1,
-
-              project_name:
-                project
-                  .querySelector(".project-title")
-                  .innerText
-
-            });
-
-          }
-        );
-
-      });
-
-
-    /* CONTACT CLICK TRACKING */
-
-    document
-      .querySelectorAll(
-        'a[href^="mailto:"], a[href^="tel:"]'
-      )
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          function() {
-
-            window.dataLayer =
-              window.dataLayer || [];
-
-            window.dataLayer.push({
-
-              event: "contact_click",
-
-              contact_type:
-                link
-                  .getAttribute("href")
-                  .startsWith("mailto:")
-                  ? "email"
-                  : "phone"
-
-            });
-
-          }
-        );
-
-      });
-
-
   </script>
-
 
 </body>
 </html>
+```
