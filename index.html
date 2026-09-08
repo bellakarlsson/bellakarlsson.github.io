@@ -30,7 +30,7 @@
 
     :root {
       --beige: #E7CFB6;
-      --beige-light: #F5EADF;
+      --beige-light: #F3E4D4;
 
       --pink: #E9A9BB;
       --pink-dark: #CF8298;
@@ -61,9 +61,7 @@
     body {
       background: var(--beige);
       color: var(--brown);
-
       font-family: "DM Sans", sans-serif;
-
       overflow-x: hidden;
     }
 
@@ -93,14 +91,12 @@
       z-index: 1000;
 
       display: flex;
-
       justify-content: space-between;
       align-items: center;
 
       padding: 22px 32px;
 
       background: rgba(62, 43, 36, 0.96);
-
       color: var(--beige-light);
 
       border-bottom:
@@ -108,21 +104,37 @@
 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+
+      transition: transform 0.35s ease;
     }
+
+
+    /* HIDES NAVBAR WHEN SCROLLING DOWN */
+
+    .navbar.hide {
+      transform: translateY(-110%);
+    }
+
+
+    /* IK LOGO */
 
     .logo {
       font-family: "Instrument Serif", serif;
 
-      font-size: 25px;
+      font-size: 28px;
 
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
 
-      transition: color 0.3s ease;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
     }
 
     .logo:hover {
       color: var(--pink);
+      transform: rotate(-4deg);
     }
+
 
     .nav-links {
       display: flex;
@@ -138,15 +150,18 @@
       letter-spacing: 0.12em;
     }
 
+
     .nav-links a {
       position: relative;
 
       transition: color 0.3s ease;
     }
 
+
     .nav-links a:hover {
       color: var(--pink);
     }
+
 
     .nav-links a::after {
       content: "";
@@ -163,6 +178,7 @@
 
       transition: width 0.3s ease;
     }
+
 
     .nav-links a:hover::after {
       width: 100%;
@@ -197,7 +213,7 @@
     }
 
 
-    /* PINK MOUSE GLOW */
+    /* PINK GLOW */
 
     .hero::before {
       content: "";
@@ -231,7 +247,7 @@
     }
 
 
-    /* SUBTLE GRAIN */
+    /* GRAIN EFFECT */
 
     .hero::after {
       content: "";
@@ -272,11 +288,13 @@
       z-index: 2;
     }
 
+
     .hero-location {
       max-width: 300px;
 
       line-height: 1.6;
     }
+
 
     .hero-number {
       font-family: "Instrument Serif", serif;
@@ -285,6 +303,7 @@
 
       font-size: 24px;
     }
+
 
     .hero-name {
       font-family: "Instrument Serif", serif;
@@ -304,6 +323,7 @@
       z-index: 2;
     }
 
+
     .hero-name .first {
       display: block;
 
@@ -316,6 +336,7 @@
         1.2s
         cubic-bezier(.77,0,.18,1);
     }
+
 
     .hero-name .last {
       display: block;
@@ -336,6 +357,7 @@
         cubic-bezier(.77,0,.18,1);
     }
 
+
     @keyframes revealLeft {
 
       from {
@@ -349,6 +371,7 @@
       }
 
     }
+
 
     @keyframes revealRight {
 
@@ -378,6 +401,7 @@
       z-index: 2;
     }
 
+
     .hero-description {
       max-width: 520px;
 
@@ -385,6 +409,7 @@
 
       line-height: 1.5;
     }
+
 
     .scroll-label {
       font-size: 11px;
@@ -399,6 +424,7 @@
 
       gap: 15px;
     }
+
 
     .scroll-line {
       width: 70px;
@@ -424,6 +450,7 @@
       border-bottom: 1px solid var(--brown);
     }
 
+
     .statement-track {
       white-space: nowrap;
 
@@ -436,9 +463,11 @@
       animation: marquee 24s linear infinite;
     }
 
+
     .statement-track span {
       margin-right: 50px;
     }
+
 
     @keyframes marquee {
 
@@ -454,12 +483,13 @@
 
 
     /* =========================
-       GENERAL
+       GENERAL SECTIONS
     ========================== */
 
     section {
       padding: 90px 32px;
     }
+
 
     .section-header {
       display: grid;
@@ -478,11 +508,13 @@
       align-items: start;
     }
 
+
     .section-number {
       color: var(--pink-dark);
 
       font-size: 12px;
     }
+
 
     .section-label {
       font-size: 12px;
@@ -491,6 +523,7 @@
 
       letter-spacing: 0.15em;
     }
+
 
     .section-title {
       font-family: "Instrument Serif", serif;
@@ -519,6 +552,7 @@
       gap: 60px;
     }
 
+
     .about-small {
       font-size: 12px;
 
@@ -529,6 +563,7 @@
       line-height: 1.7;
     }
 
+
     .about-text {
       font-family: "Instrument Serif", serif;
 
@@ -538,6 +573,7 @@
 
       letter-spacing: -0.025em;
     }
+
 
     .about-text em {
       color: var(--pink-dark);
@@ -553,6 +589,7 @@
     .work-list {
       border-top: 1px solid var(--border);
     }
+
 
     .project {
       min-height: 180px;
@@ -575,6 +612,7 @@
         padding 0.35s ease;
     }
 
+
     .project:hover {
       background: var(--pink);
 
@@ -584,9 +622,11 @@
       padding-right: 20px;
     }
 
+
     .project-number {
       font-size: 11px;
     }
+
 
     .project-title {
       font-family: "Instrument Serif", serif;
@@ -596,6 +636,7 @@
       line-height: 0.9;
     }
 
+
     .project-type {
       font-size: 12px;
 
@@ -603,6 +644,7 @@
 
       letter-spacing: 0.1em;
     }
+
 
     .project-arrow {
       font-family: "Instrument Serif", serif;
@@ -623,14 +665,17 @@
       color: var(--beige-light);
     }
 
+
     .education .section-header {
       border-color:
         rgba(245, 234, 223, 0.25);
     }
 
+
     .education .section-number {
       color: var(--pink);
     }
+
 
     .education-item {
       display: grid;
@@ -648,6 +693,7 @@
         1px solid rgba(245, 234, 223, 0.25);
     }
 
+
     .education-school {
       font-family: "Instrument Serif", serif;
 
@@ -655,6 +701,7 @@
 
       line-height: 1;
     }
+
 
     .education-course {
       font-size: 14px;
@@ -664,6 +711,7 @@
       color:
         rgba(245, 234, 223, 0.75);
     }
+
 
     .education-meta {
       text-align: right;
@@ -686,6 +734,7 @@
       justify-content: space-between;
     }
 
+
     .contact-intro {
       font-size: 12px;
 
@@ -695,6 +744,7 @@
 
       margin-bottom: 30px;
     }
+
 
     .contact-title {
       font-family: "Instrument Serif", serif;
@@ -706,11 +756,13 @@
       line-height: 0.82;
     }
 
+
     .contact-title span {
       color: var(--pink-dark);
 
       font-style: italic;
     }
+
 
     .contact-details {
       display: grid;
@@ -728,6 +780,7 @@
       padding-top: 35px;
     }
 
+
     .contact-box {
       display: flex;
 
@@ -736,6 +789,7 @@
       gap: 10px;
     }
 
+
     .contact-label {
       text-transform: uppercase;
 
@@ -743,6 +797,7 @@
 
       font-size: 10px;
     }
+
 
     .contact-link {
       font-family: "Instrument Serif", serif;
@@ -755,6 +810,7 @@
 
       word-break: break-word;
     }
+
 
     .contact-link:hover {
       color: var(--pink-dark);
@@ -800,6 +856,7 @@
         transform 0.8s ease;
     }
 
+
     .reveal.visible {
       opacity: 1;
 
@@ -842,6 +899,7 @@
         padding: 18px 20px;
       }
 
+
       .nav-links {
         position: absolute;
 
@@ -864,13 +922,16 @@
         display: none;
       }
 
+
       .nav-links.active {
         display: flex;
       }
 
+
       .menu-button {
         display: block;
       }
+
 
       .hero {
         min-height: 95vh;
@@ -881,10 +942,12 @@
           25px;
       }
 
+
       .hero::before {
         width: 420px;
         height: 420px;
       }
+
 
       .hero-name {
         font-size:
@@ -893,9 +956,11 @@
         line-height: 0.8;
       }
 
+
       .hero-name .last {
         margin-left: 5%;
       }
+
 
       .hero-bottom {
         flex-direction: column;
@@ -905,9 +970,11 @@
         gap: 40px;
       }
 
+
       section {
         padding: 70px 20px;
       }
+
 
       .section-header {
         grid-template-columns:
@@ -917,15 +984,18 @@
         gap: 15px;
       }
 
+
       .section-title {
         grid-column: 1 / -1;
 
         margin-top: 25px;
       }
 
+
       .about-grid {
         grid-template-columns: 1fr;
       }
+
 
       .project {
         grid-template-columns:
@@ -936,21 +1006,26 @@
         min-height: 140px;
       }
 
+
       .project-type {
         display: none;
       }
+
 
       .education-item {
         grid-template-columns: 1fr;
       }
 
+
       .education-meta {
         text-align: left;
       }
 
+
       .contact-details {
         grid-template-columns: 1fr;
       }
+
 
       footer {
         flex-direction: column;
@@ -979,6 +1054,7 @@
         scroll-behavior: auto;
       }
 
+
       .hero-name .first,
       .hero-name .last,
       .statement-track,
@@ -997,35 +1073,43 @@
 <body>
 
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
+  <!-- NAVIGATION -->
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
 
     <a href="#home" class="logo">
-      ISABELLA KARLSSON
+      IK
     </a>
+
 
     <ul class="nav-links" id="navLinks">
 
       <li>
-        <a href="#about">About</a>
+        <a href="#about">
+          About
+        </a>
       </li>
 
       <li>
-        <a href="#work">Work</a>
+        <a href="#work">
+          Work
+        </a>
       </li>
 
       <li>
-        <a href="#education">Education</a>
+        <a href="#education">
+          Education
+        </a>
       </li>
 
       <li>
-        <a href="#contact">Contact</a>
+        <a href="#contact">
+          Contact
+        </a>
       </li>
 
     </ul>
+
 
     <button
       class="menu-button"
@@ -1038,21 +1122,25 @@
   </nav>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- HERO -->
 
   <main id="home" class="hero">
+
 
     <div class="hero-top">
 
       <div class="hero-location">
+
         Growth Marketing<br>
         Creative Strategy
+
       </div>
 
+
       <div class="hero-number">
+
         2026
+
       </div>
 
     </div>
@@ -1073,11 +1161,15 @@
 
     <div class="hero-bottom">
 
+
       <p class="hero-description">
+
         Growth Marketing student at Berghs School of
         Communication with a curiosity for creativity,
         strategy, culture and how brands grow.
+
       </p>
+
 
       <div class="scroll-label">
 
@@ -1087,14 +1179,13 @@
 
       </div>
 
+
     </div>
 
   </main>
 
 
-  <!-- =========================
-       MOVING TEXT
-  ========================== -->
+  <!-- MOVING TEXT -->
 
   <div class="statement">
 
@@ -1113,11 +1204,10 @@
   </div>
 
 
-  <!-- =========================
-       ABOUT
-  ========================== -->
+  <!-- ABOUT -->
 
   <section id="about">
+
 
     <div class="section-header reveal">
 
@@ -1138,6 +1228,7 @@
 
 
     <div class="about-grid reveal">
+
 
       <div class="about-small">
 
@@ -1162,16 +1253,16 @@
 
       </p>
 
+
     </div>
 
   </section>
 
 
-  <!-- =========================
-       WORK
-  ========================== -->
+  <!-- WORK -->
 
   <section id="work">
+
 
     <div class="section-header reveal">
 
@@ -1192,6 +1283,7 @@
 
 
     <div class="work-list reveal">
+
 
       <a href="#" class="project">
 
@@ -1276,19 +1368,19 @@
 
       </a>
 
+
     </div>
 
   </section>
 
 
-  <!-- =========================
-       EDUCATION
-  ========================== -->
+  <!-- EDUCATION -->
 
   <section
     id="education"
     class="education"
   >
+
 
     <div class="section-header reveal">
 
@@ -1309,6 +1401,7 @@
 
 
     <div class="reveal">
+
 
       <div class="education-item">
 
@@ -1354,25 +1447,29 @@
 
       </div>
 
+
     </div>
 
   </section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================== -->
+  <!-- CONTACT -->
 
   <section
     id="contact"
     class="contact"
   >
 
+
     <div>
 
+
       <p class="contact-intro reveal">
+
         Have an idea, project or opportunity?
+
       </p>
+
 
       <h2 class="contact-title reveal">
 
@@ -1380,20 +1477,25 @@
 
         something
 
-        <span>good.</span>
+        <span>
+          good.
+        </span>
 
       </h2>
+
 
     </div>
 
 
     <div class="contact-details reveal">
 
+
       <div class="contact-box">
 
         <span class="contact-label">
           Email
         </span>
+
 
         <a
           href="mailto:bellakarlsson02@gmail.com"
@@ -1411,6 +1513,7 @@
           Phone
         </span>
 
+
         <a
           href="tel:+46707495606"
           class="contact-link"
@@ -1420,14 +1523,13 @@
 
       </div>
 
+
     </div>
 
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -1446,20 +1548,23 @@
   </footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
 
 
-    /* MOBILE MENU */
+    /* =========================
+       MOBILE MENU
+    ========================== */
 
     const menuButton =
       document.getElementById("menuButton");
 
+
     const navLinks =
       document.getElementById("navLinks");
+
+
+    const navbar =
+      document.getElementById("navbar");
 
 
     menuButton.addEventListener(
@@ -1489,7 +1594,57 @@
 
 
 
-    /* SCROLL REVEAL */
+    /* =========================
+       HIDE NAVBAR ON SCROLL
+    ========================== */
+
+    let lastScrollY =
+      window.scrollY;
+
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+
+        const currentScrollY =
+          window.scrollY;
+
+
+        /* SCROLLING DOWN */
+
+        if (
+          currentScrollY > lastScrollY &&
+          currentScrollY > 100
+        ) {
+
+          navbar.classList.add("hide");
+
+          navLinks.classList.remove("active");
+
+        }
+
+
+        /* SCROLLING UP */
+
+        else {
+
+          navbar.classList.remove("hide");
+
+        }
+
+
+        lastScrollY =
+          currentScrollY;
+
+      }
+    );
+
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
 
     const revealElements =
       document.querySelectorAll(".reveal");
@@ -1529,7 +1684,9 @@
 
 
 
-    /* HERO MOUSE EFFECT */
+    /* =========================
+       HERO MOUSE EFFECT
+    ========================== */
 
     const hero =
       document.querySelector(".hero");
@@ -1550,6 +1707,7 @@
     hero.addEventListener(
       "mousemove",
       function(event) {
+
 
         const rect =
           hero.getBoundingClientRect();
@@ -1577,7 +1735,7 @@
         );
 
 
-        /* TEXT PARALLAX */
+        /* TEXT MOVEMENT */
 
         const moveX =
           (
@@ -1604,9 +1762,12 @@
     );
 
 
+    /* RESET HERO */
+
     hero.addEventListener(
       "mouseleave",
       function() {
+
 
         firstName.style.transform =
           "translate(0, 0)";
@@ -1627,11 +1788,13 @@
           "50%"
         );
 
+
       }
     );
 
 
   </script>
+
 
 </body>
 
