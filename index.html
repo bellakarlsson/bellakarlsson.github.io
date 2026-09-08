@@ -3,11 +3,15 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Portfolio</title>
+  <title>Isabella Karlsson — Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Isabella Karlsson, Growth Marketing student at Berghs School of Communication."
+  >
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +29,6 @@
     ========================== */
 
     :root {
-
       --beige: #E8D6C2;
       --beige-light: #F5EADF;
 
@@ -33,11 +36,11 @@
       --pink-dark: #CF8298;
 
       --brown: #3E2B24;
+      --brown-light: #594038;
 
       --white: #FFFAF6;
 
       --border: rgba(62, 43, 36, 0.28);
-
     }
 
 
@@ -56,15 +59,12 @@
     }
 
     body {
-
       background: var(--beige);
-
       color: var(--brown);
 
       font-family: "DM Sans", sans-serif;
 
       overflow-x: hidden;
-
     }
 
     a {
@@ -83,7 +83,6 @@
     ========================== */
 
     .navbar {
-
       position: fixed;
 
       top: 0;
@@ -100,27 +99,32 @@
 
       padding: 22px 32px;
 
-      border-bottom: 1px solid var(--border);
+      background: rgba(62, 43, 36, 0.96);
 
-      background: rgba(232, 214, 194, 0.92);
+      color: var(--beige-light);
+
+      border-bottom:
+        1px solid rgba(245, 234, 223, 0.18);
 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-
     }
 
     .logo {
-
       font-family: "Instrument Serif", serif;
 
       font-size: 25px;
 
       letter-spacing: -0.02em;
 
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--pink);
     }
 
     .nav-links {
-
       display: flex;
 
       gap: 32px;
@@ -132,39 +136,36 @@
       text-transform: uppercase;
 
       letter-spacing: 0.12em;
-
     }
 
     .nav-links a {
-
       position: relative;
 
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
     }
 
     .nav-links a::after {
-
       content: "";
 
       position: absolute;
 
-      width: 0%;
-
+      width: 0;
       height: 1px;
 
       background: var(--pink);
 
       bottom: -5px;
-
       left: 0;
 
       transition: width 0.3s ease;
-
     }
 
     .nav-links a:hover::after {
-
       width: 100%;
-
     }
 
 
@@ -173,7 +174,6 @@
     ========================== */
 
     .hero {
-
       min-height: 100vh;
 
       display: flex;
@@ -182,7 +182,7 @@
 
       justify-content: flex-end;
 
-      padding: 150px 32px 35px 32px;
+      padding: 150px 32px 35px;
 
       border-bottom: 1px solid var(--border);
 
@@ -194,14 +194,12 @@
 
       --mouse-x: 50%;
       --mouse-y: 50%;
-
     }
 
 
-    /* PINK GLOW THAT FOLLOWS MOUSE */
+    /* PINK MOUSE GLOW */
 
     .hero::before {
-
       content: "";
 
       position: absolute;
@@ -217,19 +215,12 @@
       transform: translate(-50%, -50%);
 
       background:
-
         radial-gradient(
-
           circle,
-
           rgba(233, 169, 187, 0.62) 0%,
-
           rgba(233, 169, 187, 0.32) 30%,
-
           rgba(233, 169, 187, 0.10) 55%,
-
           rgba(233, 169, 187, 0) 72%
-
         );
 
       filter: blur(12px);
@@ -237,14 +228,12 @@
       pointer-events: none;
 
       z-index: -2;
-
     }
 
 
     /* SUBTLE GRAIN */
 
     .hero::after {
-
       content: "";
 
       position: absolute;
@@ -256,22 +245,18 @@
       pointer-events: none;
 
       background-image:
-
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.30'/%3E%3C/svg%3E");
 
       mix-blend-mode: multiply;
 
       z-index: -1;
-
     }
 
 
     .hero-top {
-
       display: flex;
 
       justify-content: space-between;
-
       align-items: flex-start;
 
       margin-bottom: 45px;
@@ -285,32 +270,23 @@
       position: relative;
 
       z-index: 2;
-
     }
-
 
     .hero-location {
-
-      max-width: 220px;
+      max-width: 300px;
 
       line-height: 1.6;
-
     }
 
-
     .hero-number {
-
       font-family: "Instrument Serif", serif;
 
       color: var(--pink-dark);
 
       font-size: 24px;
-
     }
 
-
     .hero-name {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(80px, 14vw, 210px);
@@ -326,12 +302,9 @@
       position: relative;
 
       z-index: 2;
-
     }
 
-
     .hero-name .first {
-
       display: block;
 
       will-change: transform;
@@ -342,12 +315,9 @@
         revealLeft
         1.2s
         cubic-bezier(.77,0,.18,1);
-
     }
 
-
     .hero-name .last {
-
       display: block;
 
       color: var(--pink);
@@ -364,82 +334,59 @@
         revealRight
         1.5s
         cubic-bezier(.77,0,.18,1);
-
     }
-
 
     @keyframes revealLeft {
 
       from {
-
         opacity: 0;
-
         transform: translateX(-80px);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translateX(0);
-
       }
 
     }
 
-
     @keyframes revealRight {
 
       from {
-
         opacity: 0;
-
         transform: translateX(80px);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translateX(0);
-
       }
 
     }
 
 
     .hero-bottom {
-
       margin-top: 55px;
 
       display: flex;
 
       justify-content: space-between;
-
       align-items: flex-end;
 
       position: relative;
 
       z-index: 2;
-
     }
 
-
     .hero-description {
-
-      max-width: 470px;
+      max-width: 520px;
 
       font-size: 17px;
 
       line-height: 1.5;
-
     }
 
-
     .scroll-label {
-
       font-size: 11px;
 
       text-transform: uppercase;
@@ -451,18 +398,13 @@
       align-items: center;
 
       gap: 15px;
-
     }
 
-
     .scroll-line {
-
       width: 70px;
-
       height: 1px;
 
       background: var(--brown);
-
     }
 
 
@@ -471,7 +413,6 @@
     ========================== */
 
     .statement {
-
       background: var(--pink);
 
       color: var(--brown);
@@ -481,12 +422,9 @@
       overflow: hidden;
 
       border-bottom: 1px solid var(--brown);
-
     }
 
-
     .statement-track {
-
       white-space: nowrap;
 
       display: inline-block;
@@ -496,16 +434,11 @@
       font-size: clamp(55px, 8vw, 120px);
 
       animation: marquee 24s linear infinite;
-
     }
-
 
     .statement-track span {
-
       margin-right: 50px;
-
     }
-
 
     @keyframes marquee {
 
@@ -521,18 +454,14 @@
 
 
     /* =========================
-       GENERAL SECTIONS
+       GENERAL
     ========================== */
 
     section {
-
       padding: 90px 32px;
-
     }
 
-
     .section-header {
-
       display: grid;
 
       grid-template-columns:
@@ -547,32 +476,23 @@
       border-bottom: 1px solid var(--border);
 
       align-items: start;
-
     }
 
-
     .section-number {
-
       color: var(--pink-dark);
 
       font-size: 12px;
-
     }
 
-
     .section-label {
-
       font-size: 12px;
 
       text-transform: uppercase;
 
       letter-spacing: 0.15em;
-
     }
 
-
     .section-title {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(45px, 6vw, 90px);
@@ -582,7 +502,6 @@
       letter-spacing: -0.04em;
 
       max-width: 900px;
-
     }
 
 
@@ -591,7 +510,6 @@
     ========================== */
 
     .about-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -599,25 +517,19 @@
         2fr;
 
       gap: 60px;
-
     }
 
-
     .about-small {
-
       font-size: 12px;
 
       text-transform: uppercase;
 
       letter-spacing: 0.1em;
 
-      line-height: 1.6;
-
+      line-height: 1.7;
     }
 
-
     .about-text {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(32px, 4vw, 58px);
@@ -625,16 +537,12 @@
       line-height: 1.05;
 
       letter-spacing: -0.025em;
-
     }
 
-
     .about-text em {
-
       color: var(--pink-dark);
 
       font-weight: normal;
-
     }
 
 
@@ -643,14 +551,10 @@
     ========================== */
 
     .work-list {
-
       border-top: 1px solid var(--border);
-
     }
 
-
     .project {
-
       min-height: 180px;
 
       display: grid;
@@ -669,92 +573,66 @@
         background 0.35s ease,
         color 0.35s ease,
         padding 0.35s ease;
-
     }
 
-
     .project:hover {
-
       background: var(--pink);
 
       color: var(--brown);
 
       padding-left: 20px;
-
       padding-right: 20px;
-
     }
-
 
     .project-number {
-
       font-size: 11px;
-
     }
 
-
     .project-title {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(40px, 5vw, 78px);
 
       line-height: 0.9;
-
     }
 
-
     .project-type {
-
       font-size: 12px;
 
       text-transform: uppercase;
 
       letter-spacing: 0.1em;
-
     }
 
-
     .project-arrow {
-
       font-family: "Instrument Serif", serif;
 
       font-size: 45px;
 
       text-align: right;
-
     }
 
 
     /* =========================
-       INFO
+       EDUCATION
     ========================== */
 
-    .info {
-
+    .education {
       background: var(--brown);
 
       color: var(--beige-light);
-
     }
 
-
-    .info .section-header {
-
-      border-color: rgba(245, 234, 223, 0.25);
-
+    .education .section-header {
+      border-color:
+        rgba(245, 234, 223, 0.25);
     }
 
-
-    .info .section-number {
-
+    .education .section-number {
       color: var(--pink);
-
     }
 
-
-    .info-item {
-
+    .education-item {
       display: grid;
 
       grid-template-columns:
@@ -764,40 +642,33 @@
 
       gap: 30px;
 
-      padding: 35px 0;
+      padding: 38px 0;
 
       border-bottom:
         1px solid rgba(245, 234, 223, 0.25);
-
     }
 
-
-    .info-title {
-
+    .education-school {
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(35px, 4vw, 65px);
 
+      line-height: 1;
     }
 
-
-    .info-description {
-
+    .education-course {
       font-size: 14px;
 
       line-height: 1.6;
 
-      color: rgba(245, 234, 223, 0.72);
-
+      color:
+        rgba(245, 234, 223, 0.75);
     }
 
-
-    .info-meta {
-
+    .education-meta {
       text-align: right;
 
       color: var(--pink);
-
     }
 
 
@@ -806,7 +677,6 @@
     ========================== */
 
     .contact {
-
       min-height: 90vh;
 
       display: flex;
@@ -814,12 +684,9 @@
       flex-direction: column;
 
       justify-content: space-between;
-
     }
 
-
     .contact-intro {
-
       font-size: 12px;
 
       letter-spacing: 0.15em;
@@ -827,12 +694,9 @@
       text-transform: uppercase;
 
       margin-bottom: 30px;
-
     }
 
-
     .contact-title {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(65px, 11vw, 170px);
@@ -840,21 +704,15 @@
       letter-spacing: -0.06em;
 
       line-height: 0.82;
-
     }
 
-
     .contact-title span {
-
       color: var(--pink-dark);
 
       font-style: italic;
-
     }
 
-
     .contact-details {
-
       display: grid;
 
       grid-template-columns:
@@ -868,49 +726,40 @@
       border-top: 1px solid var(--border);
 
       padding-top: 35px;
-
     }
 
-
     .contact-box {
-
       display: flex;
 
       flex-direction: column;
 
       gap: 10px;
-
     }
 
-
     .contact-label {
-
       text-transform: uppercase;
 
       letter-spacing: 0.12em;
 
       font-size: 10px;
-
     }
 
-
     .contact-link {
-
       font-family: "Instrument Serif", serif;
 
       font-size: clamp(24px, 3vw, 45px);
 
-      transition: color 0.3s ease;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 
       word-break: break-word;
-
     }
 
-
     .contact-link:hover {
-
       color: var(--pink-dark);
 
+      transform: translateX(5px);
     }
 
 
@@ -919,7 +768,6 @@
     ========================== */
 
     footer {
-
       background: var(--pink);
 
       color: var(--brown);
@@ -935,16 +783,14 @@
       text-transform: uppercase;
 
       letter-spacing: 0.13em;
-
     }
 
 
     /* =========================
-       SCROLL ANIMATION
+       SCROLL REVEAL
     ========================== */
 
     .reveal {
-
       opacity: 0;
 
       transform: translateY(50px);
@@ -952,16 +798,12 @@
       transition:
         opacity 0.8s ease,
         transform 0.8s ease;
-
     }
 
-
     .reveal.visible {
-
       opacity: 1;
 
       transform: translateY(0);
-
     }
 
 
@@ -970,14 +812,13 @@
     ========================== */
 
     .menu-button {
-
       display: none;
 
       border: 0;
 
       background: transparent;
 
-      color: var(--brown);
+      color: var(--beige-light);
 
       font-family: "DM Sans", sans-serif;
 
@@ -988,7 +829,6 @@
       letter-spacing: 0.12em;
 
       cursor: pointer;
-
     }
 
 
@@ -998,197 +838,140 @@
 
     @media (max-width: 800px) {
 
-
       .navbar {
-
         padding: 18px 20px;
-
       }
 
-
       .nav-links {
-
         position: absolute;
 
         top: 66px;
-
         left: 0;
 
         width: 100%;
 
-        background: var(--beige);
+        background: var(--brown);
+
+        color: var(--beige-light);
 
         flex-direction: column;
 
         padding: 30px 20px;
 
-        border-bottom: 1px solid var(--border);
+        border-bottom:
+          1px solid rgba(245,234,223,0.2);
 
         display: none;
-
       }
-
 
       .nav-links.active {
-
         display: flex;
-
       }
-
 
       .menu-button {
-
         display: block;
-
       }
-
 
       .hero {
-
         min-height: 95vh;
 
-        padding: 120px 20px 25px;
-
+        padding:
+          120px
+          20px
+          25px;
       }
-
 
       .hero::before {
-
         width: 420px;
         height: 420px;
-
       }
-
 
       .hero-name {
-
-        font-size: clamp(65px, 20vw, 120px);
+        font-size:
+          clamp(65px, 20vw, 120px);
 
         line-height: 0.8;
-
       }
-
 
       .hero-name .last {
-
         margin-left: 5%;
-
       }
 
-
       .hero-bottom {
-
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 40px;
-
       }
-
 
       section {
-
         padding: 70px 20px;
-
       }
 
-
       .section-header {
-
         grid-template-columns:
           45px
           1fr;
 
         gap: 15px;
-
       }
 
-
       .section-title {
-
         grid-column: 1 / -1;
 
         margin-top: 25px;
-
       }
-
 
       .about-grid {
-
         grid-template-columns: 1fr;
-
       }
 
-
       .project {
-
         grid-template-columns:
           40px
           1fr
           40px;
 
         min-height: 140px;
-
       }
-
 
       .project-type {
-
         display: none;
-
       }
 
-
-      .info-item {
-
+      .education-item {
         grid-template-columns: 1fr;
-
       }
 
-
-      .info-meta {
-
+      .education-meta {
         text-align: left;
-
       }
-
 
       .contact-details {
-
         grid-template-columns: 1fr;
-
       }
 
-
       footer {
-
         flex-direction: column;
 
         gap: 12px;
 
         padding: 20px;
-
       }
 
     }
 
-
-    /* DISABLE MOUSE EFFECT FOR TOUCH DEVICES */
 
     @media (hover: none) {
 
       .hero::before {
-
         left: 70%;
         top: 40%;
-
       }
 
     }
 
-
-    /* ACCESSIBILITY */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1200,10 +983,8 @@
       .hero-name .last,
       .statement-track,
       .reveal {
-
         animation: none;
         transition: none;
-
       }
 
     }
@@ -1216,43 +997,35 @@
 <body>
 
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
   <nav class="navbar">
 
     <a href="#home" class="logo">
-      PORTFOLIO
+      ISABELLA KARLSSON
     </a>
-
 
     <ul class="nav-links" id="navLinks">
 
       <li>
-        <a href="#about">
-          About
-        </a>
+        <a href="#about">About</a>
       </li>
 
       <li>
-        <a href="#work">
-          Work
-        </a>
+        <a href="#work">Work</a>
       </li>
 
       <li>
-        <a href="#info">
-          Info
-        </a>
+        <a href="#education">Education</a>
       </li>
 
       <li>
-        <a href="#contact">
-          Contact
-        </a>
+        <a href="#contact">Contact</a>
       </li>
 
     </ul>
-
 
     <button
       class="menu-button"
@@ -1265,25 +1038,21 @@
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <main id="home" class="hero">
-
 
     <div class="hero-top">
 
       <div class="hero-location">
-
-        Creative Portfolio<br>
-        Selected Work
-
+        Growth Marketing<br>
+        Creative Strategy
       </div>
 
-
       <div class="hero-number">
-
         2026
-
       </div>
 
     </div>
@@ -1292,16 +1061,11 @@
     <h1 class="hero-name">
 
       <span class="first">
-
-        Your
-
+        Isabella
       </span>
 
-
       <span class="last">
-
-        Name
-
+        Karlsson
       </span>
 
     </h1>
@@ -1309,15 +1073,11 @@
 
     <div class="hero-bottom">
 
-
       <p class="hero-description">
-
-        A portfolio about creativity,
-        strategy, ideas and work
-        worth talking about.
-
+        Growth Marketing student at Berghs School of
+        Communication with a curiosity for creativity,
+        strategy, culture and how brands grow.
       </p>
-
 
       <div class="scroll-label">
 
@@ -1327,28 +1087,25 @@
 
       </div>
 
-
     </div>
 
   </main>
 
 
-  <!-- MOVING TEXT -->
+  <!-- =========================
+       MOVING TEXT
+  ========================== -->
 
   <div class="statement">
 
     <div class="statement-track">
 
       <span>
-
-        CREATIVITY × STRATEGY × CULTURE × IDEAS ×
-
+        GROWTH × CREATIVITY × STRATEGY × CULTURE ×
       </span>
 
       <span>
-
-        CREATIVITY × STRATEGY × CULTURE × IDEAS ×
-
+        GROWTH × CREATIVITY × STRATEGY × CULTURE ×
       </span>
 
     </div>
@@ -1356,32 +1113,25 @@
   </div>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
   <section id="about">
-
 
     <div class="section-header reveal">
 
       <span class="section-number">
-
         01
-
       </span>
-
 
       <span class="section-label">
-
         About
-
       </span>
 
-
       <h2 class="section-title">
-
-        A little bit
-        about me.
-
+        Curious about what makes
+        people pay attention.
       </h2>
 
     </div>
@@ -1389,71 +1139,59 @@
 
     <div class="about-grid reveal">
 
-
       <div class="about-small">
 
-        Your role<br>
-        Your city<br>
-        Your focus
+        Growth Marketing<br>
+        Creative Strategy<br>
+        Communication
 
       </div>
 
 
       <p class="about-text">
 
-        This is where you can write
-        a short introduction about
-        yourself and what you do.
+        I'm Isabella, a Growth Marketing student at
+        <em>Berghs School of Communication.</em>
 
         <br><br>
 
-        Talk about your interests,
-        your ideas and what makes
-        your perspective
-
-        <em>different.</em>
+        I'm interested in the space where creativity,
+        strategy and culture meet — understanding what
+        makes people engage, what makes ideas travel and
+        how brands can create meaningful growth.
 
       </p>
-
 
     </div>
 
   </section>
 
 
-  <!-- WORK -->
+  <!-- =========================
+       WORK
+  ========================== -->
 
   <section id="work">
-
 
     <div class="section-header reveal">
 
       <span class="section-number">
-
         02
-
       </span>
-
 
       <span class="section-label">
-
         Selected work
-
       </span>
 
-
       <h2 class="section-title">
-
         Projects, concepts
         & things I've made.
-
       </h2>
 
     </div>
 
 
     <div class="work-list reveal">
-
 
       <a href="#" class="project">
 
@@ -1487,7 +1225,7 @@
         </h3>
 
         <span class="project-type">
-          Campaign / Concept
+          Growth / Marketing
         </span>
 
         <span class="project-arrow">
@@ -1508,7 +1246,7 @@
         </h3>
 
         <span class="project-type">
-          Digital / Creative
+          Campaign / Concept
         </span>
 
         <span class="project-arrow">
@@ -1538,41 +1276,33 @@
 
       </a>
 
-
     </div>
 
   </section>
 
 
-  <!-- INFO -->
+  <!-- =========================
+       EDUCATION
+  ========================== -->
 
   <section
-    id="info"
-    class="info"
+    id="education"
+    class="education"
   >
-
 
     <div class="section-header reveal">
 
       <span class="section-number">
-
         03
-
       </span>
-
 
       <span class="section-label">
-
-        Info
-
+        Education
       </span>
 
-
       <h2 class="section-title">
-
-        A few more
-        things about me.
-
+        Learning, exploring
+        & always staying curious.
       </h2>
 
     </div>
@@ -1580,84 +1310,69 @@
 
     <div class="reveal">
 
+      <div class="education-item">
 
-      <div class="info-item">
-
-        <h3 class="info-title">
-
-          Experience
-
+        <h3 class="education-school">
+          Berghs School of Communication
         </h3>
 
+        <div class="education-course">
 
-        <div class="info-description">
+          Growth Marketing
 
-          Add your experience,
-          background or other
-          relevant information here.
+          <br><br>
+
+          Exploring growth, strategy,
+          digital marketing, communication
+          and creative thinking.
 
         </div>
 
-
-        <div class="info-meta">
-
-          Details
-
+        <div class="education-meta">
+          Current
         </div>
 
       </div>
 
 
-      <div class="info-item">
+      <div class="education-item">
 
-        <h3 class="info-title">
-
-          Skills
-
+        <h3 class="education-school">
+          Florida International University
         </h3>
 
+        <div class="education-course">
 
-        <div class="info-description">
-
-          Add the skills,
-          areas or subjects
-          you want to highlight.
+          Previous studies with a focus
+          on business and marketing.
 
         </div>
 
-
-        <div class="info-meta">
-
-          Details
-
+        <div class="education-meta">
+          Previous
         </div>
 
       </div>
-
 
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
   <section
     id="contact"
     class="contact"
   >
 
-
     <div>
 
-
       <p class="contact-intro reveal">
-
-        Have an idea,
-        project or opportunity?
-
+        Have an idea, project or opportunity?
       </p>
-
 
       <h2 class="contact-title reveal">
 
@@ -1665,37 +1380,26 @@
 
         something
 
-        <span>
-
-          good.
-
-        </span>
+        <span>good.</span>
 
       </h2>
-
 
     </div>
 
 
     <div class="contact-details reveal">
 
-
       <div class="contact-box">
 
         <span class="contact-label">
-
           Email
-
         </span>
 
-
         <a
-          href="#"
+          href="mailto:bellakarlsson02@gmail.com"
           class="contact-link"
         >
-
-          your@email.com
-
+          bellakarlsson02@gmail.com
         </a>
 
       </div>
@@ -1704,84 +1408,65 @@
       <div class="contact-box">
 
         <span class="contact-label">
-
-          Social
-
+          Phone
         </span>
 
-
         <a
-          href="#"
+          href="tel:+46707495606"
           class="contact-link"
         >
-
-          @yourprofile
-
+          +46 70 749 56 06
         </a>
 
       </div>
-
 
     </div>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
-
     <span>
-
-      © 2026
-
+      © Isabella Karlsson 2026
     </span>
 
-
     <span>
-
-      Portfolio
-
+      Growth Marketing
     </span>
-
 
     <a href="#home">
-
       Back to top ↑
-
     </a>
-
 
   </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
 
 
-    /* =========================
-       MOBILE MENU
-    ========================== */
+    /* MOBILE MENU */
 
     const menuButton =
-      document.getElementById(
-        "menuButton"
-      );
-
+      document.getElementById("menuButton");
 
     const navLinks =
-      document.getElementById(
-        "navLinks"
-      );
+      document.getElementById("navLinks");
 
 
     menuButton.addEventListener(
       "click",
       function() {
 
-        navLinks
-          .classList
-          .toggle("active");
+        navLinks.classList.toggle("active");
 
       }
     );
@@ -1795,9 +1480,7 @@
           "click",
           function() {
 
-            navLinks
-              .classList
-              .remove("active");
+            navLinks.classList.remove("active");
 
           }
         );
@@ -1806,14 +1489,10 @@
 
 
 
-    /* =========================
-       SCROLL REVEAL
-    ========================== */
+    /* SCROLL REVEAL */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
     const observer =
@@ -1823,9 +1502,7 @@
 
           entries.forEach(entry => {
 
-            if (
-              entry.isIntersecting
-            ) {
+            if (entry.isIntersecting) {
 
               entry.target
                 .classList
@@ -1844,23 +1521,18 @@
       );
 
 
-    revealElements
-      .forEach(element => {
+    revealElements.forEach(element => {
 
-        observer.observe(element);
+      observer.observe(element);
 
-      });
-
+    });
 
 
-    /* =========================
-       HERO MOUSE EFFECT
-    ========================== */
+
+    /* HERO MOUSE EFFECT */
 
     const hero =
-      document.querySelector(
-        ".hero"
-      );
+      document.querySelector(".hero");
 
 
     const firstName =
@@ -1879,24 +1551,19 @@
       "mousemove",
       function(event) {
 
-
         const rect =
           hero.getBoundingClientRect();
 
 
         const x =
-          event.clientX -
-          rect.left;
+          event.clientX - rect.left;
 
 
         const y =
-          event.clientY -
-          rect.top;
+          event.clientY - rect.top;
 
 
-        /*
-          MOVE THE PINK GLOW
-        */
+        /* MOVE PINK GLOW */
 
         hero.style.setProperty(
           "--mouse-x",
@@ -1910,9 +1577,7 @@
         );
 
 
-        /*
-          CALCULATE TEXT MOVEMENT
-        */
+        /* TEXT PARALLAX */
 
         const moveX =
           (
@@ -1928,42 +1593,20 @@
           ) * 10;
 
 
-        /*
-          MOVE FIRST WORD
-        */
-
         firstName.style.transform =
-          `translate(
-            ${moveX}px,
-            ${moveY}px
-          )`;
+          `translate(${moveX}px, ${moveY}px)`;
 
-
-        /*
-          MOVE SECOND WORD
-          IN OPPOSITE DIRECTION
-        */
 
         lastName.style.transform =
-          `translate(
-            ${-moveX}px,
-            ${-moveY}px
-          )`;
-
+          `translate(${-moveX}px, ${-moveY}px)`;
 
       }
     );
 
 
-    /*
-      RESET WHEN MOUSE
-      LEAVES START PAGE
-    */
-
     hero.addEventListener(
       "mouseleave",
       function() {
-
 
         firstName.style.transform =
           "translate(0, 0)";
@@ -1984,13 +1627,11 @@
           "50%"
         );
 
-
       }
     );
 
 
   </script>
-
 
 </body>
 
