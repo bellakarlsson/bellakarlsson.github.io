@@ -1,441 +1,1065 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <!-- Google Tag Manager -->
-    <script>
+  <!-- Google Tag Manager -->
+  <script>
     (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),
-        dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
+      w[l]=w[l]||[];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event:'gtm.js'
+      });
+
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+
     })(window,document,'script','dataLayer','GTM-54WKDCLW');
-    </script>
-    <!-- End Google Tag Manager -->
+  </script>
+  <!-- End Google Tag Manager -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Isabella Karlsson</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+  <title>Isabella Karlsson — Portfolio</title>
 
-        * {
-            box-sizing: border-box;
-        }
+  <meta
+    name="description"
+    content="Portfolio of Isabella Karlsson — Growth Marketing student at Berghs School of Communication."
+  >
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            margin: 0;
-            background: #F6B28D;
-            color: #B51F3D;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
 
-        /* =========================
-           MENU
-        ========================= */
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 40px;
+  <style>
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    /* =========================
+       VARIABLES
+    ========================== */
 
-            z-index: 100;
+    :root {
 
-            border-bottom: 2px solid #B51F3D;
+      --beige: #e9dfd2;
+      --beige-light: #f2ebe3;
 
-            background-color: #F6B28D;
-        }
+      --red: #8f1d18;
+      --red-dark: #69120f;
 
-        .logo {
-            font-family: Impact, sans-serif;
-            font-size: 24px;
-        }
+      --black: #11100f;
+      --white: #f7f3ed;
 
-        .menu a {
-            color: #B51F3D;
-            text-decoration: none;
-            font-weight: bold;
+      --border: rgba(17, 16, 15, 0.35);
 
-            margin-left: 30px;
+    }
 
-            font-size: 14px;
 
-            text-transform: uppercase;
-        }
+    /* =========================
+       RESET
+    ========================== */
 
-        .menu a:hover {
-            opacity: 0.5;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* =========================
-           HERO
-        ========================= */
+    body {
+      background: var(--beige);
+      color: var(--black);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
 
-        .hero {
-            min-height: 100vh;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-            padding: 130px 40px 50px;
+    ::selection {
+      background: var(--red);
+      color: var(--beige);
+    }
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
 
-            overflow: hidden;
-        }
+    /* =========================
+       NAVIGATION
+    ========================== */
 
+    .navbar {
 
-        .hero h1 {
-            font-family: Impact, sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
 
-            font-size: clamp(75px, 13vw, 190px);
+      width: 100%;
 
-            text-transform: uppercase;
+      z-index: 1000;
 
-            line-height: 0.85;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-            letter-spacing: -2px;
+      padding: 22px 32px;
 
-            margin: 0;
+      border-bottom: 1px solid var(--border);
 
-            display: flex;
-            flex-direction: column;
-        }
+      background: rgba(233, 223, 210, 0.93);
 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
 
-        /* ISABELLA */
+    }
 
-        .first-name {
-            display: block;
 
-            opacity: 0;
+    .logo {
 
-            transform: translateY(50px);
+      font-family: "Instrument Serif", serif;
 
-            animation: firstNameIn 0.9s ease forwards;
+      font-size: 25px;
 
-            text-shadow:
-                6px 6px 0px #FAD4C1;
-        }
+      letter-spacing: -0.02em;
 
+    }
 
-        /* KARLSSON */
 
-        .last-name {
-            display: block;
+    .nav-links {
 
-            margin-left: 10vw;
+      display: flex;
+      gap: 32px;
 
-            opacity: 0;
+      list-style: none;
 
-            transform: translateX(-80px);
+      font-size: 12px;
 
-            animation: lastNameIn 0.9s ease forwards;
+      text-transform: uppercase;
 
-            animation-delay: 1s;
+      letter-spacing: 0.12em;
 
-            text-shadow:
-                6px 6px 0px #FAD4C1;
-        }
+    }
 
 
-        @keyframes firstNameIn {
+    .nav-links a {
 
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
+      position: relative;
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    }
 
-        }
 
+    .nav-links a::after {
 
-        @keyframes lastNameIn {
+      content: "";
 
-            from {
-                opacity: 0;
-                transform: translateX(-80px);
-            }
+      position: absolute;
 
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+      width: 0%;
+      height: 1px;
 
-        }
+      background: var(--red);
 
+      bottom: -5px;
+      left: 0;
 
-        .hero-subtitle {
-            font-size: 20px;
+      transition: width 0.3s ease;
 
-            font-weight: bold;
+    }
 
-            text-transform: uppercase;
 
-            letter-spacing: 3px;
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-            margin-top: 35px;
 
-            opacity: 0;
+    /* =========================
+       HERO
+    ========================== */
 
-            animation: subtitleIn 1s ease forwards;
+    .hero {
 
-            animation-delay: 2s;
-        }
+      min-height: 100vh;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
 
-        @keyframes subtitleIn {
+      padding:
 
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        150px
+        32px
+        35px
+        32px;
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+      border-bottom: 1px solid var(--border);
 
-        }
+    }
 
 
-        /* =========================
-           STAR
-        ========================= */
+    .hero-top {
 
-        .star {
-            width: 100px;
+      display: flex;
 
-            margin-top: 50px;
-        }
+      justify-content: space-between;
+      align-items: flex-start;
 
+      margin-bottom: 45px;
 
-        .star path {
-            fill: transparent;
+      font-size: 12px;
 
-            stroke: #B51F3D;
+      text-transform: uppercase;
 
-            stroke-width: 5;
+      letter-spacing: 0.12em;
 
-            stroke-linecap: round;
+    }
 
-            stroke-linejoin: round;
 
-            stroke-dasharray: 700;
+    .hero-location {
+      max-width: 220px;
+      line-height: 1.6;
+    }
 
-            stroke-dashoffset: 700;
 
-            animation: drawStar 2s ease forwards;
+    .hero-number {
 
-            animation-delay: 2.3s;
-        }
+      font-family: "Instrument Serif", serif;
 
+      color: var(--red);
 
-        @keyframes drawStar {
+      font-size: 24px;
 
-            to {
-                stroke-dashoffset: 0;
-            }
+    }
 
-        }
 
+    .hero-name {
 
-        /* =========================
-           SECTIONS
-        ========================= */
+      font-family: "Instrument Serif", serif;
 
-        section {
-            padding: 130px 40px;
-        }
+      font-size: clamp(80px, 14vw, 210px);
 
+      font-weight: 400;
 
-        .section-title {
-            font-family: Impact, sans-serif;
+      letter-spacing: -0.07em;
 
-            text-transform: uppercase;
+      line-height: 0.72;
 
-            font-size: clamp(60px, 9vw, 130px);
+      text-transform: uppercase;
 
-            margin: 0 0 60px 0;
+    }
 
-            line-height: 0.9;
-        }
 
+    .hero-name .first {
 
-        /* =========================
-           ABOUT
-        ========================= */
+      display: block;
 
-        .about-text {
-            max-width: 900px;
+      animation: revealLeft 1.2s cubic-bezier(.77,0,.18,1);
 
-            font-size: 28px;
+    }
 
-            line-height: 1.4;
-        }
 
+    .hero-name .last {
 
-        /* =========================
-           EDUCATION
-        ========================= */
+      display: block;
 
-        .education {
-            border-top: 2px solid #B51F3D;
-        }
+      color: var(--red);
 
+      margin-left: 18%;
 
-        .education-item {
-            display: flex;
+      font-style: italic;
 
-            justify-content: space-between;
+      animation: revealRight 1.5s cubic-bezier(.77,0,.18,1);
 
-            padding: 35px 0;
+    }
 
-            border-bottom: 2px solid #B51F3D;
 
-            font-size: 22px;
-        }
+    @keyframes revealLeft {
 
+      from {
+        opacity: 0;
+        transform: translateX(-80px);
+      }
 
-        .education-item strong {
-            font-size: 25px;
-        }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
+    }
 
-        /* =========================
-           CONTACT
-        ========================= */
 
-        .contact {
-            min-height: 80vh;
+    @keyframes revealRight {
 
-            display: flex;
+      from {
+        opacity: 0;
+        transform: translateX(80px);
+      }
 
-            flex-direction: column;
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-            justify-content: center;
-        }
+    }
 
 
-        .contact h2 {
-            font-family: Impact, sans-serif;
+    .hero-bottom {
 
-            font-size: clamp(70px, 12vw, 170px);
+      margin-top: 55px;
 
-            text-transform: uppercase;
+      display: flex;
 
-            margin: 0 0 50px 0;
+      justify-content: space-between;
+      align-items: flex-end;
 
-            line-height: 0.9;
-        }
+    }
 
 
-        .contact a {
-            color: #B51F3D;
+    .hero-description {
 
-            font-size: 25px;
+      max-width: 470px;
 
-            font-weight: bold;
+      font-size: 17px;
 
-            text-decoration: none;
-        }
+      line-height: 1.5;
 
+    }
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
 
+    .scroll-label {
 
-        /* =========================
-           BOTTOM DETAIL
-        ========================= */
+      font-size: 11px;
 
-        .zebra {
-            height: 100px;
+      text-transform: uppercase;
 
-            background:
-                repeating-linear-gradient(
-                    115deg,
-                    transparent 0px,
-                    transparent 30px,
-                    rgba(255,255,255,0.25) 30px,
-                    rgba(255,255,255,0.25) 45px,
-                    transparent 45px,
-                    transparent 70px
-                );
-        }
+      letter-spacing: 0.15em;
 
+      display: flex;
+      align-items: center;
+      gap: 15px;
 
-        /* =========================
-           MOBILE
-        ========================= */
+    }
 
-        @media (max-width: 700px) {
 
-            nav {
-                padding: 20px;
-            }
+    .scroll-line {
 
-            .menu a {
-                margin-left: 10px;
+      width: 70px;
+      height: 1px;
 
-                font-size: 11px;
-            }
+      background: var(--black);
 
-            .hero {
-                padding: 100px 20px 40px;
-            }
+    }
 
-            .hero h1 {
-                font-size: 20vw;
-            }
 
-            .last-name {
-                margin-left: 4vw;
-            }
+    /* =========================
+       BIG STRIP
+    ========================== */
 
-            section {
-                padding: 90px 20px;
-            }
+    .statement {
 
-            .about-text {
-                font-size: 21px;
-            }
+      background: var(--red);
 
-            .education-item {
-                flex-direction: column;
+      color: var(--beige-light);
 
-                gap: 10px;
-            }
+      padding: 30px 0;
 
-            .contact a {
-                font-size: 18px;
-            }
+      overflow: hidden;
 
-        }
+      border-bottom: 1px solid var(--black);
 
-    </style>
+    }
+
+
+    .statement-track {
+
+      white-space: nowrap;
+
+      display: inline-block;
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(55px, 8vw, 120px);
+
+      animation: marquee 24s linear infinite;
+
+    }
+
+
+    .statement-track span {
+
+      margin-right: 50px;
+
+    }
+
+
+    @keyframes marquee {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+
+    }
+
+
+    /* =========================
+       GENERAL SECTION
+    ========================== */
+
+    section {
+      padding: 90px 32px;
+    }
+
+
+    .section-header {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr
+        2fr;
+
+      padding-bottom: 30px;
+
+      margin-bottom: 60px;
+
+      border-bottom: 1px solid var(--border);
+
+      align-items: start;
+
+    }
+
+
+    .section-number {
+
+      color: var(--red);
+
+      font-size: 12px;
+
+    }
+
+
+    .section-label {
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.15em;
+
+    }
+
+
+    .section-title {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(45px, 6vw, 90px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.04em;
+
+      max-width: 900px;
+
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+
+      display: grid;
+
+      grid-template-columns: 1fr 2fr;
+
+      gap: 60px;
+
+    }
+
+
+    .about-small {
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      line-height: 1.6;
+
+    }
+
+
+    .about-text {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(32px, 4vw, 58px);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.025em;
+
+    }
+
+
+    .about-text em {
+
+      color: var(--red);
+
+      font-weight: normal;
+
+    }
+
+
+    /* =========================
+       WORK
+    ========================== */
+
+    .work-list {
+
+      border-top: 1px solid var(--border);
+
+    }
+
+
+    .project {
+
+      min-height: 180px;
+
+      display: grid;
+
+      grid-template-columns:
+        60px
+        1.8fr
+        1fr
+        80px;
+
+      align-items: center;
+
+      border-bottom: 1px solid var(--border);
+
+      transition:
+
+        background 0.35s ease,
+        color 0.35s ease,
+        padding 0.35s ease;
+
+    }
+
+
+    .project:hover {
+
+      background: var(--red);
+
+      color: var(--beige-light);
+
+      padding-left: 20px;
+      padding-right: 20px;
+
+    }
+
+
+    .project-number {
+
+      font-size: 11px;
+
+    }
+
+
+    .project-title {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(40px, 5vw, 78px);
+
+      line-height: 0.9;
+
+    }
+
+
+    .project-type {
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-arrow {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: 45px;
+
+      text-align: right;
+
+    }
+
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .education {
+
+      background: var(--black);
+
+      color: var(--beige-light);
+
+    }
+
+
+    .education .section-header {
+
+      border-color: rgba(255,255,255,0.3);
+
+    }
+
+
+    .education .section-number {
+
+      color: #cf4f45;
+
+    }
+
+
+    .education-item {
+
+      display: grid;
+
+      grid-template-columns:
+        1.5fr
+        1fr
+        150px;
+
+      gap: 30px;
+
+      padding: 35px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+
+    }
+
+
+    .education-school {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(35px, 4vw, 65px);
+
+    }
+
+
+    .education-course {
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color: rgba(255,255,255,0.75);
+
+    }
+
+
+    .education-year {
+
+      text-align: right;
+
+      color: #cf4f45;
+
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+
+      min-height: 90vh;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .contact-intro {
+
+      font-size: 12px;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .contact-title {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(65px, 11vw, 170px);
+
+      letter-spacing: -0.06em;
+
+      line-height: 0.82;
+
+    }
+
+
+    .contact-title span {
+
+      color: var(--red);
+
+      font-style: italic;
+
+    }
+
+
+    .contact-details {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+
+      margin-top: 80px;
+
+      border-top: 1px solid var(--border);
+
+      padding-top: 35px;
+
+    }
+
+
+    .contact-box {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+
+    .contact-label {
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.12em;
+
+      font-size: 10px;
+
+    }
+
+
+    .contact-link {
+
+      font-family: "Instrument Serif", serif;
+
+      font-size: clamp(24px, 3vw, 45px);
+
+      transition: color 0.3s ease;
+
+      word-break: break-word;
+
+    }
+
+
+    .contact-link:hover {
+
+      color: var(--red);
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+
+      background: var(--red);
+
+      color: var(--beige);
+
+      padding: 24px 32px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.13em;
+
+    }
+
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform: translateY(50px);
+
+      transition:
+
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* =========================
+       MOBILE MENU BUTTON
+    ========================== */
+
+    .menu-button {
+
+      display: none;
+
+      border: 0;
+
+      background: transparent;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.12em;
+
+      cursor: pointer;
+
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+
+      .navbar {
+
+        padding: 18px 20px;
+
+      }
+
+
+      .nav-links {
+
+        position: absolute;
+
+        top: 66px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: var(--beige);
+
+        flex-direction: column;
+
+        padding: 30px 20px;
+
+        border-bottom: 1px solid var(--border);
+
+        display: none;
+
+      }
+
+
+      .nav-links.active {
+
+        display: flex;
+
+      }
+
+
+      .menu-button {
+
+        display: block;
+
+      }
+
+
+      .hero {
+
+        min-height: 95vh;
+
+        padding:
+
+          120px
+          20px
+          25px;
+
+      }
+
+
+      .hero-name {
+
+        font-size: clamp(65px, 20vw, 120px);
+
+        line-height: 0.8;
+
+      }
+
+
+      .hero-name .last {
+
+        margin-left: 5%;
+
+      }
+
+
+      .hero-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 40px;
+
+      }
+
+
+      section {
+
+        padding: 70px 20px;
+
+      }
+
+
+      .section-header {
+
+        grid-template-columns:
+          45px
+          1fr;
+
+        gap: 15px;
+
+      }
+
+
+      .section-title {
+
+        grid-column: 1 / -1;
+
+        margin-top: 25px;
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project {
+
+        grid-template-columns:
+          40px
+          1fr
+          40px;
+
+        min-height: 140px;
+
+      }
+
+
+      .project-type {
+
+        display: none;
+
+      }
+
+
+      .education-item {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .education-year {
+
+        text-align: left;
+
+      }
+
+
+      .contact-details {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      footer {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 20px;
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -443,261 +1067,671 @@
 <body>
 
 
-    <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
 
-    <noscript>
+  <noscript>
 
-        <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden">
-        </iframe>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    >
+    </iframe>
 
-    </noscript>
+  </noscript>
 
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- End Google Tag Manager (noscript) -->
 
 
+  <!-- =========================
+       NAV
+  ========================== -->
 
-    <!-- =========================
-         MENU
-    ========================= -->
+  <nav class="navbar">
 
-    <nav>
+    <a href="#home" class="logo">
+      IK
+    </a>
 
-        <div class="logo">
-            IK
+
+    <ul class="nav-links" id="navLinks">
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#work">Work</a>
+      </li>
+
+      <li>
+        <a href="#education">Education</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open menu"
+    >
+      Menu
+    </button>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main id="home" class="hero">
+
+
+    <div class="hero-top">
+
+      <div class="hero-location">
+
+        Growth Marketing<br>
+        Stockholm, Sweden
+
+      </div>
+
+
+      <div class="hero-number">
+        2026
+      </div>
+
+    </div>
+
+
+    <h1 class="hero-name">
+
+      <span class="first">
+        Isabella
+      </span>
+
+      <span class="last">
+        Karlsson
+      </span>
+
+    </h1>
+
+
+    <div class="hero-bottom">
+
+
+      <p class="hero-description">
+
+        Growth marketer and creative thinker focused on
+        culture, communication, digital behaviour and ideas
+        that make brands impossible to ignore.
+
+      </p>
+
+
+      <div class="scroll-label">
+
+        Scroll
+
+        <span class="scroll-line"></span>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       MOVING TEXT
+  ========================== -->
+
+  <div class="statement">
+
+    <div class="statement-track">
+
+      <span>
+        STRATEGY × CULTURE × CREATIVITY × GROWTH ×
+      </span>
+
+      <span>
+        STRATEGY × CULTURE × CREATIVITY × GROWTH ×
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about">
+
+
+    <div class="section-header reveal">
+
+      <span class="section-number">
+        01
+      </span>
+
+      <span class="section-label">
+        About
+      </span>
+
+      <h2 class="section-title">
+
+        Curiosity first.
+        Strategy second.
+        Never boring.
+
+      </h2>
+
+    </div>
+
+
+    <div class="about-grid reveal">
+
+
+      <div class="about-small">
+
+        Based in Stockholm<br>
+        Studying at Berghs<br>
+        Growth Marketing
+
+      </div>
+
+
+      <p class="about-text">
+
+        I'm Isabella, a Growth Marketing student at
+        <em>Berghs School of Communication</em> with an
+        interest in the intersection between brands,
+        people and culture.
+
+        <br><br>
+
+        I enjoy turning insights into ideas and ideas into
+        communication that people actually want to engage with.
+
+      </p>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WORK
+  ========================== -->
+
+  <section id="work">
+
+
+    <div class="section-header reveal">
+
+      <span class="section-number">
+        02
+      </span>
+
+      <span class="section-label">
+        Selected work
+      </span>
+
+      <h2 class="section-title">
+
+        Projects, concepts
+        & things I've made.
+
+      </h2>
+
+    </div>
+
+
+    <div class="work-list reveal">
+
+
+      <a href="#" class="project">
+
+        <span class="project-number">
+          01
+        </span>
+
+        <h3 class="project-title">
+          Opera × DIF
+        </h3>
+
+        <span class="project-type">
+          Brand concept / Campaign
+        </span>
+
+        <span class="project-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a href="#" class="project">
+
+        <span class="project-number">
+          02
+        </span>
+
+        <h3 class="project-title">
+          Vehicle of Hope
+        </h3>
+
+        <span class="project-type">
+          Strategy / Creative
+        </span>
+
+        <span class="project-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a href="#" class="project">
+
+        <span class="project-number">
+          03
+        </span>
+
+        <h3 class="project-title">
+          Growth Case
+        </h3>
+
+        <span class="project-type">
+          Growth Marketing
+        </span>
+
+        <span class="project-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a href="#" class="project">
+
+        <span class="project-number">
+          04
+        </span>
+
+        <h3 class="project-title">
+          Next project
+        </h3>
+
+        <span class="project-type">
+          Coming soon
+        </span>
+
+        <span class="project-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EDUCATION
+  ========================== -->
+
+  <section
+    id="education"
+    class="education"
+  >
+
+
+    <div class="section-header reveal">
+
+      <span class="section-number">
+        03
+      </span>
+
+      <span class="section-label">
+        Education
+      </span>
+
+      <h2 class="section-title">
+
+        Learning by doing.
+
+      </h2>
+
+    </div>
+
+
+    <div class="education-list reveal">
+
+
+      <div class="education-item">
+
+
+        <h3 class="education-school">
+
+          Berghs School of Communication
+
+        </h3>
+
+
+        <div class="education-course">
+
+          Growth Marketing<br><br>
+
+          Strategy, digital marketing, communication,
+          creativity, consumer behaviour and growth.
+
         </div>
 
 
-        <div class="menu">
+        <div class="education-year">
 
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#education">
-                Education
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-    </nav>
-
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <div class="hero">
-
-
-        <h1>
-
-            <span class="first-name">
-                Isabella
-            </span>
-
-            <span class="last-name">
-                Karlsson
-            </span>
-
-        </h1>
-
-
-        <div class="hero-subtitle">
-
-            Growth Marketing Student
+          Stockholm<br>
+          2026
 
         </div>
 
 
-        <svg class="star" viewBox="0 0 200 200">
+      </div>
 
-            <path d="
-            M100 15
-            L122 72
-            L185 75
-            L136 115
-            L150 177
-            L100 142
-            L50 177
-            L64 115
-            L15 75
-            L78 72
-            Z
-            "/>
 
-        </svg>
+      <div class="education-item">
+
+
+        <h3 class="education-school">
+
+          Florida International University
+
+        </h3>
+
+
+        <div class="education-course">
+
+          Business & Marketing Courses
+
+        </div>
+
+
+        <div class="education-year">
+
+          Miami<br>
+          USA
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section
+    id="contact"
+    class="contact"
+  >
+
+
+    <div>
+
+
+      <p class="contact-intro reveal">
+
+        Have an idea, project or opportunity?
+
+      </p>
+
+
+      <h2 class="contact-title reveal">
+
+        Let's make<br>
+        something <span>good.</span>
+
+      </h2>
 
 
     </div>
 
 
+    <div class="contact-details reveal">
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
 
-    <section id="about">
+      <div class="contact-box">
 
+        <span class="contact-label">
+          Email
+        </span>
 
-        <h2 class="section-title">
+        <a
+          href="mailto:bellakarlsson02@gmail.com"
+          class="contact-link"
+        >
+          bellakarlsson02@gmail.com
+        </a>
 
-            About Me
+      </div>
 
-        </h2>
 
+      <div class="contact-box">
 
-        <div class="about-text">
+        <span class="contact-label">
+          Phone
+        </span>
 
+        <a
+          href="tel:+46707495606"
+          class="contact-link"
+        >
+          +46 70 749 56 06
+        </a>
 
-            <p>
+      </div>
 
-                I'm Isabella, a Growth Marketing student at
-                Berghs School of Communication with a strong
-                interest in the intersection between creativity,
-                strategy and business.
 
-            </p>
+    </div>
 
 
-            <p>
+  </section>
 
-                I'm particularly interested in understanding
-                what makes people connect with brands and how
-                creative ideas, culture and data can work
-                together to create meaningful growth.
 
-            </p>
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
+  <footer>
 
-            <p>
+    <span>
+      © Isabella Karlsson 2026
+    </span>
 
-                I enjoy developing concepts, exploring consumer
-                behaviour and turning insights into communication
-                that feels relevant, memorable and effective.
+    <span>
+      Stockholm, Sweden
+    </span>
 
-            </p>
+    <a href="#home">
+      Back to top ↑
+    </a>
 
+  </footer>
 
-        </div>
 
 
-    </section>
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
+  <script>
 
 
-    <!-- =========================
-         EDUCATION
-    ========================= -->
+    /* MOBILE MENU */
 
-    <section id="education">
+    const menuButton =
+      document.getElementById("menuButton");
 
+    const navLinks =
+      document.getElementById("navLinks");
 
-        <h2 class="section-title">
 
-            Education
+    menuButton.addEventListener(
+      "click",
+      function() {
 
-        </h2>
+        navLinks.classList.toggle("active");
 
+      }
+    );
 
-        <div class="education">
 
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
 
-            <div class="education-item">
+        link.addEventListener(
+          "click",
+          function() {
 
-                <strong>
+            navLinks.classList.remove("active");
 
-                    Berghs School of Communication
+          }
+        );
 
-                </strong>
+      });
 
-                <span>
 
-                    Growth Marketing
 
-                </span>
+    /* SCROLL REVEAL */
 
-            </div>
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
 
-            <div class="education-item">
+    const observer =
+      new IntersectionObserver(
 
-                <strong>
+        entries => {
 
-                    Florida International University
+          entries.forEach(entry => {
 
-                </strong>
+            if(entry.isIntersecting) {
 
-                <span>
+              entry.target
+                .classList
+                .add("visible");
 
-                    Business & Marketing
+            }
 
-                </span>
+          });
 
-            </div>
+        },
 
+        {
+          threshold: 0.12
+        }
 
-        </div>
+      );
 
 
-    </section>
+    revealElements.forEach(element => {
 
+      observer.observe(element);
 
+    });
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
 
-    <section
-    id="contact"
-    class="contact">
 
+    /* GOOGLE TAG MANAGER EVENTS */
 
-        <h2>
+    document
+      .querySelectorAll(".project")
+      .forEach((project, index) => {
 
-            Let's<br>
-            Talk.
+        project.addEventListener(
+          "click",
+          function() {
 
-        </h2>
+            window.dataLayer =
+              window.dataLayer || [];
 
+            window.dataLayer.push({
 
-        <p>
+              event: "portfolio_project_click",
 
-            <a href="mailto:bellakarlsson02@gmail.com">
+              project_number:
+                index + 1,
 
-                bellakarlsson02@gmail.com
+              project_name:
+                project
+                  .querySelector(".project-title")
+                  .innerText
 
-            </a>
+            });
 
-        </p>
+          }
+        );
 
+      });
 
-        <p>
 
-            <a href="tel:+46707495606">
+    /* CONTACT CLICK TRACKING */
 
-                +46 70 749 56 06
+    document
+      .querySelectorAll(
+        'a[href^="mailto:"], a[href^="tel:"]'
+      )
+      .forEach(link => {
 
-            </a>
+        link.addEventListener(
+          "click",
+          function() {
 
-        </p>
+            window.dataLayer =
+              window.dataLayer || [];
 
+            window.dataLayer.push({
 
-    </section>
+              event: "contact_click",
 
+              contact_type:
+                link
+                  .getAttribute("href")
+                  .startsWith("mailto:")
+                  ? "email"
+                  : "phone"
 
+            });
 
-    <div class="zebra"></div>
+          }
+        );
+
+      });
+
+
+  </script>
 
 
 </body>
-
 </html>
