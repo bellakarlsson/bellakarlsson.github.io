@@ -872,45 +872,7 @@
   </script>
 
 
-  <!-- DASHBOARD JAVASCRIPT -->
-
-  <script src="dashboard.js"></script>
-<script>
-/* BESÖK */
-fetch("https://bibstat.kb.se/data?term=Besok01&limit=10")
-  .then(response => response.json())
-  .then(data => {
-
-    const totalVisits = data.observations.reduce((sum, observation) => {
-      return sum + (Number(observation.Besok01) || 0);
-    }, 0);
-
-    document.getElementById("visits").textContent =
-      totalVisits.toLocaleString("sv-SE");
-
-  })
-  .catch(error => {
-    console.error("API-fel Besök:", error);
-  });
-
-
-/* UTLÅN */
-fetch("https://bibstat.kb.se/data?term=Folk108&limit=10")
-  .then(response => response.json())
-  .then(data => {
-
-    const totalLoans = data.observations.reduce((sum, observation) => {
-      return sum + (Number(observation.Folk108) || 0);
-    }, 0);
-
-    document.getElementById("loans").textContent =
-      totalLoans.toLocaleString("sv-SE");
-
-  })
-  .catch(error => {
-    console.error("API-fel Utlån:", error);
-  });
-</script>
+ 
 
 </body>
 

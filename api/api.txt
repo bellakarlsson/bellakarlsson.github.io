@@ -1,8 +1,11 @@
+// API – Kungliga bibliotekets biblioteksstatistik
+// Hämtar data från Bibstat API
+
 fetch("https://bibstat.kb.se/data?limit=10")
   .then(response => response.json())
   .then(data => {
     console.table(data.observations);
   })
   .catch(error => {
-    console.error("Något gick fel:", error);
+    console.error("API-fel:", error);
   });
