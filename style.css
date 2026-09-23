@@ -1,6 +1,6 @@
 /* =========================
    COLORS
-========================== */
+========================= */
 
 :root {
   --beige: #E7CFB6;
@@ -20,7 +20,7 @@
 
 /* =========================
    RESET
-========================== */
+========================= */
 
 * {
   margin: 0;
@@ -52,7 +52,7 @@ a {
 
 /* =========================
    NAVIGATION
-========================== */
+========================= */
 
 .navbar {
   position: fixed;
@@ -121,7 +121,6 @@ a {
 
 .nav-links a::after {
   content: "";
-
   position: absolute;
 
   width: 0;
@@ -142,7 +141,7 @@ a {
 
 /* =========================
    HERO
-========================== */
+========================= */
 
 .hero {
   min-height: 100vh;
@@ -371,7 +370,7 @@ a {
 
 /* =========================
    MOVING TEXT
-========================== */
+========================= */
 
 .statement {
   background: var(--pink);
@@ -416,7 +415,7 @@ a {
 
 /* =========================
    GENERAL SECTIONS
-========================== */
+========================= */
 
 section {
   padding: 90px 32px;
@@ -467,7 +466,7 @@ section {
 
 /* =========================
    ABOUT
-========================== */
+========================= */
 
 .about-grid {
   display: grid;
@@ -508,7 +507,7 @@ section {
 
 /* =========================
    EDUCATION
-========================== */
+========================= */
 
 .education {
   background: var(--brown);
@@ -565,7 +564,7 @@ section {
 
 /* =========================
    CONTACT
-========================== */
+========================= */
 
 .contact {
   min-height: 90vh;
@@ -655,7 +654,7 @@ section {
 
 /* =========================
    FOOTER
-========================== */
+========================= */
 
 footer {
   background: var(--pink);
@@ -678,7 +677,7 @@ footer {
 
 /* =========================
    SCROLL REVEAL
-========================== */
+========================= */
 
 .reveal {
   opacity: 0;
@@ -699,7 +698,7 @@ footer {
 
 /* =========================
    MOBILE MENU
-========================== */
+========================= */
 
 .menu-button {
   display: none;
@@ -724,7 +723,7 @@ footer {
 
 /* =========================
    MOBILE
-========================== */
+========================= */
 
 @media (max-width: 800px) {
 
@@ -864,4 +863,178 @@ footer {
     transition: none;
   }
 
+}
+
+
+/* ==========================================
+   LIBRARY DASHBOARD
+========================================== */
+
+.library-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 110px 32px;
+}
+
+
+/* DASHBOARD HEADER */
+
+.dashboard-header {
+  max-width: 850px;
+  margin-bottom: 60px;
+}
+
+.dashboard-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink-dark);
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 25px;
+}
+
+.dashboard-header > p:last-child {
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* DASHBOARD KPI CARDS */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.dashboard-card {
+  background: var(--brown);
+  color: var(--beige-light);
+  border-radius: 18px;
+  padding: 28px;
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-card span {
+  font-size: 25px;
+}
+
+.dashboard-card h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 46px;
+  font-weight: 400;
+  color: var(--pink);
+  margin-top: 25px;
+}
+
+.dashboard-card p {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 5px;
+}
+
+
+/* DASHBOARD CHART */
+
+.chart-container {
+  background: var(--beige-light);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 45px;
+}
+
+.chart-container h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.chart-container > p {
+  font-size: 14px;
+  margin-bottom: 35px;
+  opacity: 0.75;
+}
+
+#libraryChart {
+  display: block;
+  width: 100% !important;
+  max-height: 450px;
+}
+
+
+/* DASHBOARD SOURCE */
+
+.dashboard-source {
+  border-top: 1px solid var(--border);
+  padding-top: 30px;
+  margin-top: 20px;
+}
+
+.dashboard-source h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.dashboard-source p {
+  max-width: 700px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* DASHBOARD MOBILE */
+
+@media (max-width: 800px) {
+
+  .library-dashboard {
+    padding: 80px 20px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-container {
+    padding: 25px 18px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    min-height: 150px;
+  }
+
+}
+.card-description {
+  font-size: 12px;
+  opacity: 0.65;
+  margin-top: 6px;
+  line-height: 1.4;
 }

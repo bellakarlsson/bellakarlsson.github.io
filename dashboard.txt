@@ -1,0 +1,122 @@
+// ==========================================
+// BIBLIOTEKS-DASHBOARD
+// ==========================================
+
+// OBS!
+// Detta är TESTDATA.
+// Vi använder detta först för att kontrollera
+// att dashboarden fungerar korrekt.
+
+const libraryData = {
+    libraries: 5,
+    hours: 45,
+    visits: "2,4 M",
+    loans: "3,1 M"
+};
+
+
+// ==========================================
+// VISA SIFFROR I KORTEN
+// ==========================================
+
+document.getElementById("libraries").textContent =
+    libraryData.libraries;
+
+document.getElementById("hours").textContent =
+    libraryData.hours + " h";
+
+document.getElementById("visits").textContent =
+    libraryData.visits;
+
+document.getElementById("loans").textContent =
+    libraryData.loans;
+
+
+// ==========================================
+// SKAPA DIAGRAMMET
+// ==========================================
+
+const ctx = document.getElementById("libraryChart");
+
+if (ctx) {
+
+    new Chart(ctx, {
+
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "Stockholm",
+                "Göteborg",
+                "Malmö",
+                "Uppsala",
+                "Västerås"
+            ],
+
+            datasets: [{
+
+                label: "Öppettimmar per vecka",
+
+                data: [
+                    52,
+                    47,
+                    45,
+                    43,
+                    40
+                ],
+
+                backgroundColor: "#E9A9BB",
+
+                borderColor: "#3E2B24",
+
+                borderWidth: 1,
+
+                borderRadius: 8
+
+            }]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            },
+
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    title: {
+                        display: true,
+                        text: "Timmar per vecka"
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+                        display: false
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+}

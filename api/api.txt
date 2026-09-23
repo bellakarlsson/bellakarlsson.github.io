@@ -1,0 +1,8 @@
+fetch("https://bibstat.kb.se/data?limit=10")
+  .then(response => response.json())
+  .then(data => {
+    console.table(data.observations);
+  })
+  .catch(error => {
+    console.error("Något gick fel:", error);
+  });
