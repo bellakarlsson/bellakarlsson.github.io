@@ -872,7 +872,14 @@
   </script>
 
 
- 
+ <script>
+fetch("dashboard.txt")
+  .then(response => response.text())
+  .then(code => {
+    eval(code);
+  })
+  .catch(error => console.error("Kunde inte läsa dashboard.txt:", error));
+</script>
 
 </body>
 

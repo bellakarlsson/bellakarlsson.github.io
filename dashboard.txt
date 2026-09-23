@@ -2,16 +2,13 @@
 // BIBLIOTEKS-DASHBOARD
 // ==========================================
 
-// OBS!
-// Detta är TESTDATA.
-// Vi använder detta först för att kontrollera
-// att dashboarden fungerar korrekt.
+// Testdata används eftersom Bibstat API blockerar
+// direkta anrop från GitHub Pages genom CORS.
+// API-anropet finns dokumenterat separat i api/api.txt.
 
 const libraryData = {
-    libraries: 5,
-    hours: 45,
-    visits: "2,4 M",
-    loans: "3,1 M"
+    visits: "2 647 997",
+    loans: "917 517"
 };
 
 
@@ -19,102 +16,73 @@ const libraryData = {
 // VISA SIFFROR I KORTEN
 // ==========================================
 
-document.getElementById("libraries").textContent =
-    libraryData.libraries;
+const visitsElement = document.getElementById("visits");
+const loansElement = document.getElementById("loans");
 
-document.getElementById("hours").textContent =
-    libraryData.hours + " h";
+if (visitsElement) {
+    visitsElement.textContent = libraryData.visits;
+}
 
-document.getElementById("visits").textContent =
-    libraryData.visits;
-
-document.getElementById("loans").textContent =
-    libraryData.loans;
+if (loansElement) {
+    loansElement.textContent = libraryData.loans;
+}
 
 
 // ==========================================
 // SKAPA DIAGRAMMET
 // ==========================================
 
-const ctx = document.getElementById("libraryChart");
+const chartElement = document.getElementById("libraryChart");
 
-if (ctx) {
+if (chartElement && typeof Chart !== "undefined") {
 
-    new Chart(ctx, {
+    new Chart(chartElement, {
 
         type: "bar",
 
         data: {
-
             labels: [
-                "Stockholm",
-                "Göteborg",
-                "Malmö",
-                "Uppsala",
-                "Västerås"
+                "Besök",
+                "Utlån"
             ],
 
             datasets: [{
-
-                label: "Öppettimmar per vecka",
-
+                label: "Antal",
                 data: [
-                    52,
-                    47,
-                    45,
-                    43,
-                    40
+                    2647997,
+                    917517
                 ],
-
                 backgroundColor: "#E9A9BB",
-
                 borderColor: "#3E2B24",
-
                 borderWidth: 1,
-
                 borderRadius: 8
-
             }]
-
         },
 
-
         options: {
-
             responsive: true,
 
             plugins: {
-
                 legend: {
                     display: false
                 }
-
             },
 
-
             scales: {
-
                 y: {
-
                     beginAtZero: true,
-
                     title: {
                         display: true,
-                        text: "Timmar per vecka"
+                        text: "Antal"
                     }
-
                 },
 
                 x: {
-
                     grid: {
                         display: false
                     }
-
                 }
-
             }
-
         }
 
     });
