@@ -42,12 +42,12 @@ if (chartElement && typeof Chart !== "undefined") {
 
         data: {
             labels: [
-                "Besök",
-                "Utlån"
+                "Visits",
+                "Loans"
             ],
 
             datasets: [{
-                label: "Antal",
+                label: "Numbers of visits",
                 data: [
                     2647997,
                     917517
@@ -73,7 +73,7 @@ if (chartElement && typeof Chart !== "undefined") {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: "Antal"
+                        text: "Number of visits"
                     }
                 },
 
