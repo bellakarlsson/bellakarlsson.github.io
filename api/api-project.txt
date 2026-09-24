@@ -1,0 +1,16 @@
+// API Project – Country Explorer
+// Hämtar information om ett land från REST Countries API
+
+fetch("https://restcountries.com/v3.1/name/sweden")
+  .then(response => response.json())
+  .then(data => {
+    const country = data[0];
+
+    console.log("Country:", country.name.common);
+    console.log("Capital:", country.capital[0]);
+    console.log("Population:", country.population);
+    console.log("Region:", country.region);
+  })
+  .catch(error => {
+    console.error("API error:", error);
+  });
