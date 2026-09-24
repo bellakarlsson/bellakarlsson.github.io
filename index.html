@@ -932,6 +932,10 @@ Promise.all([
     .then(response => response.json())
 ])
 .then(([weatherData, activityData]) => {
+  window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: "weather_activity_loaded"
+});
 
   const temperature = weatherData.current.temperature_2m;
   const wind = weatherData.current.wind_speed_10m;
