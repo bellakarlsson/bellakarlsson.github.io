@@ -1,967 +1,1361 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1GSLSS0W2T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  gtag('config', 'G-1GSLSS0W2T');
-</script>
+<title>Isabella Karlsson — Portfolio</title>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-54WKDCLW');
-  </script>
-  <!-- End Google Tag Manager -->
+<meta name="description"
+content="Isabella Karlsson — Growth Marketing & Creative Strategy Portfolio">
 
-  <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+rel="stylesheet">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<style>
 
-  <title>Isabella Karlsson — Portfolio</title>
+:root {
+  --cream: #f7f3ed;
+  --pink: #e9c5bd;
+  --brown: #28221e;
+  --terracotta: #b85d53;
+  --muted: #736a64;
+  --line: #ded5cc;
+}
 
-  <meta
-    name="description"
-    content="Portfolio of Isabella Karlsson, Growth Marketing student at Berghs School of Communication."
-  >
+* {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- GOOGLE FONTS -->
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'DM Sans', sans-serif;
+}
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+section {
+  scroll-margin-top: 90px;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  >
+/* NAVIGATION */
 
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,243,237,.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  <!-- CSS -->
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 13px;
+}
 
+.nav-links a:hover {
+  color: var(--terracotta);
+}
+
+.contact-button {
+  background: var(--brown);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding: 100px 7% 90px;
+  min-height: 690px;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(85px, 15vw, 220px);
+  font-weight: 400;
+  letter-spacing: -5px;
+  line-height: .8;
+  margin: 110px 0 75px;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero h1 span:last-child {
+  color: var(--terracotta);
+  font-style: italic;
+  text-align: right;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: end;
+}
+
+.hero-description {
+  font-size: 23px;
+  line-height: 1.5;
+  max-width: 590px;
+}
+
+.availability {
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  padding: 14px 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dot {
+  display: inline-block;
+  background: #7f9f77;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+/* MOVING TEXT */
+
+.marquee {
+  background: var(--brown);
+  color: white;
+  overflow: hidden;
+  padding: 22px 0;
+  font-family: 'Instrument Serif', serif;
+  font-size: 27px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 110px 7%;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 30px;
+  margin-bottom: 55px;
+}
+
+.section-number {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0;
+}
+
+.section-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 650px;
+  color: var(--muted);
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 80px;
+}
+
+.about-text {
+  font-size: 20px;
+  line-height: 1.85;
+}
+
+.about-side {
+  border-top: 1px solid var(--brown);
+  padding-top: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.about-side h3 {
+  color: var(--brown);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* PROJECTS */
+
+.projects-section {
+  background: #f0e9e2;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  background: #fffdf9;
+  border: 1px solid #e6dcd3;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-image {
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+}
+
+.project-image h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(45px, 6vw, 85px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.project-index {
+  position: absolute;
+  top: 20px;
+  left: 23px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* PROJECT COLORS */
+
+.heat {
+  background: #d9e4ea;
+  color: #45426a;
+}
+
+.aroma {
+  background: #ddc4a4;
+  color: #5b382d;
+}
+
+.opera {
+  background: #672a35;
+  color: #f8eee4;
+}
+
+.coding {
+  background: #e8c6c0;
+  color: #6a3838;
+}
+
+.bygg {
+  background: #e0d8e8;
+  color: #433b5d;
+}
+
+.project-info {
+  padding: 30px;
+}
+
+.project-category {
+  color: var(--terracotta);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.project-info h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.project-info p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.tag {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+
+details {
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+details ul {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-left: 20px;
+}
+
+/* EXPERIENCE */
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 180px 1fr 150px;
+  gap: 30px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item:first-child {
+  border-top: 1px solid var(--brown);
+}
+
+.experience-type {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.experience-item h3 {
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.experience-item p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+
+.experience-date {
+  font-size: 12px;
+  text-align: right;
+  color: var(--muted);
+}
+
+/* SKILLS */
+
+.skills-section {
+  background: #fffdf9;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.skill-card h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.skill-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: var(--brown);
+  color: var(--cream);
+}
+
+.contact-section .section-title {
+  max-width: 900px;
+}
+
+.contact-section em {
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.contact-section .section-intro {
+  color: #c5b8b1;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.contact-link {
+  background: var(--pink);
+  color: var(--brown);
+  padding: 16px 25px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-link.secondary {
+  background: transparent;
+  border: 1px solid #a99a91;
+  color: white;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 7%;
+  background: var(--brown);
+  color: #c5b8b1;
+  border-top: 1px solid #554b45;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .about-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .experience-date {
+    text-align: left;
+  }
+
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  nav {
+    padding: 18px 6%;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    padding: 75px 6%;
+    min-height: 540px;
+  }
+
+  .hero h1 {
+    font-size: 16vw;
+    margin: 110px 0 70px;
+  }
+
+  .hero-description {
+    font-size: 19px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+</style>
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
 
-  <!-- GOOGLE TAG MANAGER -->
+<nav>
 
-  <noscript>
+  <a href="#home" class="logo">IK.</a>
 
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-54WKDCLW"
-      height="0"
-      width="0"
-      style="display:none;visibility:hidden">
-    </iframe>
+  <button class="menu-button"
+    id="menuButton"
+    aria-expanded="false"
+    aria-controls="navLinks">
+    Menu +
+  </button>
 
-  </noscript>
-
-
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
-  <nav class="navbar" id="navbar">
-
-    <a href="#home" class="logo">
-      IK
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#work">Selected Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="contact-button">
+      Let's Talk ↗
     </a>
+  </div>
 
+</nav>
 
-    <ul class="nav-links" id="navLinks">
+<main>
 
-      <li>
-        <a href="#about">
-          About
-        </a>
-      </li>
+<!-- HERO -->
 
-      <li>
-        <a href="#education">
-          Education
-        </a>
-      </li>
+<header class="hero" id="home">
 
-      <li>
-        <a href="#dashboard">
-          Dashboard
-        </a>
-      </li>
+  <div class="hero-top">
+    <span>Growth Marketing × Creative Strategy</span>
+    <span>Stockholm / 2026</span>
+  </div>
 
-      <li>
-        <a href="#contact">
-          Contact
-        </a>
-      </li>
+  <h1>
+    <span>Isabella</span>
+    <span>Karlsson.</span>
+  </h1>
 
-    </ul>
+  <div class="hero-bottom">
 
+    <p class="hero-description">
+      I combine creativity, strategy and curiosity
+      to explore how brands connect with people
+      and grow in meaningful ways.
+    </p>
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open menu">
-
-      Menu
-
-    </button>
-
-  </nav>
-
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <main id="home" class="hero">
-
-
-    <div class="hero-top">
-
-      <div class="hero-location">
-
-        Growth Marketing
-        <br>
-        Creative Strategy
-
-      </div>
-
-
-      <div class="hero-number">
-        2026
-      </div>
-
+    <div class="availability">
+      <span class="dot"></span>
+      Open to internship opportunities
     </div>
 
+  </div>
 
+</header>
 
-    <h1 class="hero-name">
+<div class="marquee">
+  GROWTH × CREATIVITY × STRATEGY × CULTURE × IDEAS
+</div>
 
-      <span class="first">
-        Isabella
-      </span>
+<!-- ABOUT -->
 
-      <span class="last">
-        Karlsson
-      </span>
+<section class="section" id="about">
 
-    </h1>
+  <div class="section-header reveal">
+    <div class="section-number">01 / About</div>
 
+    <h2 class="section-title">
+      Curious about what makes people pay attention.
+    </h2>
+  </div>
 
+  <div class="about-grid reveal">
 
-    <div class="hero-bottom">
+    <div class="about-text">
 
-      <p class="hero-description">
-
-        Growth Marketing student at Berghs School of
-        Communication with a curiosity for creativity,
-        strategy, culture and how brands grow.
-
+      <p>
+        Hi, I'm Isabella — a Growth Marketing student
+        at Berghs School of Communication in Stockholm.
       </p>
 
+      <p>
+        I'm passionate about the intersection of
+        creativity, strategy and culture.
+        I love understanding why certain ideas
+        resonate, how brands build communities,
+        and how creative thinking can drive growth.
+      </p>
 
-      <div class="scroll-label">
-
-        Scroll
-
-        <span class="scroll-line"></span>
-
-      </div>
+      <p>
+        Through my studies and professional experience,
+        I've developed an interest in brand building,
+        digital marketing, customer behaviour
+        and creative communication.
+      </p>
 
     </div>
 
+    <div class="about-side">
 
-  </main>
+      <h3>What drives me</h3>
 
+      <p>
+        Curiosity, creativity and connecting ideas
+        with people. I enjoy combining creative
+        concepts with strategic thinking.
+      </p>
 
+      <h3>Currently</h3>
 
-  <!-- =========================
-       MOVING TEXT
-  ========================== -->
-
-  <div class="statement">
-
-    <div class="statement-track">
-
-      <span>
-        GROWTH × CREATIVITY × STRATEGY × CULTURE ×
-      </span>
-
-      <span>
-        GROWTH × CREATIVITY × STRATEGY × CULTURE ×
-      </span>
+      <p>
+        Studying Growth Marketing at Berghs
+        and looking for opportunities to learn
+        and contribute to creative teams.
+      </p>
 
     </div>
 
   </div>
 
+</section>
 
+<!-- SELECTED WORK -->
 
-  <!-- =========================
-       ABOUT
-  ========================== -->
+<section class="section projects-section" id="work">
 
-  <section id="about">
+  <div class="section-header reveal">
 
+    <div class="section-number">
+      02 / Selected Work
+    </div>
 
-    <div class="section-header reveal">
-
-      <span class="section-number">
-        01
-      </span>
-
-      <span class="section-label">
-        About
-      </span>
-
+    <div>
       <h2 class="section-title">
-
-        Curious about what makes
-        people pay attention.
-
+        Ideas, insights & projects.
       </h2>
 
+      <p class="section-intro">
+        A selection of academic projects and
+        creative experiments exploring marketing,
+        strategy, data and digital experiences.
+      </p>
     </div>
 
+  </div>
 
+  <div class="project-grid">
 
-    <div class="about-grid reveal">
+    <!-- PROJECT 1: HEAT -->
 
-      <div class="about-small">
+    <article class="project-card reveal">
 
-        Growth Marketing
-        <br>
+      <div class="project-image heat">
+        <span class="project-index">
+          01 / School Project
+        </span>
 
-        Creative Strategy
-        <br>
-
-        Communication
-
+        <h3>HEAT.</h3>
       </div>
 
+      <div class="project-info">
 
-      <p class="about-text">
+        <span class="project-category">
+          Digital Marketing Strategy
+        </span>
 
-        I'm Isabella, a Growth Marketing student at
-        <em>Berghs School of Communication.</em>
+        <h3>Heat by Sophia Lie</h3>
 
-        <br><br>
+        <p>
+          A digital marketing strategy exploring
+          how a wellness brand can strengthen its
+          digital presence, connect with its target
+          audience and create a more effective
+          customer journey.
+        </p>
 
-        I'm interested in the space where creativity,
-        strategy and culture meet — understanding what
-        makes people engage, what makes ideas travel and
-        how brands can create meaningful growth.
+        <div class="tags">
+          <span class="tag">Strategy</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">Google Ads</span>
+        </div>
 
-      </p>
+        <details>
+          <summary>Explore the project +</summary>
+
+          <ul>
+            <li>
+              Developed campaign concepts
+              and channel recommendations.
+            </li>
+
+            <li>
+              Explored audience targeting
+              and the customer journey.
+            </li>
+
+            <li>
+              Created advertising mockups
+              for a school assignment.
+            </li>
+          </ul>
+
+        </details>
+
+      </div>
+    </article>
+
+    <!-- PROJECT 2: AROMA ROAST -->
+
+    <article class="project-card reveal">
+
+      <div class="project-image aroma">
+        <span class="project-index">
+          02 / School Project
+        </span>
+
+        <h3>Aroma<br>Roast.</h3>
+      </div>
+
+      <div class="project-info">
+
+        <span class="project-category">
+          Creative Campaign
+        </span>
+
+        <h3>Aroma Roast</h3>
+
+        <p>
+          A creative marketing campaign for
+          decaffeinated coffee, connecting
+          better evening habits with the
+          importance of sleep and wellbeing.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Campaign Concept</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">Consumer Insight</span>
+        </div>
+
+        <details>
+          <summary>Explore the project +</summary>
+
+          <ul>
+            <li>
+              Created the concept
+              "Better habits. Better sleep."
+            </li>
+
+            <li>
+              Developed image and video
+              advertisement concepts.
+            </li>
+
+            <li>
+              Worked with a proposed
+              campaign budget of SEK 2,500.
+            </li>
+          </ul>
+
+        </details>
+
+      </div>
+    </article>
+
+    <!-- PROJECT 3: KUNGLIGA OPERAN -->
+
+    <article class="project-card reveal">
+
+      <div class="project-image opera">
+        <span class="project-index">
+          03 / School Project
+        </span>
+
+        <h3>Kungliga<br>Operan.</h3>
+      </div>
+
+      <div class="project-info">
+
+        <span class="project-category">
+          Creative Strategy & Brand Collaboration
+        </span>
+
+        <h3>Kungliga Operan × Djurgården</h3>
+
+        <p>
+          A creative concept exploring how
+          Kungliga Operan and Djurgården
+          could collaborate to reach new
+          audiences, build cultural relevance
+          and create meaningful experiences
+          through strategic partnerships.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Creative Strategy</span>
+          <span class="tag">Brand Collaboration</span>
+          <span class="tag">Target Audience</span>
+        </div>
+
+        <details>
+          <summary>Explore the project +</summary>
+
+          <ul>
+            <li>
+              Explored a potential collaboration
+              between Kungliga Operan and Djurgården.
+            </li>
+
+            <li>
+              Developed ideas for reaching
+              and engaging new audiences.
+            </li>
+
+            <li>
+              Worked with creative concepts,
+              positioning and strategic communication.
+            </li>
+          </ul>
+
+        </details>
+
+      </div>
+    </article>
+
+    <!-- PROJECT 4: CREATIVE CODING -->
+
+    <article class="project-card reveal">
+
+      <div class="project-image coding">
+        <span class="project-index">
+          04 / Technical Project
+        </span>
+
+        <h3>Code ×<br>Creative.</h3>
+      </div>
+
+      <div class="project-info">
+
+        <span class="project-category">
+          Web Development
+        </span>
+
+        <h3>Creative Coding</h3>
+
+        <p>
+          Exploring the intersection of
+          technology and creativity through
+          web development, API integrations
+          and interactive digital experiences.
+        </p>
+
+        <div class="tags">
+          <span class="tag">HTML & CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">APIs</span>
+        </div>
+
+        <details>
+          <summary>Explore the project +</summary>
+
+          <ul>
+            <li>
+              Built a weather-data component
+              using Open-Meteo.
+            </li>
+
+            <li>
+              Experimented with
+              activity recommendations.
+            </li>
+
+            <li>
+              Explored Google Analytics
+              and Google Tag Manager.
+            </li>
+          </ul>
+
+        </details>
+
+      </div>
+    </article>
+
+    <!-- PROJECT 5: BYGGALLIANSEN -->
+
+    <article class="project-card reveal">
+
+      <div class="project-image bygg">
+        <span class="project-index">
+          05 / School Project
+        </span>
+
+        <h3>Build<br>Forward.</h3>
+      </div>
+
+      <div class="project-info">
+
+        <span class="project-category">
+          Competitor Analysis
+        </span>
+
+        <h3>Byggalliansen</h3>
+
+        <p>
+          A competitor analysis exploring
+          how a construction-focused brand
+          can strengthen its position as
+          a trusted source of industry knowledge.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Research</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">SEO</span>
+        </div>
+
+        <details>
+          <summary>Explore the project +</summary>
+
+          <ul>
+            <li>
+              Compared Offerta,
+              Servicefinder and BraByggare.
+            </li>
+
+            <li>
+              Identified strengths
+              and content opportunities.
+            </li>
+
+            <li>
+              Developed recommendations
+              for expert-led content.
+            </li>
+          </ul>
+
+        </details>
+
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+  <div class="section-header reveal">
+    <div class="section-number">
+      03 / Background
+    </div>
+
+    <h2 class="section-title">
+      Experience & education.
+    </h2>
+  </div>
+
+  <div class="reveal">
+
+    <div class="experience-item">
+
+      <span class="experience-type">
+        Work Experience
+      </span>
+
+      <div>
+        <h3>Heat by Sophia Lie</h3>
+
+        <p>
+          <strong>
+            Sales, Studio & Event Associate
+          </strong>
+
+          <br>
+
+          Working with customer relations,
+          bookings, daily studio operations,
+          communication and event coordination.
+          Developing an understanding of brand
+          experience and customer engagement.
+        </p>
+      </div>
+
+      <span class="experience-date">
+        Jan 2025 – Present
+      </span>
 
     </div>
 
+    <div class="experience-item">
 
-  </section>
-
-
-
-  <!-- =========================
-       EDUCATION
-  ========================== -->
-
-  <section
-    id="education"
-    class="education"
-  >
-
-
-    <div class="section-header reveal">
-
-      <span class="section-number">
-        02
-      </span>
-
-      <span class="section-label">
+      <span class="experience-type">
         Education
       </span>
 
-      <h2 class="section-title">
+      <div>
+        <h3>Berghs School of Communication</h3>
 
-        Learning, exploring
-        & always staying curious.
+        <p>
+          <strong>Growth Marketing</strong>
+          <br>
+          Exploring digital strategy,
+          performance marketing,
+          consumer insights, content
+          creation and marketing analytics.
+        </p>
+      </div>
 
-      </h2>
+      <span class="experience-date">
+        Current
+      </span>
 
     </div>
 
+    <div class="experience-item">
 
+      <span class="experience-type">
+        Education
+      </span>
 
-    <div class="reveal">
+      <div>
+        <h3>Florida International University</h3>
 
-
-      <div class="education-item">
-
-        <h3 class="education-school">
-
-          Berghs School of Communication
-
-        </h3>
-
-
-        <div class="education-course">
-
-          Growth Marketing
-
-          <br><br>
-
-          Exploring growth, strategy,
-          digital marketing, communication
-          and creative thinking.
-
-        </div>
-
-
-        <div class="education-meta">
-          Current
-        </div>
-
-      </div>
-
-
-
-      <div class="education-item">
-
-        <h3 class="education-school">
-
-          Florida International University
-
-        </h3>
-
-
-        <div class="education-course">
-
+        <p>
           Previous studies with a focus
           on business and marketing.
-
-        </div>
-
-
-        <div class="education-meta">
-          Previous
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- =========================
-       LIBRARY DASHBOARD
-  ========================== -->
-
-  <section
-    id="dashboard"
-    class="library-dashboard"
-  >
-
-
-    <div class="dashboard-header">
-
-      <p class="dashboard-label">
-        LIBRARIES IN THE ELECTION CAMPAIGN
-      </p>
-
-
-      <h1>
-
-        How do we actually use libraries?
-
-      </h1>
-
-
-      <p>
-
-        Explore data on Swedish libraries and see how
-        they are used through visits and loans.
-
-      </p>
-
-    </div>
-
-
-
-    <!-- KPI CARDS -->
-
-    <div class="dashboard-cards">
-
-
-      <div class="dashboard-card">
-
-        <span>👥</span>
-
-        <h2 id="visits">
-          –
-        </h2>
-
-        <p>
-          Visits
         </p>
-
       </div>
 
-
-
-      <div class="dashboard-card">
-
-        <span>📖</span>
-
-        <h2 id="loans">
-          –
-        </h2>
-
-        <p>
-          Loans
-        </p>
-
-      </div>
-
+      <span class="experience-date">
+        Previous
+      </span>
 
     </div>
 
+  </div>
 
+</section>
 
-    <!-- CHART -->
+<!-- SKILLS -->
 
-    <div class="chart-container">
+<section class="section skills-section" id="skills">
 
+  <div class="section-header reveal">
 
-      <h2>
-       Visits and loans at Swedish libraries
+    <div class="section-number">
+      04 / Skills
+    </div>
+
+    <div>
+      <h2 class="section-title">
+        The toolkit.
       </h2>
 
-
-      <p>
-
-        A comparison of how libraries are used through physical visits and loans.
-
+      <p class="section-intro">
+        Skills and areas I'm developing
+        through my studies, projects
+        and work experience.
       </p>
-
-
-      <canvas id="libraryChart"></canvas>
-
-
     </div>
 
+  </div>
 
+  <div class="skills-grid reveal">
 
-    <!-- DATA INFORMATION -->
-
-    <div class="dashboard-source">
-
-
-      <h3>
-        About the data
-      </h3>
-
+    <div class="skill-card">
+      <h3>Strategy & Branding</h3>
 
       <p>
-
-        The dashboard examines the accessibility and usage of Swedish public libraries.
-
-        <br><br>
-
-        Source: The National Library of Sweden's official
-        library statistics.
+        Brand positioning, competitor analysis,
+        customer journeys, consumer insights
+        and marketing strategy.
       </p>
-
-
     </div>
 
+    <div class="skill-card">
+      <h3>Digital Marketing</h3>
 
-  </section>
+      <p>
+        SEO fundamentals, Meta Ads concepts,
+        Google Ads concepts, GA4, GTM
+        and content planning.
+      </p>
+    </div>
 
+    <div class="skill-card">
+      <h3>Creative & Technical</h3>
 
+      <p>
+        Campaign concepts, presentations,
+        HTML, CSS, JavaScript, APIs
+        and data visualisation.
+      </p>
+    </div>
 
-  <!-- =========================
-       CONTACT
-  ========================== -->
+  </div>
 
-  <section
-    id="contact"
-    class="contact"
-  >
+</section>
 
+<!-- CONTACT -->
+
+<section class="section contact-section" id="contact">
+
+  <div class="section-header reveal">
+
+    <div class="section-number">
+      05 / Contact
+    </div>
 
     <div>
 
-
-      <p class="contact-intro reveal">
-
-        Have an idea, project or opportunity?
-
-      </p>
-
-
-      <h2 class="contact-title reveal">
-
-        Let's make
-        <br>
-
-        something
-
-        <span>
-          good.
-        </span>
-
+      <h2 class="section-title">
+        Good ideas start with
+        <em>a conversation.</em>
       </h2>
 
+      <p class="section-intro">
+        Have an idea, a project or an
+        internship opportunity?
+        I'd love to connect.
+      </p>
+
+      <div class="contact-links">
+
+        <a href="mailto:bellakarlsson02@gmail.com"
+           class="contact-link">
+          Send me an email ↗
+        </a>
+
+        <a href="https://www.instagram.com/isabellaakarlsson/"
+           class="contact-link secondary"
+           target="_blank"
+           rel="noopener noreferrer">
+          Instagram ↗
+        </a>
+
+      </div>
 
     </div>
 
+  </div>
 
+</section>
 
-    <div class="contact-details reveal">
+</main>
 
+<!-- FOOTER -->
 
-      <!-- EMAIL -->
+<footer>
+  <span>© 2026 Isabella Karlsson</span>
 
-      <div class="contact-box">
+  <span>
+    Made with curiosity in Stockholm.
+  </span>
 
-        <span class="contact-label">
-          Email
-        </span>
+  <a href="#home">
+    Back to top ↑
+  </a>
+</footer>
 
-        <a
-          href="mailto:bellakarlsson02@gmail.com"
-          class="contact-link"
-        >
+<!-- JAVASCRIPT -->
 
-          bellakarlsson02@gmail.com
+<script>
 
-        </a>
+const menuButton =
+  document.getElementById("menuButton");
 
-      </div>
+const navLinks =
+  document.getElementById("navLinks");
 
+menuButton.addEventListener("click", function() {
 
+  const isOpen =
+    navLinks.classList.toggle("open");
 
-      <!-- INSTAGRAM -->
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
 
-      <div class="contact-box">
+  menuButton.textContent =
+    isOpen ? "Close ×" : "Menu +";
 
-        <span class="contact-label">
-          Instagram
-        </span>
+});
 
-        <a
-          href="https://www.instagram.com/isabellaakarlsson/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-link"
-        >
+document.querySelectorAll(".nav-links a")
+  .forEach(link => {
 
-          @isabellaakarlsson ↗
+    link.addEventListener("click", function() {
 
-        </a>
+      navLinks.classList.remove("open");
 
-      </div>
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
+      menuButton.textContent = "Menu +";
 
+    });
 
-      <!-- PHONE -->
+  });
 
-      <div class="contact-box">
+/* SCROLL ANIMATIONS */
 
-        <span class="contact-label">
-          Phone
-        </span>
+const elements =
+  document.querySelectorAll(".reveal");
 
-        <a
-          href="tel:+46707495606"
-          class="contact-link"
-        >
+if ("IntersectionObserver" in window) {
 
-          +46 70 749 56 06
+  const observer =
+    new IntersectionObserver(entries => {
 
-        </a>
+      entries.forEach(entry => {
 
-      </div>
+        if (entry.isIntersecting) {
 
+          entry.target.classList.add("visible");
 
-    </div>
+          observer.unobserve(entry.target);
 
-
-  </section>
-
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-
-    <span>
-      © Isabella Karlsson 2026
-    </span>
-
-
-    <span>
-      Growth Marketing
-    </span>
-
-
-    <a href="#home">
-      Back to top ↑
-    </a>
-
-
-  </footer>
-
-
-
-  <!-- =========================
-       WEBSITE JAVASCRIPT
-  ========================== -->
-
-  <script>
-
-
-    /* MOBILE MENU */
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-    const navbar =
-      document.getElementById("navbar");
-
-
-    menuButton.addEventListener(
-      "click",
-      function() {
-
-        navLinks.classList.toggle("active");
-
-      }
-    );
-
-
-
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          function() {
-
-            navLinks.classList.remove("active");
-
-          }
-        );
+        }
 
       });
 
+    }, { threshold: 0.08 });
 
+  elements.forEach(element =>
+    observer.observe(element)
+  );
 
-    /* HIDE NAVBAR ON SCROLL */
+} else {
 
-    let lastScrollY =
-      window.scrollY;
+  elements.forEach(element =>
+    element.classList.add("visible")
+  );
 
+}
 
-    window.addEventListener(
-      "scroll",
-      function() {
-
-        const currentScrollY =
-          window.scrollY;
-
-
-        if (
-          currentScrollY > lastScrollY &&
-          currentScrollY > 100
-        ) {
-
-          navbar.classList.add("hide");
-
-          navLinks.classList.remove("active");
-
-        }
-
-        else {
-
-          navbar.classList.remove("hide");
-
-        }
-
-
-        lastScrollY =
-          currentScrollY;
-
-      }
-    );
-
-
-
-    /* SCROLL REVEAL */
-
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-
-    const observer =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                "visible"
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.12
-        }
-
-      );
-
-
-    revealElements.forEach(
-      element => {
-
-        observer.observe(element);
-
-      }
-    );
-
-
-
-    /* HERO MOUSE EFFECT */
-
-    const hero =
-      document.querySelector(".hero");
-
-    const firstName =
-      document.querySelector(
-        ".hero-name .first"
-      );
-
-    const lastName =
-      document.querySelector(
-        ".hero-name .last"
-      );
-
-
-    hero.addEventListener(
-      "mousemove",
-      function(event) {
-
-        const rect =
-          hero.getBoundingClientRect();
-
-
-        const x =
-          event.clientX - rect.left;
-
-        const y =
-          event.clientY - rect.top;
-
-
-        hero.style.setProperty(
-          "--mouse-x",
-          x + "px"
-        );
-
-        hero.style.setProperty(
-          "--mouse-y",
-          y + "px"
-        );
-
-
-        const moveX =
-          (x / rect.width - 0.5) * 18;
-
-        const moveY =
-          (y / rect.height - 0.5) * 10;
-
-
-        firstName.style.transform =
-          `translate(${moveX}px, ${moveY}px)`;
-
-        lastName.style.transform =
-          `translate(${-moveX}px, ${-moveY}px)`;
-
-      }
-    );
-
-
-
-    hero.addEventListener(
-      "mouseleave",
-      function() {
-
-        firstName.style.transform =
-          "translate(0, 0)";
-
-        lastName.style.transform =
-          "translate(0, 0)";
-
-
-        hero.style.setProperty(
-          "--mouse-x",
-          "50%"
-        );
-
-        hero.style.setProperty(
-          "--mouse-y",
-          "50%"
-        );
-
-      }
-    );
-
-
-  </script>
-
-
-
-  <!-- CHART.JS -->
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/chart.js">
-  </script>
-
-
- <script>
-fetch("dashboard.txt")
-  .then(response => response.text())
-  .then(code => {
-    eval(code);
-  })
-  .catch(error => console.error("Kunde inte läsa dashboard.txt:", error));
-</script>
-
-
-  <section id="api-project">
-  <h2>Stockholm Weather</h2>
-  <p>Live data fetched from Open-Meteo API</p>
-
-  <div id="weather-data">
-    Loading weather...
-  </div>
-</section>
-<script>
-fetch("https://api.open-meteo.com/v1/forecast?latitude=59.33&longitude=18.07&current=temperature_2m,wind_speed_10m")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("weather-data").innerHTML = `
-      <p><strong>Temperature:</strong> ${data.current.temperature_2m} °C</p>
-      <p><strong>Wind:</strong> ${data.current.wind_speed_10m} km/h</p>
-      <p><strong>Updated:</strong> ${data.current.time}</p>
-    `;
-  })
-  .catch(error => {
-    document.getElementById("weather-data").textContent =
-      "Could not load weather data.";
-    console.error(error);
-  });
-</script>
-<section id="activity-project">
-  <h2>Weather Activity</h2>
-  <p>A recommended activity based on today's weather in Stockholm.</p>
-
-  <div id="activity-data">
-    Finding an activity...
-  </div>
-</section>
-
-<script>
-Promise.all([
-  fetch("https://api.open-meteo.com/v1/forecast?latitude=59.33&longitude=18.07&current=temperature_2m,wind_speed_10m")
-    .then(response => response.json()),
-
-  fetch("https://api.stungevents.com/events")
-    .then(response => response.json())
-])
-.then(([weatherData, activityData]) => {
-  window.dataLayer = window.dataLayer || [];
-dataLayer.push({
-  event: "weather_activity_loaded"
-});
-
-  const temperature = weatherData.current.temperature_2m;
-  const wind = weatherData.current.wind_speed_10m;
-
-  let recommendation;
-
-  if (temperature >= 18 && wind < 25) {
-    recommendation = "Go for a walk in Djurgården 🌳";
-  } else if (temperature >= 10 && wind < 30) {
-    recommendation = "Explore Stockholm and visit a café ☕";
-  } else {
-    recommendation = "Visit a museum or enjoy an indoor activity 🖼️";
-  }
-
-  document.getElementById("activity-data").innerHTML = `
-    <p><strong>Recommended activity:</strong> ${recommendation}</p>
-    <p>Based on ${temperature} °C and ${wind} km/h wind.</p>
-  `;
-
-  console.log("Activity API data:", activityData);
-})
-.catch(error => {
-  console.error("Mashup error:", error);
-  document.getElementById("activity-data").textContent =
-    "Could not load activity recommendation.";
-});
 </script>
 
 </body>
-
 </html>
