@@ -1,21 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Isabella Karlsson — Growth Marketing & Creative Strategy Portfolio">
 <title>Isabella Karlsson — Portfolio</title>
 
-<meta name="description"
-content="Isabella Karlsson — Growth Marketing & Creative Strategy Portfolio">
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
   --cream: #f7f3ed;
   --pink: #e9c5bd;
@@ -25,13 +19,9 @@ rel="stylesheet">
   --line: #ded5cc;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -40,14 +30,9 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
-section {
-  scroll-margin-top: 90px;
-}
+section { scroll-margin-top: 90px; }
 
 /* NAVIGATION */
 
@@ -62,6 +47,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform .35s ease;
+}
+
+nav.nav-hidden {
+  transform: translateY(-110%);
 }
 
 .logo {
@@ -88,6 +78,10 @@ nav {
   border-radius: 30px;
 }
 
+.nav-links .contact-button:hover {
+  color: var(--pink);
+}
+
 .menu-button {
   display: none;
   background: transparent;
@@ -102,33 +96,86 @@ nav {
 .hero {
   padding: 100px 7% 90px;
   min-height: 690px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* PINK SPOTLIGHT */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(222,144,155,.34) 0%,
+    rgba(233,197,189,.17) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+  transition: left .18s ease-out, top .18s ease-out;
+}
+
+.hero-top,
+.hero h1,
+.hero-bottom {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-top {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+/* HERO NAME */
 
 .hero h1 {
   font-family: 'Instrument Serif', serif;
   font-size: clamp(85px, 15vw, 220px);
   font-weight: 400;
   letter-spacing: -5px;
-  line-height: .8;
+  line-height: .70;
   margin: 110px 0 75px;
 }
 
 .hero h1 span {
   display: block;
+  opacity: 0;
+  transform: translateY(45px);
+  animation: nameReveal 1.1s ease forwards;
+}
+
+.hero h1 span:first-child {
+  animation-delay: .2s;
 }
 
 .hero h1 span:last-child {
+  animation-delay: .8s;
   color: var(--terracotta);
   font-style: italic;
   text-align: right;
+}
+
+@keyframes nameReveal {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-bottom {
@@ -496,7 +543,7 @@ footer {
   font-size: 12px;
 }
 
-/* ANIMATIONS */
+/* SCROLL ANIMATIONS */
 
 .reveal {
   opacity: 0;
@@ -509,10 +556,9 @@ footer {
   transform: translateY(0);
 }
 
-/* MOBILE */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 850px) {
-
   .about-grid,
   .skills-grid {
     grid-template-columns: 1fr;
@@ -534,7 +580,6 @@ footer {
 }
 
 @media (max-width: 650px) {
-
   nav {
     padding: 18px 6%;
   }
@@ -567,6 +612,13 @@ footer {
   .hero h1 {
     font-size: 16vw;
     margin: 110px 0 70px;
+    line-height: .70;
+    letter-spacing: -3px;
+  }
+
+  .hero-top {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 
   .hero-description {
@@ -576,6 +628,10 @@ footer {
   .hero-bottom {
     flex-direction: column;
     align-items: start;
+  }
+
+  .availability {
+    white-space: normal;
   }
 
   .section {
@@ -595,6 +651,8 @@ footer {
   }
 }
 
+/* ACCESSIBILITY */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -605,82 +663,18 @@ footer {
     transform: none;
     transition: none;
   }
-}
 
-/* HERO NAME ANIMATION */
-
-.hero h1 span {
-  display: block;
-  opacity: 0;
-  transform: translateY(45px);
-  animation: nameReveal 1.1s ease forwards;
-}
-
-.hero h1 span:first-child {
-  animation-delay: 0.2s;
-}
-
-.hero h1 span:last-child {
-  animation-delay: 1.7s;
-}
-
-@keyframes nameReveal {
-  from {
-    opacity: 0;
-    transform: translateY(45px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
   .hero h1 span {
     animation: none;
     opacity: 1;
     transform: none;
   }
-}
 
-/* HERO NAME ANIMATION */
-
-.hero h1 span {
-  display: block;
-  opacity: 0;
-  transform: translateY(45px);
-  animation: nameReveal 1.1s ease forwards;
-}
-
-.hero h1 span:first-child {
-  animation-delay: 0.2s;
-}
-
-.hero h1 span:last-child {
-  animation-delay: 0.8s;
-}
-
-@keyframes nameReveal {
-  from {
-    opacity: 0;
-    transform: translateY(45px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .hero::before,
+  nav {
+    transition: none;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero h1 span {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 </style>
 </head>
 
@@ -688,12 +682,13 @@ footer {
 
 <!-- NAVIGATION -->
 
-<nav>
-
+<nav id="navbar">
   <a href="#home" class="logo">IK.</a>
 
-  <button class="menu-button"
+  <button
+    class="menu-button"
     id="menuButton"
+    aria-label="Open menu"
     aria-expanded="false"
     aria-controls="navLinks">
     Menu +
@@ -708,7 +703,6 @@ footer {
       Let's Talk ↗
     </a>
   </div>
-
 </nav>
 
 <main>
@@ -716,7 +710,6 @@ footer {
 <!-- HERO -->
 
 <header class="hero" id="home">
-
   <div class="hero-top">
     <span>Growth Marketing × Creative Strategy</span>
     <span>Stockholm / 2026</span>
@@ -728,7 +721,6 @@ footer {
   </h1>
 
   <div class="hero-bottom">
-
     <p class="hero-description">
       I combine creativity, strategy and curiosity
       to explore how brands connect with people
@@ -739,10 +731,10 @@ footer {
       <span class="dot"></span>
       Open to internship opportunities
     </div>
-
   </div>
-
 </header>
+
+<!-- MARQUEE -->
 
 <div class="marquee">
   GROWTH × CREATIVITY × STRATEGY × CULTURE × IDEAS
@@ -751,7 +743,6 @@ footer {
 <!-- ABOUT -->
 
 <section class="section" id="about">
-
   <div class="section-header reveal">
     <div class="section-number">01 / About</div>
 
@@ -761,9 +752,7 @@ footer {
   </div>
 
   <div class="about-grid reveal">
-
     <div class="about-text">
-
       <p>
         Hi, I'm Isabella — a Growth Marketing student
         at Berghs School of Communication in Stockholm.
@@ -783,13 +772,10 @@ footer {
         digital marketing, customer behaviour
         and creative communication.
       </p>
-
     </div>
 
     <div class="about-side">
-
       <h3>What drives me</h3>
-
       <p>
         Curiosity, creativity and connecting ideas
         with people. I enjoy combining creative
@@ -797,25 +783,19 @@ footer {
       </p>
 
       <h3>Currently</h3>
-
       <p>
         Studying Growth Marketing at Berghs
         and looking for opportunities to learn
         and contribute to creative teams.
       </p>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- SELECTED WORK -->
 
 <section class="section projects-section" id="work">
-
   <div class="section-header reveal">
-
     <div class="section-number">
       02 / Selected Work
     </div>
@@ -831,7 +811,6 @@ footer {
         strategy, data and digital experiences.
       </p>
     </div>
-
   </div>
 
   <div class="project-grid">
@@ -839,17 +818,14 @@ footer {
     <!-- PROJECT 1: HEAT -->
 
     <article class="project-card reveal">
-
       <div class="project-image heat">
         <span class="project-index">
           01 / School Project
         </span>
-
         <h3>HEAT.</h3>
       </div>
 
       <div class="project-info">
-
         <span class="project-category">
           Digital Marketing Strategy
         </span>
@@ -872,43 +848,35 @@ footer {
 
         <details>
           <summary>Explore the project +</summary>
-
           <ul>
             <li>
               Developed campaign concepts
               and channel recommendations.
             </li>
-
             <li>
               Explored audience targeting
               and the customer journey.
             </li>
-
             <li>
               Created advertising mockups
               for a school assignment.
             </li>
           </ul>
-
         </details>
-
       </div>
     </article>
 
     <!-- PROJECT 2: AROMA ROAST -->
 
     <article class="project-card reveal">
-
       <div class="project-image aroma">
         <span class="project-index">
           02 / School Project
         </span>
-
         <h3>Aroma<br>Roast.</h3>
       </div>
 
       <div class="project-info">
-
         <span class="project-category">
           Creative Campaign
         </span>
@@ -930,43 +898,35 @@ footer {
 
         <details>
           <summary>Explore the project +</summary>
-
           <ul>
             <li>
               Created the concept
               "Better habits. Better sleep."
             </li>
-
             <li>
               Developed image and video
               advertisement concepts.
             </li>
-
             <li>
               Worked with a proposed
               campaign budget of SEK 2,500.
             </li>
           </ul>
-
         </details>
-
       </div>
     </article>
 
     <!-- PROJECT 3: KUNGLIGA OPERAN -->
 
     <article class="project-card reveal">
-
       <div class="project-image opera">
         <span class="project-index">
           03 / School Project
         </span>
-
         <h3>Kungliga<br>Operan.</h3>
       </div>
 
       <div class="project-info">
-
         <span class="project-category">
           Creative Strategy & Brand Collaboration
         </span>
@@ -990,43 +950,35 @@ footer {
 
         <details>
           <summary>Explore the project +</summary>
-
           <ul>
             <li>
               Explored a potential collaboration
               between Kungliga Operan and Djurgården.
             </li>
-
             <li>
               Developed ideas for reaching
               and engaging new audiences.
             </li>
-
             <li>
               Worked with creative concepts,
               positioning and strategic communication.
             </li>
           </ul>
-
         </details>
-
       </div>
     </article>
 
     <!-- PROJECT 4: CREATIVE CODING -->
 
     <article class="project-card reveal">
-
       <div class="project-image coding">
         <span class="project-index">
           04 / Technical Project
         </span>
-
         <h3>Code ×<br>Creative.</h3>
       </div>
 
       <div class="project-info">
-
         <span class="project-category">
           Web Development
         </span>
@@ -1048,43 +1000,35 @@ footer {
 
         <details>
           <summary>Explore the project +</summary>
-
           <ul>
             <li>
               Built a weather-data component
               using Open-Meteo.
             </li>
-
             <li>
               Experimented with
               activity recommendations.
             </li>
-
             <li>
               Explored Google Analytics
               and Google Tag Manager.
             </li>
           </ul>
-
         </details>
-
       </div>
     </article>
 
     <!-- PROJECT 5: BYGGALLIANSEN -->
 
     <article class="project-card reveal">
-
       <div class="project-image bygg">
         <span class="project-index">
           05 / School Project
         </span>
-
         <h3>Build<br>Forward.</h3>
       </div>
 
       <div class="project-info">
-
         <span class="project-category">
           Competitor Analysis
         </span>
@@ -1106,37 +1050,30 @@ footer {
 
         <details>
           <summary>Explore the project +</summary>
-
           <ul>
             <li>
               Compared Offerta,
               Servicefinder and BraByggare.
             </li>
-
             <li>
               Identified strengths
               and content opportunities.
             </li>
-
             <li>
               Developed recommendations
               for expert-led content.
             </li>
           </ul>
-
         </details>
-
       </div>
     </article>
 
   </div>
-
 </section>
 
 <!-- EXPERIENCE -->
 
 <section class="section" id="experience">
-
   <div class="section-header reveal">
     <div class="section-number">
       03 / Background
@@ -1150,21 +1087,17 @@ footer {
   <div class="reveal">
 
     <div class="experience-item">
-
       <span class="experience-type">
         Work Experience
       </span>
 
       <div>
         <h3>Heat by Sophia Lie</h3>
-
         <p>
           <strong>
             Sales, Studio & Event Associate
           </strong>
-
           <br>
-
           Working with customer relations,
           bookings, daily studio operations,
           communication and event coordination.
@@ -1176,18 +1109,15 @@ footer {
       <span class="experience-date">
         Jan 2025 – Present
       </span>
-
     </div>
 
     <div class="experience-item">
-
       <span class="experience-type">
         Education
       </span>
 
       <div>
         <h3>Berghs School of Communication</h3>
-
         <p>
           <strong>Growth Marketing</strong>
           <br>
@@ -1201,18 +1131,15 @@ footer {
       <span class="experience-date">
         Current
       </span>
-
     </div>
 
     <div class="experience-item">
-
       <span class="experience-type">
         Education
       </span>
 
       <div>
         <h3>Florida International University</h3>
-
         <p>
           Previous studies with a focus
           on business and marketing.
@@ -1222,19 +1149,15 @@ footer {
       <span class="experience-date">
         Previous
       </span>
-
     </div>
 
   </div>
-
 </section>
 
 <!-- SKILLS -->
 
 <section class="section skills-section" id="skills">
-
   <div class="section-header reveal">
-
     <div class="section-number">
       04 / Skills
     </div>
@@ -1250,14 +1173,12 @@ footer {
         and work experience.
       </p>
     </div>
-
   </div>
 
   <div class="skills-grid reveal">
 
     <div class="skill-card">
       <h3>Strategy & Branding</h3>
-
       <p>
         Brand positioning, competitor analysis,
         customer journeys, consumer insights
@@ -1267,7 +1188,6 @@ footer {
 
     <div class="skill-card">
       <h3>Digital Marketing</h3>
-
       <p>
         SEO fundamentals, Meta Ads concepts,
         Google Ads concepts, GA4, GTM
@@ -1277,7 +1197,6 @@ footer {
 
     <div class="skill-card">
       <h3>Creative & Technical</h3>
-
       <p>
         Campaign concepts, presentations,
         HTML, CSS, JavaScript, APIs
@@ -1286,21 +1205,17 @@ footer {
     </div>
 
   </div>
-
 </section>
 
 <!-- CONTACT -->
 
 <section class="section contact-section" id="contact">
-
   <div class="section-header reveal">
-
     <div class="section-number">
       05 / Contact
     </div>
 
     <div>
-
       <h2 class="section-title">
         Good ideas start with
         <em>a conversation.</em>
@@ -1314,26 +1229,19 @@ footer {
 
       <div class="contact-links">
 
-        
-<div class="contact-links">
+        <a href="mailto:bellakarlsson02@gmail.com"
+           class="contact-link">
+          Send me an email ↗
+        </a>
 
-  <a href="mailto:bellakarlsson02@gmail.com"
-     class="contact-link">
-    Send me an email ↗
-  </a>
+        <a href="tel:+46707495606"
+           class="contact-link secondary">
+          Call me ↗ +46 70 749 56 06
+        </a>
 
-  <a href="tel:+46707495606"
-     class="contact-link secondary">
-    Call me ↗ +46 70 749 56 06
-  </a>
-
-</div>
-
-
+      </div>
     </div>
-
   </div>
-
 </section>
 
 </main>
@@ -1342,94 +1250,103 @@ footer {
 
 <footer>
   <span>© 2026 Isabella Karlsson</span>
-
-  <span>
-    Made with curiosity in Stockholm.
-  </span>
-
-  <a href="#home">
-    Back to top ↑
-  </a>
+  <span>Made with curiosity in Stockholm.</span>
+  <a href="#home">Back to top ↑</a>
 </footer>
 
 <!-- JAVASCRIPT -->
 
 <script>
 
-const menuButton =
-  document.getElementById("menuButton");
+/* MOBILE MENU */
 
-const navLinks =
-  document.getElementById("navLinks");
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+const navbar = document.getElementById("navbar");
 
 menuButton.addEventListener("click", function() {
-
-  const isOpen =
-    navLinks.classList.toggle("open");
+  const isOpen = navLinks.classList.toggle("open");
 
   menuButton.setAttribute(
     "aria-expanded",
     String(isOpen)
   );
 
-  menuButton.textContent =
-    isOpen ? "Close ×" : "Menu +";
-
+  menuButton.textContent = isOpen ? "Close ×" : "Menu +";
 });
 
-document.querySelectorAll(".nav-links a")
-  .forEach(link => {
-
-    link.addEventListener("click", function() {
-
-      navLinks.classList.remove("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuButton.textContent = "Menu +";
-
-    });
-
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", function() {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menu +";
   });
+});
 
-/* SCROLL ANIMATIONS */
+/* SCROLL REVEAL */
 
-const elements =
-  document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .08 });
 
-  const observer =
-    new IntersectionObserver(entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          observer.unobserve(entry.target);
-
-        }
-
-      });
-
-    }, { threshold: 0.08 });
-
-  elements.forEach(element =>
-    observer.observe(element)
-  );
-
+  revealElements.forEach(element => observer.observe(element));
 } else {
-
-  elements.forEach(element =>
-    element.classList.add("visible")
-  );
-
+  revealElements.forEach(element => {
+    element.classList.add("visible");
+  });
 }
+
+/* INTERACTIVE PINK SPOTLIGHT */
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+  hero.addEventListener("pointermove", function(event) {
+    if (event.pointerType === "touch") return;
+
+    const rect = hero.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    hero.style.setProperty("--mouse-x", x + "px");
+    hero.style.setProperty("--mouse-y", y + "px");
+  });
+
+  hero.addEventListener("pointerleave", function() {
+    hero.style.setProperty("--mouse-x", "50%");
+    hero.style.setProperty("--mouse-y", "50%");
+  });
+}
+
+/* HIDE MENU WHEN SCROLLING DOWN */
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", function() {
+  const currentScrollY = Math.max(0, window.scrollY);
+  const menuOpen = navLinks.classList.contains("open");
+
+  if (
+    currentScrollY < 90 ||
+    menuOpen ||
+    currentScrollY < lastScrollY - 3
+  ) {
+    navbar.classList.remove("nav-hidden");
+  } else if (currentScrollY > lastScrollY + 3) {
+    navbar.classList.add("nav-hidden");
+  }
+
+  lastScrollY = currentScrollY;
+}, { passive: true });
 
 </script>
 
