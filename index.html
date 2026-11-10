@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Isabella Karlsson — Growth Marketing & Creative Strategy Portfolio">
-  <title>Isabella Karlsson — Portfolio</title>
+  <title>Isabella Karlsson | Growth & Marketing</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f7f3ed;
-      --pink: #e9c5bd;
-      --brown: #28221e;
-      --terracotta: #b85d53;
-      --muted: #736a64;
-      --line: #ded5cc;
+      --pink: #ff0080;
+      --black: #050505;
+      --white: #ffffff;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -28,158 +28,228 @@
     }
 
     body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--brown);
-      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* BACKGROUND GLOW */
+
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: var(--pink);
+      filter: blur(120px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    section {
-      scroll-margin-top: 90px;
+    .glow-top {
+      top: -300px;
+      left: -200px;
+    }
+
+    .glow-bottom {
+      right: -250px;
+      bottom: -250px;
     }
 
     /* NAVIGATION */
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(247,243,237,.95);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--line);
-      padding: 22px 7%;
+    header {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 24px 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      transition: transform .35s ease;
-    }
-
-    nav.nav-hidden {
-      transform: translateY(-110%);
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 700;
-      letter-spacing: -2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      font-size: 13px;
-    }
-
-    .nav-links a:hover {
-      color: var(--terracotta);
-    }
-
-    .contact-button {
-      background: var(--brown);
+      letter-spacing: -3px;
+      text-decoration: none;
       color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
     }
 
-    .nav-links .contact-button:hover {
+    nav {
+      display: flex;
+      gap: 45px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
       color: var(--pink);
     }
 
-    .menu-button {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--line);
-      padding: 10px 14px;
-      border-radius: 20px;
-      cursor: pointer;
+    nav a.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 5px;
+    }
+
+    .connect {
+      background: var(--pink);
+      padding: 14px 25px;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .connect:hover {
+      background: white;
+      color: black;
+      transform: scale(1.05);
     }
 
     /* HERO */
 
     .hero {
-      padding: 100px 7% 90px;
-      min-height: 690px;
+      min-height: calc(100svh - 86px);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 3% 125px;
       overflow: hidden;
       isolation: isolate;
     }
 
-    /* PINK SPOTLIGHT EFFECT */
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 650px;
-      height: 650px;
-      left: var(--mouse-x, 50%);
-      top: var(--mouse-y, 50%);
-      transform: translate(-50%, -50%);
-      background: radial-gradient(
-        circle,
-        rgba(222,144,155,.34) 0%,
-        rgba(233,197,189,.17) 35%,
-        transparent 70%
-      );
-      pointer-events: none;
-      z-index: -1;
-      transition: left .18s ease-out, top .18s ease-out;
-    }
-
-    .hero-top,
-    .hero h1,
-    .hero-bottom {
+    .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      width: 100%;
     }
 
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      font-size: 12px;
+    .name {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 900;
+      font-size: clamp(110px, 18vw, 300px);
+      line-height: 0.77;
+      letter-spacing: -0.035em;
+      color: var(--pink);
       text-transform: uppercase;
-      letter-spacing: 2px;
     }
 
-    /* NAME ANIMATION */
-
-    .hero h1 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(85px, 15vw, 220px);
-      font-weight: 400;
-      letter-spacing: -5px;
-      line-height: .70;
-      margin: 110px 0 75px;
+    .isabella {
+      text-align: left;
+      animation: slideLeft 1.2s ease both;
     }
 
-    .hero h1 span {
-      display: block;
-      opacity: 0;
-      transform: translateY(45px);
-      animation: nameReveal 1.1s ease forwards;
-    }
-
-    .hero h1 span:first-child {
-      animation-delay: .2s;
-    }
-
-    .hero h1 span:last-child {
-      animation-delay: .8s;
-      color: var(--terracotta);
-      font-style: italic;
+    .karlsson {
       text-align: right;
+      margin-top: 15px;
+      animation: slideRight 1.2s ease both;
     }
 
-    @keyframes nameReveal {
+    /* INTRO */
+
+    .intro {
+      max-width: 390px;
+      margin-top: 35px;
+      margin-left: 2%;
+      animation: fadeIn 1.6s ease both;
+    }
+
+    .intro p {
+      font-size: 21px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .work-btn {
+      display: inline-flex;
+      gap: 20px;
+      align-items: center;
+      padding: 13px 30px;
+      border: 1.5px solid white;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .work-btn:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+      transform: translateY(-4px);
+    }
+
+    /* MOVING BANNER */
+
+    .ticker {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: var(--pink);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+
+    .ticker-content {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding-right: 80px;
+      white-space: nowrap;
+      font-family: "Barlow Condensed", sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 35px;
+      letter-spacing: 10px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes slideLeft {
       from {
         opacity: 0;
-        transform: translateY(45px);
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -187,562 +257,82 @@
       }
     }
 
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      align-items: end;
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
 
-    .hero-description {
-      font-size: 23px;
-      line-height: 1.5;
-      max-width: 590px;
-    }
-
-    .availability {
-      border: 1px solid var(--line);
-      border-radius: 40px;
-      padding: 14px 20px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .dot {
-      display: inline-block;
-      background: #7f9f77;
-      height: 8px;
-      width: 8px;
-      border-radius: 50%;
-      margin-right: 7px;
-    }
-
-    /* MARQUEE */
-
-    .marquee {
-      background: var(--brown);
-      color: white;
-      overflow: hidden;
-      padding: 22px 0;
-      font-family: 'Instrument Serif', serif;
-      font-size: 27px;
-      font-style: italic;
-      text-align: center;
-    }
-
-    /* SECTIONS */
-
-    .section {
-      padding: 110px 7%;
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 30px;
-      margin-bottom: 55px;
-    }
-
-    .section-number {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-    }
-
-    .section-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(48px, 7vw, 90px);
-      font-weight: 400;
-      letter-spacing: -2px;
-      line-height: 1;
-      margin: 0;
-    }
-
-    .section-intro {
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 650px;
-      color: var(--muted);
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 80px;
-    }
-
-    .about-text {
-      font-size: 20px;
-      line-height: 1.85;
-    }
-
-    .about-side {
-      border-top: 1px solid var(--brown);
-      padding-top: 20px;
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .about-side h3 {
-      color: var(--brown);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* PROJECTS */
-
-    .projects-section {
-      background: #f0e9e2;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project-card {
-      background: #fffdf9;
-      border: 1px solid #e6dcd3;
-      border-radius: 18px;
-      overflow: hidden;
-      transition: transform .3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .project-image {
-      height: 260px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-      position: relative;
-    }
-
-    .project-image h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(45px, 6vw, 85px);
-      font-weight: 400;
-      letter-spacing: -2px;
-      line-height: 1;
-    }
-
-    .project-index {
-      position: absolute;
-      top: 20px;
-      left: 23px;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* PROJECT COLORS */
-
-    .heat {
-      background: #d9e4ea;
-      color: #45426a;
-    }
-
-    .aroma {
-      background: #ddc4a4;
-      color: #5b382d;
-    }
-
-    .opera {
-      background: #672a35;
-      color: #f8eee4;
-    }
-
-    .coding {
-      background: #e8c6c0;
-      color: #6a3838;
-    }
-
-    .bygg {
-      background: #e0d8e8;
-      color: #433b5d;
-    }
-
-    .project-info {
-      padding: 30px;
-    }
-
-    .project-category {
-      color: var(--terracotta);
-      text-transform: uppercase;
-      font-size: 11px;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-
-    .project-info h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 36px;
-      font-weight: 400;
-      margin: 12px 0;
-    }
-
-    .project-info p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 22px 0;
-    }
-
-    .tag {
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 8px 12px;
-      font-size: 11px;
-    }
-
-    details {
-      border-top: 1px solid var(--line);
-      padding-top: 17px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    details ul {
-      font-size: 13px;
-      line-height: 1.8;
-      color: var(--muted);
-      padding-left: 20px;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 180px 1fr 150px;
-      gap: 30px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .experience-item:first-child {
-      border-top: 1px solid var(--brown);
-    }
-
-    .experience-type {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--terracotta);
-    }
-
-    .experience-item h3 {
-      font-size: 20px;
-      margin: 0 0 12px;
-    }
-
-    .experience-item p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .experience-date {
-      font-size: 12px;
-      text-align: right;
-      color: var(--muted);
-    }
-
-    /* SKILLS */
-
-    .skills-section {
-      background: #fffdf9;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .skill-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .skill-card h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 29px;
-      font-weight: 400;
-    }
-
-    .skill-card p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* CONTACT */
-
-    .contact-section {
-      background: var(--brown);
-      color: var(--cream);
-    }
-
-    .contact-section .section-title {
-      max-width: 900px;
-    }
-
-    .contact-section em {
-      color: var(--pink);
-      font-weight: 400;
-    }
-
-    .contact-section .section-intro {
-      color: #c5b8b1;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .contact-photo-wrap {
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    
-.contact-photo {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  display: block;
-  box-shadow: none;
-  transition: transform 0.4s ease;
-}
-
-
-    .contact-photo:hover {
-      transform: translateY(-8px) rotate(1deg);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 35px;
-    }
-
-    .contact-link {
-      background: var(--pink);
-      color: var(--brown);
-      padding: 16px 25px;
-      border-radius: 40px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: transform .25s ease;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-3px);
-    }
-
-    .contact-link.secondary {
-      background: transparent;
-      border: 1px solid #a99a91;
-      color: white;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 30px 7%;
-      background: var(--brown);
-      color: #c5b8b1;
-      border-top: 1px solid #554b45;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 12px;
-    }
-
-    /* SCROLL REVEAL */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .7s, transform .7s;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* TABLET */
-
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
       }
 
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-header {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
         gap: 10px;
       }
 
-      .experience-date {
-        text-align: left;
+      nav a {
+        font-size: 12px;
       }
 
-      .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .contact-photo-wrap {
-        justify-content: flex-start;
-      }
-
-      .contact-photo {
-        max-width: 330px;
-      }
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 650px) {
-      nav {
-        padding: 18px 6%;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: var(--cream);
-        flex-direction: column;
-        padding: 30px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav-links.open {
-        display: flex;
+      .connect {
+        padding: 12px 16px;
+        font-size: 12px;
       }
 
       .hero {
-        padding: 75px 6%;
-        min-height: 540px;
+        min-height: calc(100svh - 120px);
+        padding: 60px 5% 115px;
       }
 
-      .hero h1 {
-        font-size: 16vw;
-        margin: 110px 0 70px;
-        line-height: .70;
-        letter-spacing: -3px;
+      .name {
+        font-size: clamp(65px, 17vw, 140px);
+        line-height: 0.9;
       }
 
-      .hero-top {
-        font-size: 10px;
-        letter-spacing: 1px;
+      .karlsson {
+        margin-top: 20px;
       }
 
-      .hero-description {
-        font-size: 19px;
+      .intro {
+        margin-top: 50px;
+        margin-left: 0;
       }
 
-      .hero-bottom {
-        flex-direction: column;
-        align-items: start;
+      .intro p {
+        font-size: 17px;
       }
 
-      .availability {
-        white-space: normal;
+      .ticker {
+        height: 70px;
       }
 
-      .section {
-        padding: 75px 6%;
+      .ticker-content {
+        font-size: 25px;
+        letter-spacing: 6px;
       }
 
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-image {
-        height: 200px;
-      }
-
-      .contact-photo {
-        max-width: 100%;
-      }
-
-      footer {
-        flex-direction: column;
+      .glow {
+        width: 280px;
+        height: 280px;
       }
     }
 
-    /* ACCESSIBILITY */
-
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-
-      .hero h1 span {
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
-
-      .hero::before,
-      nav,
-      .contact-photo,
-      .contact-link {
-        transition: none;
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -750,714 +340,68 @@
 
 <body>
 
-<!-- NAVIGATION -->
+  <header>
+    <a href="#" class="logo">IK</a>
 
-<nav id="navbar">
-  <a href="#home" class="logo">IK.</a>
+    <nav>
+      <a href="#" class="active">HOME</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="mailto:hello@example.com">CONTACT</a>
+    </nav>
 
-  <button class="menu-button"
-          id="menuButton"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="navLinks">
-    Menu +
-  </button>
-
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#work">Selected Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact" class="contact-button">
-      Let's Talk ↗
+    <a href="mailto:hello@example.com" class="connect">
+      LET'S CONNECT ↗
     </a>
-  </div>
-</nav>
+  </header>
 
-<main>
+  <main>
+    <section class="hero" id="home">
 
-<!-- HERO -->
+      <div class="glow glow-top"></div>
+      <div class="glow glow-bottom"></div>
 
-<header class="hero" id="home">
+      <div class="hero-content">
 
-  <div class="hero-top">
-    <span>Growth Marketing × Creative Strategy</span>
-    <span>Stockholm / 2026</span>
-  </div>
+        <h1 class="name isabella">ISABELLA</h1>
+        <h1 class="name karlsson">KARLSSON</h1>
 
-  <h1>
-    <span>Isabella</span>
-    <span>Karlsson.</span>
-  </h1>
+        <div class="intro">
+          <p>
+            Growth marketing student with a focus on
+            marketing, growth and brand development.
+          </p>
 
-  <div class="hero-bottom">
-    <p class="hero-description">
-      I combine creativity, strategy and curiosity
-      to explore how brands connect with people
-      and grow in meaningful ways.
-    </p>
-
-    <div class="availability">
-      <span class="dot"></span>
-      Open to internship opportunities
-    </div>
-  </div>
-
-</header>
-
-<!-- MARQUEE -->
-
-<div class="marquee">
-  GROWTH × CREATIVITY × STRATEGY × CULTURE × IDEAS
-</div>
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-  <div class="section-header reveal">
-    <div class="section-number">01 / About</div>
-    <h2 class="section-title">
-      Curious about what makes people pay attention.
-    </h2>
-  </div>
-
-  <div class="about-grid reveal">
-
-    <div class="about-text">
-      <p>
-        Hi, I'm Isabella — a Growth Marketing student
-        at Berghs School of Communication in Stockholm.
-      </p>
-
-      <p>
-        I'm passionate about the intersection of
-        creativity, strategy and culture.
-        I love understanding why certain ideas
-        resonate, how brands build communities,
-        and how creative thinking can drive growth.
-      </p>
-
-      <p>
-        Through my studies and professional experience,
-        I've developed an interest in brand building,
-        digital marketing, customer behaviour
-        and creative communication.
-      </p>
-    </div>
-
-    <div class="about-side">
-      <h3>What drives me</h3>
-      <p>
-        Curiosity, creativity and connecting ideas
-        with people. I enjoy combining creative
-        concepts with strategic thinking.
-      </p>
-
-      <h3>Currently</h3>
-      <p>
-        Studying Growth Marketing at Berghs
-        and looking for opportunities to learn
-        and contribute to creative teams.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- SELECTED WORK -->
-
-<section class="section projects-section" id="work">
-
-  <div class="section-header reveal">
-    <div class="section-number">
-      02 / Selected Work
-    </div>
-
-    <div>
-      <h2 class="section-title">
-        Ideas, insights & projects.
-      </h2>
-
-      <p class="section-intro">
-        A selection of academic projects and
-        creative experiments exploring marketing,
-        strategy, data and digital experiences.
-      </p>
-    </div>
-  </div>
-
-  <div class="project-grid">
-
-    <!-- PROJECT 1: HEAT -->
-
-    <article class="project-card reveal">
-
-      <div class="project-image heat">
-        <span class="project-index">
-          01 / School Project
-        </span>
-        <h3>HEAT.</h3>
-      </div>
-
-      <div class="project-info">
-        <span class="project-category">
-          Digital Marketing Strategy
-        </span>
-
-        <h3>Heat by Sophia Lie</h3>
-
-        <p>
-          A digital marketing strategy exploring
-          how a wellness brand can strengthen its
-          digital presence, connect with its target
-          audience and create a more effective
-          customer journey.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Strategy</span>
-          <span class="tag">Meta Ads</span>
-          <span class="tag">Google Ads</span>
-        </div>
-
-        <details>
-          <summary>Explore the project +</summary>
-          <ul>
-            <li>
-              Developed campaign concepts
-              and channel recommendations.
-            </li>
-            <li>
-              Explored audience targeting
-              and the customer journey.
-            </li>
-            <li>
-              Created advertising mockups
-              for a school assignment.
-            </li>
-          </ul>
-        </details>
-      </div>
-
-    </article>
-
-    <!-- PROJECT 2: AROMA ROAST -->
-
-    <article class="project-card reveal">
-
-      <div class="project-image aroma">
-        <span class="project-index">
-          02 / School Project
-        </span>
-        <h3>Aroma<br>Roast.</h3>
-      </div>
-
-      <div class="project-info">
-        <span class="project-category">
-          Creative Campaign
-        </span>
-
-        <h3>Aroma Roast</h3>
-
-        <p>
-          A creative marketing campaign for
-          decaffeinated coffee, connecting
-          better evening habits with the
-          importance of sleep and wellbeing.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Campaign Concept</span>
-          <span class="tag">Meta Ads</span>
-          <span class="tag">Consumer Insight</span>
-        </div>
-
-        <details>
-          <summary>Explore the project +</summary>
-          <ul>
-            <li>
-              Created the concept
-              "Better habits. Better sleep."
-            </li>
-            <li>
-              Developed image and video
-              advertisement concepts.
-            </li>
-            <li>
-              Worked with a proposed
-              campaign budget of SEK 2,500.
-            </li>
-          </ul>
-        </details>
-      </div>
-
-    </article>
-
-    <!-- PROJECT 3: KUNGLIGA OPERAN -->
-
-    <article class="project-card reveal">
-
-      <div class="project-image opera">
-        <span class="project-index">
-          03 / School Project
-        </span>
-        <h3>Kungliga<br>Operan.</h3>
-      </div>
-
-      <div class="project-info">
-        <span class="project-category">
-          Creative Strategy & Brand Collaboration
-        </span>
-
-        <h3>Kungliga Operan × Djurgården</h3>
-
-        <p>
-          A creative concept exploring how
-          Kungliga Operan and Djurgården
-          could collaborate to reach new
-          audiences, build cultural relevance
-          and create meaningful experiences
-          through strategic partnerships.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Creative Strategy</span>
-          <span class="tag">Brand Collaboration</span>
-          <span class="tag">Target Audience</span>
-        </div>
-
-        <details>
-          <summary>Explore the project +</summary>
-          <ul>
-            <li>
-              Explored a potential collaboration
-              between Kungliga Operan and Djurgården.
-            </li>
-            <li>
-              Developed ideas for reaching
-              and engaging new audiences.
-            </li>
-            <li>
-              Worked with creative concepts,
-              positioning and strategic communication.
-            </li>
-          </ul>
-        </details>
-      </div>
-
-    </article>
-
-    <!-- PROJECT 4: CREATIVE CODING -->
-
-    <article class="project-card reveal">
-
-      <div class="project-image coding">
-        <span class="project-index">
-          04 / Technical Project
-        </span>
-        <h3>Code ×<br>Creative.</h3>
-      </div>
-
-      <div class="project-info">
-        <span class="project-category">
-          Web Development
-        </span>
-
-        <h3>Creative Coding</h3>
-
-        <p>
-          Exploring the intersection of
-          technology and creativity through
-          web development, API integrations
-          and interactive digital experiences.
-        </p>
-
-        <div class="tags">
-          <span class="tag">HTML & CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">APIs</span>
-        </div>
-
-        <details>
-          <summary>Explore the project +</summary>
-          <ul>
-            <li>
-              Built a weather-data component
-              using Open-Meteo.
-            </li>
-            <li>
-              Experimented with
-              activity recommendations.
-            </li>
-            <li>
-              Explored Google Analytics
-              and Google Tag Manager.
-            </li>
-          </ul>
-        </details>
-      </div>
-
-    </article>
-
-    <!-- PROJECT 5: BYGGALLIANSEN -->
-
-    <article class="project-card reveal">
-
-      <div class="project-image bygg">
-        <span class="project-index">
-          05 / School Project
-        </span>
-        <h3>Build<br>Forward.</h3>
-      </div>
-
-      <div class="project-info">
-        <span class="project-category">
-          Competitor Analysis
-        </span>
-
-        <h3>Byggalliansen</h3>
-
-        <p>
-          A competitor analysis exploring
-          how a construction-focused brand
-          can strengthen its position as
-          a trusted source of industry knowledge.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Research</span>
-          <span class="tag">Content Strategy</span>
-          <span class="tag">SEO</span>
-        </div>
-
-        <details>
-          <summary>Explore the project +</summary>
-          <ul>
-            <li>
-              Compared Offerta,
-              Servicefinder and BraByggare.
-            </li>
-            <li>
-              Identified strengths
-              and content opportunities.
-            </li>
-            <li>
-              Developed recommendations
-              for expert-led content.
-            </li>
-          </ul>
-        </details>
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section class="section" id="experience">
-
-  <div class="section-header reveal">
-    <div class="section-number">
-      03 / Background
-    </div>
-
-    <h2 class="section-title">
-      Experience & education.
-    </h2>
-  </div>
-
-  <div class="reveal">
-
-    <div class="experience-item">
-      <span class="experience-type">
-        Work Experience
-      </span>
-
-      <div>
-        <h3>Heat by Sophia Lie</h3>
-
-        <p>
-          <strong>
-            Sales, Studio & Event Associate
-          </strong>
-          <br>
-          Working with customer relations,
-          bookings, daily studio operations,
-          communication and event coordination.
-          Developing an understanding of brand
-          experience and customer engagement.
-        </p>
-      </div>
-
-      <span class="experience-date">
-        Jan 2025 – Present
-      </span>
-    </div>
-
-    <div class="experience-item">
-      <span class="experience-type">
-        Education
-      </span>
-
-      <div>
-        <h3>Berghs School of Communication</h3>
-
-        <p>
-          <strong>Growth Marketing</strong>
-          <br>
-          Exploring digital strategy,
-          performance marketing,
-          consumer insights, content
-          creation and marketing analytics.
-        </p>
-      </div>
-
-      <span class="experience-date">
-        Current
-      </span>
-    </div>
-
-    <div class="experience-item">
-      <span class="experience-type">
-        Education
-      </span>
-
-      <div>
-        <h3>Florida International University</h3>
-
-        <p>
-          Previous studies with a focus
-          on business and marketing.
-        </p>
-      </div>
-
-      <span class="experience-date">
-        Previous
-      </span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section class="section skills-section" id="skills">
-
-  <div class="section-header reveal">
-    <div class="section-number">
-      04 / Skills
-    </div>
-
-    <div>
-      <h2 class="section-title">
-        The toolkit.
-      </h2>
-
-      <p class="section-intro">
-        Skills and areas I'm developing
-        through my studies, projects
-        and work experience.
-      </p>
-    </div>
-  </div>
-
-  <div class="skills-grid reveal">
-
-    <div class="skill-card">
-      <h3>Strategy & Branding</h3>
-      <p>
-        Brand positioning, competitor analysis,
-        customer journeys, consumer insights
-        and marketing strategy.
-      </p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Digital Marketing</h3>
-      <p>
-        SEO fundamentals, Meta Ads concepts,
-        Google Ads concepts, GA4, GTM
-        and content planning.
-      </p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Creative & Technical</h3>
-      <p>
-        Campaign concepts, presentations,
-        HTML, CSS, JavaScript, APIs
-        and data visualisation.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT WITH PORTRAIT -->
-
-<section class="section contact-section" id="contact">
-
-  <div class="section-header reveal">
-    <div class="section-number">
-      05 / Contact
-    </div>
-
-    <div class="contact-layout">
-
-      <div>
-        <h2 class="section-title">
-          Good ideas start with
-          <em>a conversation.</em>
-        </h2>
-
-        <p class="section-intro">
-          Have an idea, a project or an
-          internship opportunity?
-          I'd love to connect.
-        </p>
-
-        <div class="contact-links">
-
-          <a href="mailto:bellakarlsson02@gmail.com"
-             class="contact-link">
-            Send me an email ↗
+          <a href="#work" class="work-btn">
+            VIEW WORK ↗
           </a>
+        </div>
 
-          <a href="tel:+46707495606"
-             class="contact-link secondary">
-            Call me ↗ +46 70 749 56 06
-          </a>
+      </div>
+
+      <div class="ticker">
+        <div class="ticker-track">
+
+          <div class="ticker-content">
+            <span>GROWTH</span>
+            <span>/</span>
+            <span>MARKETING</span>
+            <span>/</span>
+          </div>
+
+          <div class="ticker-content" aria-hidden="true">
+            <span>GROWTH</span>
+            <span>/</span>
+            <span>MARKETING</span>
+            <span>/</span>
+          </div>
 
         </div>
       </div>
 
-      <div class="contact-photo-wrap">
-        <img
-          src="images/isabella.jpg"
-          alt="Portrait of Isabella Karlsson"
-          class="contact-photo"
-          loading="lazy"
-          width="768"
-          height="1024"
-        >
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-  <span>© 2026 Isabella Karlsson</span>
-  <span>Made with curiosity in Stockholm.</span>
-  <a href="#home">Back to top ↑</a>
-</footer>
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-  /* MOBILE MENU */
-
-  const menuButton = document.getElementById("menuButton");
-  const navLinks = document.getElementById("navLinks");
-  const navbar = document.getElementById("navbar");
-
-  menuButton.addEventListener("click", function() {
-    const isOpen = navLinks.classList.toggle("open");
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    menuButton.textContent = isOpen ? "Close ×" : "Menu +";
-  });
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", function() {
-      navLinks.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.textContent = "Menu +";
-    });
-  });
-
-  /* SCROLL REVEAL */
-
-  const revealElements = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: .08 });
-
-    revealElements.forEach(element => observer.observe(element));
-  } else {
-    revealElements.forEach(element => {
-      element.classList.add("visible");
-    });
-  }
-
-  /* INTERACTIVE SPOTLIGHT */
-
-  const hero = document.querySelector(".hero");
-
-  if (hero) {
-    hero.addEventListener("pointermove", function(event) {
-      if (event.pointerType === "touch") return;
-
-      const rect = hero.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      hero.style.setProperty("--mouse-x", x + "px");
-      hero.style.setProperty("--mouse-y", y + "px");
-    });
-
-    hero.addEventListener("pointerleave", function() {
-      hero.style.setProperty("--mouse-x", "50%");
-      hero.style.setProperty("--mouse-y", "50%");
-    });
-  }
-
-  /* HIDE MENU ON SCROLL DOWN */
-
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", function() {
-    const currentScrollY = Math.max(0, window.scrollY);
-    const menuOpen = navLinks.classList.contains("open");
-
-    if (
-      currentScrollY < 90 ||
-      menuOpen ||
-      currentScrollY < lastScrollY - 3
-    ) {
-      navbar.classList.remove("nav-hidden");
-    } else if (currentScrollY > lastScrollY + 3) {
-      navbar.classList.add("nav-hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }, { passive: true });
-
-</script>
+    </section>
+  </main>
 
 </body>
 </html>
+
